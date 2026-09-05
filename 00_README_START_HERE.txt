@@ -1,47 +1,26 @@
-MONTOWNIA SMAKÓW — REDESIGN v9
-=================================
+MONTOWNIA SMAKÓW — V10 / GITHUB PAGES
 
 START:
-1. Rozpakuj ZIP.
-2. Otwórz 01_INDEX.html dwuklikiem.
-3. Nie trzeba uruchamiać Node ani PowerShell.
+1. Upload ALL files and folders from this directory into the ROOT of your GitHub repository.
+2. IMPORTANT: index.html must stay in the repository ROOT.
+3. GitHub -> Settings -> Pages -> Deploy from a branch -> choose main -> /(root) -> Save.
+4. Open your GitHub Pages address.
 
-PLIKI:
-01_INDEX.html  = cała struktura strony
-02_STYLE.css   = cały wygląd + pełna wersja mobilna
-03_SCRIPT.js   = przyciski, menu, galeria, video, języki
-04_ASSETS      = lokalne video
+EDITING ORDER:
+1. index.html       — main page (GitHub Pages entry point)
+2. 01_INDEX.html    — same page copy for local opening/editing
+3. 02_STYLE.css     — all visual styles and mobile adaptation
+4. 03_SCRIPT.js     — menu slider, languages, gallery, video behavior
+5. 04_ASSETS/       — local video and other local assets
 
-JĘZYKI:
-- PL — polski (domyślny)
-- EN — angielski
-- UA — ukraiński
-- Przełącznik języka znajduje się w prawym górnym rogu.
-- Wybrany język jest zapamiętywany w przeglądarce.
-
-MOBILE:
-- Responsywne menu hamburger.
-- Osobny układ dla telefonów 430 px i mniejszych.
-- Przyciski, menu, galeria, mapa i stopka dopasowują się do ekranu.
-- Nawigacja zamyka się po kliknięciu linku.
+LANGUAGES:
+PL / EN / UA. The selected language is saved in localStorage.
 
 VIDEO:
-- Film jest lokalnym plikiem 04_ASSETS/07_SHOWREEL.mp4.
-- Bez YouTube, bez iframe, bez przejścia na zewnętrzną stronę.
-- Automatycznie startuje od 00:27, bez dźwięku i bez panelu sterowania.
-- Po zakończeniu wraca do 00:27.
+04_ASSETS/07_SHOWREEL.mp4 is local. No external video player is used.
+The video is muted/autoplay/loop and starts from 27 seconds via JavaScript.
 
-MENU:
-- 4 strony.
-- Strzałki lewo/prawo.
-- Kropki do szybkiego przełączania.
-
-GALERIA:
-- 12 zdjęć.
-- Kliknięcie otwiera duże zdjęcie.
-- Strzałki, licznik i Escape działają.
-
-EDYCJA:
-Najłatwiej zacząć od 01_INDEX.html. Sekcje są ponumerowane komentarzami 01–12.
-Wygląd zmieniaj w 02_STYLE.css.
-Interakcje i tłumaczenia zmieniaj w 03_SCRIPT.js.
+GITHUB PAGES NOTE:
+The site must be opened from GitHub Pages over HTTPS. Do not rename index.html.
+Remote official-site images used in the design require an internet connection.
+The local MP4 is played directly by the browser.
