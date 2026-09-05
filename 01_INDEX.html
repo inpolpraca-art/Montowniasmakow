@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Montownia Smaków — restauracja przy Popularnej 71 w Warszawie.">
+<title>Montownia Smaków — Warszawa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="02_STYLE.css">
+</head>
+<body>
+
+<!-- 00. SIMPLE LOADER -->
+<div class="page-loader" id="pageLoader" aria-hidden="true"><span>M</span></div>
+
+<!-- 01. HEADER -->
+<header class="site-header" id="siteHeader">
+  <a class="brand" href="#start" aria-label="Montownia Smaków — start">
+    <span class="brand-dot"></span>
+    <span>MONTOWNIA</span>
+    <small>SMAKÓW</small>
+  </a>
+
+  <div class="header-tools"><div class="language-switcher" aria-label="Language"><button class="lang-btn active" data-lang="pl" type="button">PL</button><button class="lang-btn" data-lang="en" type="button">EN</button><button class="lang-btn" data-lang="uk" type="button">UA</button></div><button class="mobile-menu" id="mobileMenu" aria-label="Otwórz menu" aria-expanded="false">
+    <span></span><span></span>
+  </button></div>
+
+  <nav id="mainNav">
+    <a href="#start" data-i18n="nav_start">START</a>
+    <a href="#o-nas" data-i18n="nav_about">O NAS</a>
+    <a href="#menu" data-i18n="nav_menu">MENU</a>
+    <a href="#polecamy" data-i18n="nav_recommend">DZIŚ POLECAMY</a>
+    <a href="#oferta" data-i18n="nav_offer">OFERTA</a>
+    <a href="#opinie" data-i18n="nav_reviews">RECENZJE</a>
+    <a href="#galeria" data-i18n="nav_gallery">GALERIA</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- 02. HERO -->
+<section class="hero" id="start">
+  <div class="hero-bg hero-bg-1"></div>
+  <div class="hero-bg hero-bg-2"></div>
+  <div class="hero-bg hero-bg-3"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <p class="eyebrow" data-i18n="hero_eyebrow">WARSZAWA • WŁOCHY</p>
+    <h1 data-i18n="hero_title">Smak,<br><em>który łączy.</em></h1>
+    <p class="hero-text" data-i18n="hero_text">Kuchnia fusion, świeże składniki i wyjątkowa atmosfera przy Popularnej 71.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-light" href="#menu"><span data-i18n="hero_menu">ZOBACZ MENU</span> <span>↓</span></a>
+      <a class="btn btn-outline" href="#video"><span data-i18n="hero_video">VIDEO</span> <span>↘</span></a>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <span>POPULARNA 71</span>
+    <span data-i18n="hero_scroll">PRZEWIŃ ↓</span>
+  </div>
+</section>
+
+<!-- 03. O NAS -->
+<section class="section about" id="o-nas">
+  <div class="section-label" data-i18n="about_label">01 / O NAS</div>
+  <div class="split">
+    <div>
+      <p class="eyebrow" data-i18n="about_eyebrow">MONTOWNIA SMAKÓW</p>
+      <h2 data-i18n="about_title">Więcej niż<br><em>restauracja.</em></h2>
+    </div>
+    <div class="about-copy">
+      <p data-i18n="about_p1">Montownia Smaków to klimatyczne miejsce na warszawskiej Woli, gdzie nowoczesne wnętrze spotyka się z kuchnią pełną różnych smaków.</p>
+      <p data-i18n="about_p2">W karcie znajdziesz m.in. burgery, pasty, ramen, curry, żeberka, sałatki, desery i sezonowe propozycje.</p>
+      <a class="text-link" href="#galeria"><span data-i18n="about_gallery">ZOBACZ GALERIĘ</span> <span>→</span></a>
+    </div>
+  </div>
+  <div class="quote">„Nie ma bardziej szczerej miłości<br><em>niż miłość do jedzenia…”</em><small data-i18n="quote_author">GEORGE BERNARD SHAW</small></div>
+</section>
+
+<!-- 04. VIDEO — LOCAL MP4, NO YOUTUBE -->
+<section class="video-section" id="video">
+  <div class="video-frame" id="videoFrame">
+    <video
+      class="site-video"
+      id="siteVideo"
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+      aria-label="Film Montownia Smaków"
+    >
+      <source src="04_ASSETS/07_SHOWREEL.mp4" type="video/mp4">
+      Twoja przeglądarka nie obsługuje odtwarzania wideo.
+    </video>
+
+    <div class="video-shade"></div>
+
+    <div class="video-title">
+      <span data-i18n="video_section_label">04 / VIDEO</span>
+      <h2 data-i18n="video_title">Smak zaczyna się<br><em>w kuchni.</em></h2>
+    </div>
+
+    <div class="video-poster-note" data-i18n="video_note">MONTOWNIA SMAKÓW · VIDEO</div>
+  </div>
+</section>
+
+<!-- 05. MENU -->
+<section class="section menu-section dark" id="menu">
+  <div class="section-top">
+    <div>
+      <div class="section-label" data-i18n="menu_label">02 / MENU</div>
+      <h2 data-i18n="menu_title">Nasze <em>menu.</em></h2>
+      <p class="section-intro" data-i18n="menu_intro">Przeglądaj kartę strona po stronie.</p>
+    </div>
+    <a class="btn btn-outline" href="https://montowniasmakow.pl/menu/" target="_blank" rel="noopener"><span data-i18n="full_menu">PEŁNE MENU ↗</span></a>
+  </div>
+
+  <div class="menu-viewer">
+    <button class="menu-arrow menu-prev" id="menuPrev" aria-label="Previous menu page">←</button>
+    <div class="menu-page-wrap">
+      <img id="menuPage" src="https://montowniasmakow.pl/wp-content/uploads/2025/07/0001-1024x746.png" alt="Menu Montownia Smaków — strona 1">
+    </div>
+    <button class="menu-arrow menu-next" id="menuNext" aria-label="Next menu page">→</button>
+  </div>
+
+  <div class="menu-pagination">
+    <span id="menuCounter">01 / 04</span>
+    <div class="menu-dots" id="menuDots"></div>
+  </div>
+</section>
+
+<!-- 06. DZIŚ POLECAMY -->
+<section class="section recommend" id="polecamy">
+  <div class="section-label" data-i18n="rec_label">03 / DZIŚ POLECAMY</div>
+  <div class="recommend-layout">
+    <div>
+      <p class="eyebrow" data-i18n="rec_eyebrow">CHEF'S CHOICE</p>
+      <h2 data-i18n="rec_title">Dziś<br><em>polecamy.</em></h2>
+      <p class="recommend-intro" data-i18n="rec_intro">Kilka pozycji, od których warto zacząć wizytę w Montowni Smaków.</p>
+    </div>
+
+    <div class="recommend-list">
+      <button class="recommend-item active" data-title="PIECZONE ŻEBERKA W BBQ" data-desc="Frytki i sałatka winegret." data-price="57 zł">
+        <span>01</span><strong>PIECZONE ŻEBERKA W BBQ</strong><b>57 zł</b>
+      </button>
+      <button class="recommend-item" data-title="CARBONARA" data-desc="Makaron, bekon, świeży tymianek, czosnek, cebula i sos śmietanowy." data-price="42 zł">
+        <span>02</span><strong>CARBONARA</strong><b>42 zł</b>
+      </button>
+      <button class="recommend-item" data-title="RAMEN" data-desc="Wołowina / kurczak / tofu / krewetki, makaron udon i dodatki." data-price="42 zł">
+        <span>03</span><strong>RAMEN</strong><b>42 zł</b>
+      </button>
+      <button class="recommend-item" data-title="THAI CURRY" data-desc="Warzywa, mleko kokosowe, pasta curry i makaron udon." data-price="45 zł">
+        <span>04</span><strong>THAI CURRY</strong><b>45 zł</b>
+      </button>
+    </div>
+  </div>
+
+  <div class="recommend-result">
+    <div>
+      <span><span data-i18n="selected">WYBRANO</span></span>
+      <h3 id="recommendTitle">PIECZONE ŻEBERKA W BBQ</h3>
+      <p id="recommendDesc">Frytki i sałatka winegret.</p>
+    </div>
+    <strong id="recommendPrice">57 zł</strong>
+  </div>
+</section>
+
+<!-- 07. OFERTA -->
+<section class="section offer dark" id="oferta">
+  <div class="offer-inner">
+    <div class="section-label" data-i18n="offer_label">04 / OFERTA</div>
+    <h2 data-i18n="offer_title">Spotkajmy się<br><em>przy stole.</em></h2>
+    <p data-i18n="offer_text">Dostawa, na wynos, rezerwacje, ogródek i catering.</p>
+    <div class="offer-actions">
+      <a href="tel:+48883199177"><span data-i18n="reservation">REZERWACJA</span></a>
+      <a href="tel:+48883199177"><span data-i18n="call">ZADZWOŃ</span></a>
+      <a href="mailto:biuro@montowniasmakow.pl"><span data-i18n="catering">CATERING</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 08. RECENZJE -->
+<section class="section reviews" id="opinie">
+  <div class="section-top">
+    <div>
+      <div class="section-label" data-i18n="reviews_label">05 / RECENZJE</div>
+      <h2 data-i18n="reviews_title">Goście <em>mówią.</em></h2>
+    </div>
+    <div class="rating"><strong>4.6</strong><span>★★★★★<small data-i18n="google">GOOGLE</small></span></div>
+  </div>
+
+  <div class="review-grid">
+    <article><span>“</span><p>Świetne miejsce z genialnym klimatem. Pyszne jedzenie i profesjonalna obsługa.</p></article>
+    <article><span>“</span><p>Klimat, obsługa super. Duże porcje i bardzo ciekawe menu.</p></article>
+    <article><span>“</span><p>Przytulny lokal, miła obsługa i jedzenie, do którego chce się wracać.</p></article>
+  </div>
+
+  <a class="text-link centered" href="https://www.google.com/search?q=Montownia+Smaków+Popularna+71+Warszawa+opinie" target="_blank" rel="noopener"><span data-i18n="more_reviews">ZOBACZ WIĘCEJ OPINII ↗</span></a>
+</section>
+
+<!-- 09. GALERIA -->
+<section class="section gallery" id="galeria">
+  <div class="section-top">
+    <div>
+      <div class="section-label" data-i18n="gallery_label">06 / GALERIA</div>
+      <h2 data-i18n="gallery_title">Montownia<br><em>w obiektywie.</em></h2>
+    </div>
+    <span class="gallery-count" data-i18n="photos">12 ZDJĘĆ</span>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <button class="gallery-card large" data-index="0"><img src="https://montowniasmakow.pl/wp-content/uploads/2024/12/433356296_122115890756240308_2193831147285926610_n-1.jpg" alt="Montownia Smaków — wnętrze" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="1"><img src="https://montowniasmakow.pl/wp-content/uploads/2024/02/photo16371748861-853x720.jpeg" alt="Montownia Smaków — napój" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="2"><img src="https://montowniasmakow.pl/wp-content/uploads/2024/12/449951297_122151315440240308_6492189504369584758_n.jpg" alt="Montownia Smaków — restauracja" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="3"><img src="https://zjedz.my/storage/images/gallery/th_064db5f54a56ac9ada18afe1e45a033152c63aac.jpeg" alt="Montownia Smaków — danie" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="4"><img src="https://zjedz.my/storage/images/gallery/th_44c0ddab380c2df5b439a9850e3b85f79454df67.jpg" alt="Montownia Smaków — zupa" loading="lazy" decoding="async"></button>
+    <button class="gallery-card large" data-index="5"><img src="https://zjedz.my/storage/images/gallery/th_10da999251f2de9b29b3875cc1dd403c0331292d.jpeg" alt="Montownia Smaków — danie" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="6"><img src="https://zjedz.my/storage/images/gallery/th_e328f7101e3abdd10e6f01c955f67a3dcd327459.jpeg" alt="Montownia Smaków — obiad" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="7"><img src="https://zjedz.my/storage/images/gallery/th_3521a886aae3429d210c6eca0515b2fc9f7197a8.jpeg" alt="Montownia Smaków — danie" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="8"><img src="https://zjedz.my/storage/images/gallery/th_487dfc5769e92f3c88d49bdfdc15c9f4d2eb3cce.jpg" alt="Montownia Smaków — deser" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="9"><img src="https://zjedz.my/storage/images/gallery/th_41ef46fa843cd7f47e713f725d418e7f627cad56.jpeg" alt="Montownia Smaków — żeberka" loading="lazy" decoding="async"></button>
+    <button class="gallery-card large" data-index="10"><img src="https://zjedz.my/storage/images/gallery/th_4ae778828138ce8ad0fcd7a1b3c7049a1dff33b2.jpg" alt="Montownia Smaków — curry" loading="lazy" decoding="async"></button>
+    <button class="gallery-card" data-index="11"><img src="https://zjedz.my/storage/images/gallery/th_fb7c354e4b0d980fe79de27dd5d00251995c426f.jpg" alt="Montownia Smaków — danie" loading="lazy" decoding="async"></button>
+  </div>
+</section>
+
+<!-- 10. KONTAKT -->
+<section class="contact dark">
+  <div class="contact-copy">
+    <div class="section-label" data-i18n="contact_label">07 / KONTAKT</div>
+    <h2 data-i18n="contact_title">Widzimy się<br><em>na Popularnej.</em></h2>
+    <p>Popularna 71<br>02-473 Warszawa</p>
+    <div class="contact-links">
+      <a href="tel:+48883199177">+48 883 199 177</a>
+      <a href="mailto:biuro@montowniasmakow.pl">biuro@montowniasmakow.pl</a>
+    </div>
+  </div>
+
+  <div class="map-wrap">
+    <div class="hours">
+      <span data-i18n="hours">GODZINY OTWARCIA</span>
+      <p><b>PN–PT</b><em>10:00 — 21:00</em></p>
+      <p><b>SB</b><em>11:00 — 21:00</em></p>
+      <p><b>ND</b><em>12:00 — 19:00</em></p>
+    </div>
+    <div class="map">
+      <iframe title="Google Maps — Montownia Smaków" loading="lazy" src="https://www.google.com/maps?q=Popularna%2071%2C%2002-473%20Warszawa&output=embed"></iframe>
+      <a href="https://www.google.com/maps/search/?api=1&query=Popularna+71+Warszawa" target="_blank" rel="noopener"><span data-i18n="map">OTWÓRZ MAPĘ ↗</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- 11. FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">
+    <strong>MONTOWNIA <em>SMAKÓW</em></strong>
+    <p data-i18n="footer_desc">Tworzymy, komponujemy, montujemy… smaki!</p>
+  </div>
+
+  <div class="footer-col">
+    <span data-i18n="shortcuts">NA SKRÓTY</span>
+    <a href="#o-nas" data-i18n="nav_about">O NAS</a>
+    <a href="#menu" data-i18n="nav_menu">MENU</a>
+    <a href="#polecamy" data-i18n="nav_recommend">DZIŚ POLECAMY</a>
+    <a href="#galeria" data-i18n="nav_gallery">GALERIA</a>
+  </div>
+
+  <div class="footer-col">
+    <span data-i18n="contact">KONTAKT</span>
+    <a href="tel:+48883199177">+48 883 199 177</a>
+    <a href="mailto:biuro@montowniasmakow.pl">biuro@montowniasmakow.pl</a>
+    <small>Popularna 71, Warszawa</small>
+  </div>
+
+  <div class="footer-social">
+    <span data-i18n="follow">ŚLEDŹ NAS</span>
+    <a class="facebook" href="https://www.facebook.com/montowniasmakow" target="_blank" rel="noopener">f</a>
+    <a href="https://www.instagram.com/montowniasmakow/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+    <a href="https://www.facebook.com/montowniasmakow" target="_blank" rel="noopener">FACEBOOK ↗</a>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© <b id="year"></b> MONTOWNIA SMAKÓW</span>
+    <span data-i18n="presentation">STRONA PREZENTACYJNA</span>
+  </div>
+</footer>
+
+<!-- 12. GALLERY MODAL -->
+<div class="modal" id="galleryModal" aria-hidden="true">
+  <button class="modal-close" id="galleryClose" aria-label="Close">×</button>
+  <button class="lightbox-arrow left" id="galleryPrev" aria-label="Previous photo">←</button>
+  <img id="galleryModalImage" src="" alt="Montownia Smaków — zdjęcie">
+  <button class="lightbox-arrow right" id="galleryNext" aria-label="Next photo">→</button>
+  <span class="lightbox-counter" id="galleryCounter">01 / 12</span>
+</div>
+
+<script src="03_SCRIPT.js" defer></script>
+</body>
+</html>
