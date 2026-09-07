@@ -1,0 +1,16 @@
+MONTOWNIA SMAKÓW — SEO / LIGHTHOUSE CHECKLIST
+
+1. Publish index.html at https://montowniasmakow.pl/
+2. Publish /menu/index.html at https://montowniasmakow.pl/menu/
+3. Publish robots.txt at domain root.
+4. Publish sitemap.xml at domain root.
+5. Publish llms.txt at domain root.
+6. Keep HTTPS enabled.
+7. In Google Search Console submit https://montowniasmakow.pl/sitemap.xml
+8. Request indexing for / and /menu/.
+9. Do NOT test robots.txt/llms.txt using file://. Lighthouse cannot fetch these HTTP resources from a local file URL. Test after deployment over HTTPS.
+10. The local video is included as videoplayback.mp4 and also 04_ASSETS/07_SHOWREEL.mp4. The poster is 04_ASSETS/video-poster.jpg.
+11. The lunch/recommendation block has no day selector. JavaScript chooses the current weekday automatically.
+12. Daily recommendation photos are assigned separately for each weekday.
+
+IMPORTANT: A sitemap helps discovery but does not guarantee a top Google position. During WordPress -> HTML migration, preserve indexed URLs and create 301 redirects for any URL that changes.
