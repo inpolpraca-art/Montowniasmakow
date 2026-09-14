@@ -1,0 +1,52 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "@id": "https://montowniasmakow.pl/#restaurant",
+  "name": "Montownia Smaków",
+  "url": "https://montowniasmakow.pl/",
+  "telephone": "+48 883 199 177",
+  "email": "biuro@montowniasmakow.pl",
+  "image": "https://montowniasmakow.pl/wp-content/uploads/2024/12/433356296_122115890756240308_2193831147285926610_n-1.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Popularna 71",
+    "postalCode": "02-473",
+    "addressLocality": "Warszawa",
+    "addressCountry": "PL"
+  },
+  "servesCuisine": [
+    "Fusion",
+    "Polska",
+    "Europejska",
+    "Burgery",
+    "Ramen",
+    "Pasta",
+    "Curry"
+  ],
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/montowniasmakow",
+    "https://www.instagram.com/montownia_smakow/"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "11:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "12:00",
+      "closes": "21:00"
+    }
+  ],
+  "hasMenu": "https://montowniasmakow.pl/menu/"
+}

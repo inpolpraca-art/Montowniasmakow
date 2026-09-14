@@ -1,5 +1,6 @@
 export const translations = {
   pl: {
+    home: "Strona główna",
     nav_start: "START",
     nav_offer: "OFERTA",
     nav_about: "O NAS",
@@ -72,6 +73,7 @@ export const translations = {
     catering: "CATERING",
   },
   en: {
+    home: "Home",
     nav_start: "HOME",
     nav_offer: "OFFER",
     nav_about: "ABOUT",
@@ -144,6 +146,7 @@ export const translations = {
     catering: "CATERING",
   },
   uk: {
+    home: "Головна",
     nav_start: "ГОЛОВНА",
     nav_offer: "ПРОПОЗИЦІЯ",
     nav_about: "ПРО НАС",
