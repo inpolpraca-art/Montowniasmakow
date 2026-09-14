@@ -1,28 +1,415 @@
 <!doctype html>
 <html lang="pl">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Menu – Montownia Smaków | Restauracja Warszawa</title>
-<meta name="description" content="Menu Montownii Smaków w Warszawie przy Popularnej 71. Sprawdź kartę restauracji.">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-<link rel="canonical" href="https://montowniasmakow.pl/menu/">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{blackfood:'#0c0c0b',paper:'#f2eee7',cream:'#fbf8f1',gold:'#d88943'},fontFamily:{sans:['DM Sans','Arial','sans-serif'],serif:['Playfair Display','Georgia','serif']}}}};</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Menu – Montownia Smaków","url":"https://montowniasmakow.pl/menu/","isPartOf":{"@type":"WebSite","url":"https://montowniasmakow.pl/"}}</script>
-</head>
-<body class="m-0 bg-paper font-sans text-[#151513]">
-<main class="mx-auto max-w-[1180px] px-[22px] pb-[70px] pt-[110px]">
-<a href="../" class="text-[10px] font-bold tracking-[.12em] hover:text-gold">← MONTOWNIA SMAKÓW</a>
-<h1 class="mt-7 font-serif text-[clamp(48px,8vw,92px)] font-semibold leading-[.95]">Menu</h1>
-<p class="mt-4 leading-[1.7]">Montownia Smaków, Popularna 71, Warszawa.</p>
-<h2 class="mb-[22px] mt-[60px] font-serif text-[clamp(32px,5vw,54px)] font-semibold leading-none">MENU</h2>
-<div class="grid grid-cols-1 gap-5 md:grid-cols-2">
-<img width="1024" height="746" loading="eager" src="https://montowniasmakow.pl/wp-content/uploads/2025/07/0001-1024x746.png" alt="Menu Montownia Smaków – strona 1" class="block h-auto w-full">
-<img width="1024" height="746" loading="lazy" src="https://montowniasmakow.pl/wp-content/uploads/2025/07/0002-1024x746.png" alt="Menu Montownia Smaków – strona 2" class="block h-auto w-full">
-<img width="967" height="1024" loading="lazy" src="https://montowniasmakow.pl/wp-content/uploads/2024/12/drink-menu-2.pdf-967x1024.png" alt="Menu Montownia Smaków – napoje" class="block h-auto w-full">
-<img width="967" height="1024" loading="lazy" src="https://montowniasmakow.pl/wp-content/uploads/2024/12/drink-menu-2.pdf1_-967x1024.png" alt="Menu Montownia Smaków – napoje" class="block h-auto w-full">
-</div>
-<div class="mt-[45px] border border-[#ddd] bg-white p-[25px]"><h2 class="mb-5 font-serif text-[clamp(32px,5vw,54px)] font-semibold leading-none">Rezerwacje i zamówienia</h2><p class="leading-[1.7]"><a href="tel:+48883199177" class="font-semibold hover:text-gold">+48 883 199 177</a><br><a href="mailto:biuro@montowniasmakow.pl" class="hover:text-gold">biuro@montowniasmakow.pl</a></p><p class="leading-[1.7]">Popularna 71, 02-473 Warszawa</p><p class="leading-[1.7]">Dostawa, na wynos, rezerwacje, ogródek i catering.</p></div>
-</main></body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu | Montownia Smaków</title>
+    <meta
+      name="description"
+      content="Menu Montownia Smaków — zobacz kartę dań i napojów w wysokiej jakości. Otwórz pełny podgląd i wygodnie powiększ każdą stronę menu."
+    />
+    <meta name="theme-color" content="#0b0b0b" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://montowniasmakow.pl/menu/" />
+
+    <!-- og: -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Menu | Montownia Smaków" />
+    <meta
+      property="og:description"
+      content="Zobacz menu Montownia Smaków w wysokiej jakości."
+    />
+    <meta property="og:url" content="https://montowniasmakow.pl/menu/" />
+    <meta
+      property="og:image"
+      content="https://montowniasmakow.pl/assets/menu/menu-01.png"
+    />
+
+    <!-- twitter: -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://montowniasmakow.pl/assets/menu/menu-01.png"
+    />
+
+    <!-- favicon -->
+    <link rel="icon" href="../assets/logo-black.png" />
+    <link rel="apple-touch-icon" href="../assets/logo-black.png" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body
+    class="min-h-screen bg-[#0b0b0b] text-[#f5f1e9] antialiased selection:bg-[#f5f1e9] selection:text-[#0b0b0b]"
+  >
+    <header
+      class="sticky top-0 z-40 border-b border-white/10 bg-[#111111]/95 backdrop-blur-xl"
+    >
+      <div
+        class="mx-auto flex h-[92px] max-w-[1370px] items-center justify-between px-6 lg:px-10"
+      >
+        <a
+          href="../index.html"
+          aria-label="Powrót do strony głównej"
+          class="group flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white/80 transition hover:text-white"
+        >
+          <span
+            class="text-xl leading-none transition-transform duration-300 group-hover:-translate-x-1"
+            >←</span
+          >
+          <span>Strona główna</span>
+        </a>
+
+        <div
+          class="absolute left-1/2 hidden -translate-x-1/2 text-center sm:block"
+        >
+          <p
+            class="text-[9px] font-bold uppercase tracking-[0.38em] text-white/45"
+          >
+            Montownia Smaków
+          </p>
+          <p class="mt-1 text-xs font-bold uppercase tracking-[0.25em]">Menu</p>
+        </div>
+
+        <a
+          href="tel:+48883199177"
+          class="border border-white/25 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-white hover:text-black sm:px-5"
+        >
+          <span class="hidden sm:inline">883 199 177</span>
+          <span class="sm:hidden">Zadzwoń</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="mx-auto max-w-[1370px] px-6 pb-16 pt-24 lg:px-10 lg:pb-24 lg:pt-32"
+      >
+        <div class="grid gap-12 lg:grid-cols-[1.25fr_.75fr] lg:items-end">
+          <div>
+            <p
+              class="mb-8 text-[10px] font-bold uppercase tracking-[0.35em] text-white/45"
+            >
+              04 / Menu
+            </p>
+            <h1
+              class="font-serif text-[clamp(4rem,9vw,8.5rem)] leading-[.82] tracking-[-0.055em]"
+            >
+              Nasze <span class="italic">menu.</span>
+            </h1>
+          </div>
+          <div class="max-w-md lg:pb-2">
+            <p class="text-base leading-7 text-white/55 sm:text-lg">
+              Przeglądaj kartę strona po stronie. Kliknij dowolną stronę, aby
+              otworzyć ją na pełnym ekranie i dokładnie powiększyć.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="mt-16 border-t border-white/10 pt-5 flex items-center justify-between"
+        >
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+            >Karta dań</span
+          >
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+            >4 strony · kliknij zdjęcie</span
+          >
+        </div>
+      </section>
+
+      <section
+        class="mx-auto max-w-[1370px] px-6 pb-28 lg:px-10"
+        aria-label="Strony menu"
+      >
+        <div class="grid gap-5 md:grid-cols-2">
+          <div class="sr-only">
+            <h3>Wina i piwo</h3>
+            <p>Wina czerwone, białe, musujące, piwa rzemieślnicze...</p>
+          </div>
+          <button
+            data-menu-index="0"
+            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
+          >
+            <div class="relative overflow-hidden bg-[#151515]">
+              <img
+                src="../assets/menu/menu-01.avif"
+                alt="Menu Montownia Smaków — wina i piwo"
+                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
+                loading="eager"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
+              ></div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
+              >
+                <div>
+                  <p
+                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
+                  >
+                    01 / 04
+                  </p>
+                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
+                    Wina &amp; piwo
+                  </h2>
+                </div>
+                <span
+                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
+                  >↗</span
+                >
+              </div>
+            </div>
+          </button>
+
+          <button
+            data-menu-index="1"
+            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
+          >
+            <div class="relative overflow-hidden bg-[#151515]">
+              <img
+                src="../assets/menu/menu-02.avif"
+                alt="Menu Montownia Smaków — koktajle"
+                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
+              ></div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
+              >
+                <div>
+                  <p
+                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
+                  >
+                    02 / 04
+                  </p>
+                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
+                    Drink menu
+                  </h2>
+                </div>
+                <span
+                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
+                  >↗</span
+                >
+              </div>
+            </div>
+          </button>
+
+          <button
+            data-menu-index="2"
+            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
+          >
+            <div class="relative overflow-hidden bg-[#151515]">
+              <img
+                src="../assets/menu/menu-03.avif"
+                alt="Menu Montownia Smaków — dania główne"
+                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
+              ></div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
+              >
+                <div>
+                  <p
+                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
+                  >
+                    03 / 04
+                  </p>
+                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
+                    Dania główne
+                  </h2>
+                </div>
+                <span
+                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
+                  >↗</span
+                >
+              </div>
+            </div>
+          </button>
+
+          <button
+            data-menu-index="3"
+            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
+          >
+            <div class="relative overflow-hidden bg-[#151515]">
+              <img
+                src="../assets/menu/menu-04.avif"
+                alt="Menu Montownia Smaków — burgery, pizza i napoje"
+                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
+              ></div>
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
+              >
+                <div>
+                  <p
+                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
+                  >
+                    04 / 04
+                  </p>
+                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
+                    Pizza, burgery &amp; napoje
+                  </h2>
+                </div>
+                <span
+                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
+                  >↗</span
+                >
+              </div>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <section class="border-y border-black/10 bg-[#eeeae2] text-[#111111]">
+        <div class="mx-auto max-w-[1370px] px-6 py-20 lg:px-10 lg:py-28">
+          <div class="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div>
+              <p
+                class="text-[10px] font-bold uppercase tracking-[0.32em] text-black/45"
+              >
+                Montownia Smaków · Warszawa
+              </p>
+              <h2
+                class="mt-5 max-w-3xl font-serif text-5xl leading-[.92] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
+              >
+                Masz ochotę?<br /><span class="italic"
+                  >Widzimy się przy stole.</span
+                >
+              </h2>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a
+                href="tel:+48883199177"
+                class="border border-black/25 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-black hover:text-white"
+                >Zadzwoń</a
+              >
+              <a
+                href="../index.html#kontakt"
+                class="border border-black/25 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-black hover:text-white"
+                >Kontakt</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer
+      class="border-t border-white/10 px-6 py-8 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-white/30"
+    >
+      © <span id="year"></span> Montownia Smaków · Wszystkie prawa zastrzeżone
+    </footer>
+
+    <div
+      id="viewer"
+      class="fixed inset-0 z-[100] hidden bg-[#080808]/98 opacity-0 transition-opacity duration-300"
+      aria-hidden="true"
+    >
+      <div
+        class="absolute inset-x-0 top-0 z-30 flex h-[82px] items-center justify-between border-b border-white/10 bg-[#0b0b0b]/90 px-5 backdrop-blur-xl lg:px-8"
+      >
+        <div class="flex items-center gap-5">
+          <button
+            id="viewerBack"
+            class="group inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/65 transition hover:text-white"
+            aria-label="Wróć do menu"
+          >
+            <span
+              class="text-xl transition-transform group-hover:-translate-x-1"
+              >←</span
+            >
+            Menu
+          </button>
+          <span class="hidden h-5 w-px bg-white/15 sm:block"></span>
+          <span
+            id="viewerTitle"
+            class="hidden text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 sm:block"
+            >Wina &amp; piwo</span
+          >
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="zoomOut"
+            class="grid h-10 w-10 place-items-center border border-white/15 text-xl text-white/80 transition hover:bg-white hover:text-black"
+            aria-label="Pomniejsz"
+          >
+            −
+          </button>
+          <button
+            id="zoomReset"
+            class="hidden h-10 min-w-[68px] border border-white/15 px-3 text-[10px] font-bold tracking-[0.12em] text-white/60 transition hover:bg-white hover:text-black sm:block"
+            aria-label="Resetuj powiększenie"
+          >
+            100%
+          </button>
+          <button
+            id="zoomIn"
+            class="grid h-10 w-10 place-items-center border border-white/15 text-xl text-white/80 transition hover:bg-white hover:text-black"
+            aria-label="Powiększ"
+          >
+            +
+          </button>
+          <button
+            id="viewerClose"
+            class="ml-2 grid h-10 w-10 place-items-center bg-white text-xl font-light text-black transition hover:scale-105"
+            aria-label="Zamknij"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="viewerStage"
+        class="absolute inset-0 overflow-hidden touch-none select-none pt-[82px]"
+      >
+        <div
+          id="imageWrap"
+          class="absolute left-1/2 top-[calc(50%+41px)] origin-center will-change-transform"
+        >
+          <img
+            id="viewerImage"
+            src=""
+            alt=""
+            draggable="false"
+            class="block max-w-none select-none"
+          />
+        </div>
+      </div>
+
+      <button
+        id="prevMenu"
+        class="absolute left-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-white/15 bg-black/50 text-3xl font-light text-white transition hover:bg-white hover:text-black lg:left-8"
+        aria-label="Poprzednia strona"
+      >
+        ‹
+      </button>
+      <button
+        id="nextMenu"
+        class="absolute right-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-white/15 bg-black/50 text-3xl font-light text-white transition hover:bg-white hover:text-black lg:right-8"
+        aria-label="Następna strona"
+      >
+        ›
+      </button>
+
+      <div
+        class="pointer-events-none absolute bottom-5 left-1/2 z-30 hidden -translate-x-1/2 border border-white/10 bg-black/60 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/40 backdrop-blur sm:block"
+      >
+        Kółko = zoom · przeciągnij = przesuwanie · ← → = strony · Esc = zamknij
+      </div>
+    </div>
+
+    <script src="../scripts/main-menu.js" type="module"></script>
+  </body>
+</html>
