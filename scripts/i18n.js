@@ -26,7 +26,8 @@ export const translations = {
     about_p2:
       "W karcie znajdziesz m.in. burgery, pasty, ramen, curry, żeberka, sałatki, desery i sezonowe propozycje.",
     about_gallery: "ZOBACZ GALERIĘ",
-    quote_cite: "„Nie ma bardziej szczerej miłości<br /><em>niż miłość do jedzenia…”</em>",
+    quote_cite:
+      "„Nie ma bardziej szczerej miłości<br /><em>niż miłość do jedzenia…”</em>",
     quote_author: "GEORGE BERNARD SHAW",
     video_section_label: "03 / VIDEO",
     video_title: "Smak zaczyna się<br><em>w kuchni.</em>",
@@ -34,6 +35,21 @@ export const translations = {
     menu_label: "04 / MENU",
     menu_title: "Nasze <em>menu.</em>",
     menu_intro: "Przeglądaj kartę strona po stronie.",
+    menu_ramen_title: "Ramen Chashu",
+    menu_ramen_desc:
+      "Powolnie gotowany wywar, boczek chashu, makaron ramen, jajko ajitsuke, nori, szczypiorek.",
+    menu_burger_title: "Burger Montownia",
+    menu_burger_desc:
+      "100% wołowina, ser cheddar, bekon, prażona cebulka, sos autorski, bułka brioche.",
+    menu_ribs_title: "Żeberka BBQ",
+    menu_ribs_desc:
+      "Pieczone żeberka wieprzowe w domowym sosie BBQ, podawane z frytkami i surówką colesław.",
+    menu_curry_title: "Butter Chicken Curry",
+    menu_curry_desc:
+      "Soczyste kawałki kurczaka w aksamitnym sosie pomidorowo-maślanym, ryż basmati, chlebek naan.",
+    menu_pasta_title: "Tagliatelle z Krewetkami",
+    menu_pasta_desc:
+      "Świeży makaron, krewetki królewskie, czosnek, chili, pomidorki koktajlowe, białe wino, masło.",
     full_menu: "PEŁNE MENU",
     reviews_label: "05 / RECENZJE",
     reviews_title: "Goście <em>mówią.</em>",
@@ -73,7 +89,8 @@ export const translations = {
     hero_scroll: "SCROLL ↓",
     offer_label: "01 / OFFER",
     offer_title: "Let's meet<br /><em>at the table.</em>",
-    offer_text: "Delivery, takeaway, reservations, outdoor patio, and catering.",
+    offer_text:
+      "Delivery, takeaway, reservations, outdoor patio, and catering.",
     about_label: "02 / ABOUT",
     about_eyebrow: "MONTOWNIA SMAKÓW",
     about_title: "More than a<br><em>restaurant.</em>",
@@ -90,6 +107,21 @@ export const translations = {
     menu_label: "04 / MENU",
     menu_title: "Our <em>menu.</em>",
     menu_intro: "Browse the menu page by page.",
+    menu_ramen_title: "Chashu Ramen",
+    menu_ramen_desc:
+      "Slow-cooked broth, chashu pork belly, ramen noodles, ajitsuke egg, nori, green onion.",
+    menu_burger_title: "Montownia Burger",
+    menu_burger_desc:
+      "100% beef, cheddar cheese, bacon, crispy onions, signature sauce, brioche bun.",
+    menu_ribs_title: "BBQ Ribs",
+    menu_ribs_desc:
+      "Roasted pork ribs in homemade BBQ sauce, served with french fries and coleslaw.",
+    menu_curry_title: "Butter Chicken Curry",
+    menu_curry_desc:
+      "Juicy chicken pieces in a creamy tomato-butter sauce, basmati rice, naan bread.",
+    menu_pasta_title: "Shrimp Tagliatelle",
+    menu_pasta_desc:
+      "Fresh pasta, king prawns, garlic, chili, cherry tomatoes, white wine, butter.",
     full_menu: "FULL MENU",
     reviews_label: "05 / REVIEWS",
     reviews_title: "Guests <em>speak.</em>",
@@ -129,7 +161,8 @@ export const translations = {
     hero_scroll: "ГОРТАЙТЕ ↓",
     offer_label: "01 / ПРОПОЗИЦІЯ",
     offer_title: "Зустрінемось<br /><em>за столом.</em>",
-    offer_text: "Доставка, на винос, бронювання, літній майданчик та кейтеринг.",
+    offer_text:
+      "Доставка, на винос, бронювання, літній майданчик та кейтеринг.",
     about_label: "02 / ПРО НАС",
     about_eyebrow: "MONTOWNIA SMAKÓW",
     about_title: "Більше ніж<br><em>ресторан.</em>",
@@ -146,6 +179,21 @@ export const translations = {
     menu_label: "04 / МЕНЮ",
     menu_title: "Наше <em>меню.</em>",
     menu_intro: "Переглядайте меню сторінка за сторінкою.",
+    menu_ramen_title: "Рамен Чашу",
+    menu_ramen_desc:
+      "Повільно зварений бульйон, свиняча грудинка чашу, локшина рамен, яйце аджіцуке, норі, зелена цибуля.",
+    menu_burger_title: "Бургер Montownia",
+    menu_burger_desc:
+      "100% яловичина, сир чеддер, бекон, хрустка цибуля, фірмовий соус, булочка бріош.",
+    menu_ribs_title: "Реберця BBQ",
+    menu_ribs_desc:
+      "Запечені свинячі реберця у домашньому соусі BBQ, подаються з картоплею фрі та салатом коулсло.",
+    menu_curry_title: "Баттер Чікен Каррі",
+    menu_curry_desc:
+      "Соковиті шматочки курки у ніжному томатно-вершковому соусі, рис басматі, хліб наан.",
+    menu_pasta_title: "Тальятелле з креветками",
+    menu_pasta_desc:
+      "Свіжа паста, королівські креветки, часник, чилі, томати черрі, біле вино, вершкове масло.",
     full_menu: "ПОВНЕ МЕНЮ",
     reviews_label: "05 / ВІДГУКИ",
     reviews_title: "Гості <em>кажуть.</em>",
@@ -175,12 +223,12 @@ export function initI18n($$, langButtons) {
     document.documentElement.lang = lang === "uk" ? "uk" : lang;
     document.body.dataset.lang = lang;
 
-    $$('[data-i18n]').forEach(el => {
+    $$("[data-i18n]").forEach((el) => {
       const k = el.dataset.i18n;
       if (t[k] !== undefined) el.innerHTML = t[k];
     });
 
-    langButtons.forEach(b => {
+    langButtons.forEach((b) => {
       const active = b.dataset.lang === lang;
       b.classList.toggle("bg-white", active);
       b.classList.toggle("text-[#111]", active);
@@ -192,6 +240,8 @@ export function initI18n($$, langButtons) {
     localStorage.setItem("montownia-language", lang);
   }
 
-  langButtons.forEach(b => b.addEventListener("click", () => applyLanguage(b.dataset.lang)));
+  langButtons.forEach((b) =>
+    b.addEventListener("click", () => applyLanguage(b.dataset.lang)),
+  );
   applyLanguage(localStorage.getItem("montownia-language") || "pl");
 }
