@@ -1,8 +1,8 @@
 export function initUI($, $$) {
   // Page Loader & Year
   const loader = $("#pageLoader");
-  setTimeout(() => loader?.classList.add('opacity-20'),1200);
-  setTimeout(() => loader?.remove() , 1400);
+  setTimeout(() => loader?.classList.add("opacity-20"), 1200);
+  setTimeout(() => loader?.remove(), 1400);
 
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
@@ -24,9 +24,8 @@ export function initUI($, $$) {
   // Mobile Menu
   const mobile = $("#mobileMenu"),
     nav = $("#mainNav");
-  mobile?.classList.remove("hidden");
-  mobile?.addEventListener("click", () => {
-    const open = nav.dataset.open !== "true";
+
+  function toggleMobileMenu(open) {
     nav.dataset.open = String(open);
     nav.classList.toggle("hidden", !open);
     nav.classList.toggle("flex", open);
@@ -34,17 +33,38 @@ export function initUI($, $$) {
     nav.classList.toggle("flex-col", open);
     nav.classList.toggle("items-start", open);
     nav.classList.toggle("gap-0", open);
-    nav.classList.toggle("rounded-b-xl", open);
     nav.classList.toggle("bg-blackfood/95", open);
     nav.classList.toggle("p-6", open);
     nav.classList.toggle("shadow-2xl", open);
     mobile.setAttribute("aria-expanded", String(open));
+  }
+  mobile?.classList.remove("hidden");
+  mobile?.addEventListener("click", () => {
+    const open = nav.dataset.open !== "true";
+    toggleMobileMenu(open);
+  });
+  window.addEventListener("keydown", (event) => {
+    const open = nav.dataset.open === "true";
+    if (event.code === "Escape" && open) {
+      toggleMobileMenu(!open);
+    }
+  });
+  window.addEventListener("click", (event) => {
+    const open = nav.dataset.open === "true";
+    if (!open) return;
+    const targetElement = event.target;
+    const isClickInsideNav = nav.contains(targetElement);
+    const isClickOnButton = mobile.contains(targetElement);
+
+    if (!isClickInsideNav && !isClickOnButton) {
+      toggleMobileMenu(false);
+    }
   });
 
   $$("#mainNav a").forEach((a) =>
     a.addEventListener("click", () => {
       nav.dataset.open = "false";
-      if (innerWidth < 768) nav.classList.add("hidden");
+      if (innerWidth < 1024) nav.classList.add("hidden");
     }),
   );
 

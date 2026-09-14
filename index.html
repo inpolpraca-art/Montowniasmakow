@@ -120,11 +120,20 @@
     </script>
   </head>
   <body class="relative bg-paper font-sans text-[#151513] selection:bg-gold">
-    <div id="pageLoader" aria-hidden="true" class="fixed inset-0 z-[9999] grid place-items-center bg-black duration-200"><span class="grid size-14.5 place-items-center rounded-full border border-white font-serif text-2xl font-medium text-white">M</span></div>
+    <div
+      id="pageLoader"
+      aria-hidden="true"
+      class="fixed inset-0 z-[9999] grid place-items-center bg-black duration-200"
+    >
+      <span
+        class="grid size-14.5 place-items-center rounded-full border border-white font-serif text-2xl font-medium text-white"
+        >M</span
+      >
+    </div>
 
     <header
       id="siteHeader"
-      class="flex sticky top-0 z-100 text-white bg-neutral-900 py-2.5 items-center justify-between px-25"
+      class="flex sticky top-0 z-100 text-white bg-neutral-900 py-2.5 items-center justify-between px-[8vw]"
     >
       <a
         href="#start"
@@ -140,7 +149,7 @@
           class="rounded-full max-w-15 max-h-15"
         />
       </a>
-      <div class="flex">
+      <div class="flex gap-x-2.5">
         <div
           class="flex items-center gap-1 rounded-full border *:cursor-pointer border-white/20 bg-black/20 p-1 *:min-h-7 *:min-w-5 *:rounded-full *:border-0 *:px-2 py-1.5 text-[0.5rem] font-bold tracking-[.12em]"
           aria-label="Language"
@@ -165,17 +174,20 @@
         </div>
         <button
           id="mobileMenu"
-          class=""
+          class="rounded-md border-0 bg-transparent p-2.5 lg:hidden"
           aria-label="Otwórz menu"
           aria-expanded="false"
           type="button"
         >
-          <span class=""></span><span class=""></span>
+          <span
+            class="mb-1.5 block h-px w-6 bg-white transition-transform"
+          ></span
+          ><span class="block h-px w-6 bg-white transition-transform"></span>
         </button>
       </div>
       <nav
         id="mainNav"
-        class="flex justify-end gap-x-4 max-w-160 w-full text-[0.688rem] font-bold tracking-[.12em] *:hover:text-white/60 *:duration-200 items-center"
+        class="absolute top-full hidden left-0 lg:static lg:flex lg:z-auto justify-end w-full lg:max-w-160 text-[0.688rem] font-bold tracking-[.12em] *:inline-block *:hover:text-white/60 *:p-2 *:duration-200 items-center"
       >
         <a href="#start" data-i18n="nav_start">START</a>
         <a href="#oferta" data-i18n="nav_offer">OFERTA</a>
@@ -184,7 +196,7 @@
         <a href="#menu" data-i18n="nav_menu">MENU</a>
         <a href="#opinie" data-i18n="nav_reviews">RECENZJE</a>
         <a href="#galeria" data-i18n="nav_gallery">GALERIA</a>
-        <a href="tel:+48883199177" data-i18n="nav_reserve" class="border p-2"
+        <a href="tel:+48883199177" data-i18n="nav_reserve" class="border"
           >REZERWACJA</a
         >
       </nav>
@@ -204,7 +216,7 @@
         <div
           class="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.18)_75%),linear-gradient(0deg,rgba(0,0,0,.55),transparent_60%)]"
         ></div>
-        <div class="relative flex flex-col gap-y-5 z-10 pl-45 py-40">
+        <div class="relative flex flex-col gap-y-5 z-10 pl-[8vw] py-40">
           <p
             class="text-[0.57rem] font-bold tracking-[.22em]"
             data-i18n="hero_eyebrow"
@@ -224,7 +236,7 @@
             Kuchnia fusion, świeże składniki i wyjątkowa atmosfera przy
             Popularnej 71.
           </p>
-          <div class="flex gap-2">
+          <div class="flex flex-wrap gap-2">
             <a
               href="#menu"
               class="inline-flex items-center justify-between gap-6 bg-cream px-4.5 py-3.5 text-[0.57rem] font-bold tracking-[.13em] text-[#111] transition hover:-translate-y-0.5"
@@ -251,7 +263,7 @@
 
       <section
         id="oferta"
-        class="grid place-items-center bg-blackfood px-24 py-30 text-center text-cream"
+        class="grid place-items-center bg-blackfood px-[8vw] py-30 text-center text-cream"
       >
         <div class="max-w-180 grid gap-y-5">
           <div
@@ -281,7 +293,7 @@
         </div>
       </section>
 
-      <section id="o-nas" class="bg-paper px-24 py-30">
+      <section id="o-nas" class="bg-paper px-[8vw] py-30">
         <div
           class="text-[0.56rem] font-bold tracking-[.22em]"
           data-i18n="about_label"
@@ -327,7 +339,7 @@
           class="mx-auto flex flex-col gap-y-5 mt-30 text-center font-serif text-[clamp(27px,4vw,52px)] font-medium leading-[1.12]"
         >
           <blockquote>
-            <p>
+            <p data-i18n="quote_cite">
               „Nie ma bardziej szczerej miłości<br />
               <em>niż miłość do jedzenia…”</em>
             </p>
@@ -387,7 +399,7 @@
 
       <section
         id="menu"
-        class="bg-blackfood flex flex-col gap-y-12 px-24 py-30 text-cream"
+        class="bg-blackfood flex flex-col gap-y-12 px-[8vw] py-30 text-cream"
       >
         <div
           class="flex flex-col items-start justify-between gap-7 md:flex-row md:items-end"
@@ -516,7 +528,7 @@
         </ul>
       </section>
 
-      <section id="opinie" class="bg-paper px-24 py-30">
+      <section id="opinie" class="bg-paper px-[8vw] py-30">
         <div
           class="flex mb-15 flex-col items-start justify-between gap-7 md:flex-row md:items-end"
         >
@@ -577,7 +589,7 @@
         >
       </section>
 
-      <section id="galeria" class="bg-[#e6e0d6] px-24 py-30">
+      <section id="galeria" class="bg-[#e6e0d6] px-[8vw] py-30">
         <div
           class="flex mb-14 flex-col items-start justify-between gap-7 md:flex-row md:items-end"
         >
@@ -770,7 +782,7 @@
         id="kontakt"
         class="grid grid-cols-1 bg-blackfood text-cream lg:grid-cols-2"
       >
-        <div class="px-24 flex flex-col gap-y-6 pb-15.5 pt-22.5 lg:py-22.5">
+        <div class="px-[8vw] flex flex-col gap-y-6 pb-15.5 pt-22.5 lg:py-22.5">
           <div
             class="text-[0.56rem] font-bold tracking-[.22em]"
             data-i18n="contact_label"
@@ -796,7 +808,7 @@
             >
           </div>
         </div>
-        <div class="flex flex-col gap-y-7.5 px-24 pb-19 lg:py-22.5">
+        <div class="flex flex-col gap-y-7.5 px-[8vw] pb-19 lg:py-22.5">
           <div class="border-t border-[#363632] pt-5">
             <span
               class="text-[0.56rem] tracking-[.18em] text-[#999]"
@@ -845,7 +857,7 @@
     </main>
 
     <footer
-      class="grid grid-cols-1 justify-items-center gap-9 bg-[#0b0b0a] px-24 pb-5 pt-8.75 text-white md:grid-cols-2 lg:grid-cols-4"
+      class="grid grid-cols-1 lg:justify-items-center gap-9 bg-[#0b0b0a] px-[8vw] pb-5 pt-8.75 text-white md:grid-cols-2 lg:grid-cols-4"
     >
       <div class="flex flex-col gap-y-3 lg:col-span-1">
         <strong class="font-serif text-2xl font-medium"
@@ -855,12 +867,13 @@
           Tworzymy, komponujemy, montujemy… smaki!
         </p>
       </div>
-      <div class="grid grid-cols-2 gap-2">
+      <div class="grid grid-cols-[auto_1fr] gap-2">
         <span
           class="mb-2 col-span-2 text-[0.56rem] tracking-[.18em] text-[#777]"
           data-i18n="shortcuts"
           >NA SKRÓTY</span
-        ><a href="#oferta" data-i18n="nav_offer" class="text-[0.56rem]">OFERTA</a
+        ><a href="#oferta" data-i18n="nav_offer" class="text-[0.56rem]"
+          >OFERTA</a
         ><a href="#o-nas" data-i18n="nav_about" class="text-[0.56rem]">O NAS</a
         ><a href="#video" data-i18n="nav_video" class="text-[0.56rem]">VIDEO</a
         ><a href="#menu" data-i18n="nav_menu" class="text-[0.56rem]">MENU</a
