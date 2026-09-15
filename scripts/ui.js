@@ -4,9 +4,6 @@ export function initUI($, $$) {
   setTimeout(() => loader?.classList.add("opacity-20"), 1200);
   setTimeout(() => loader?.remove(), 1400);
 
-  const year = $("#year");
-  if (year) year.textContent = new Date().getFullYear();
-
   // Header Scroll Effect
   const header = $("#siteHeader");
   window.addEventListener(

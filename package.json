@@ -1,0 +1,23 @@
+{
+  "name": "montowniasmakow",
+  "version": "1.0.0",
+  "description": "restauracia w warszawie",
+  "homepage": "https://github.com/inpolpraca-art/Montowniasmakow#readme",
+  "bugs": {
+    "url": "https://github.com/inpolpraca-art/Montowniasmakow/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inpolpraca-art/Montowniasmakow.git"
+  },
+  "license": "ISC",
+  "author": "inpolpraca",
+  "type": "commonjs",
+  "main": "./scripts/main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "tailwindcss": "^4.3.3"
+  }
+}

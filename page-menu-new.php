@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Nowy design (Menu)
+*/
+?>
 <!doctype html>
 <html lang="pl">
   <head>
@@ -33,10 +38,9 @@
     />
 
     <!-- favicon -->
-    <link rel="icon" href="../assets/logo-black.png" />
-    <link rel="apple-touch-icon" href="../assets/logo-black.png" />
-
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png" />
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
   </head>
   <body
     class="min-h-screen bg-[#0b0b0b] text-[#f5f1e9] antialiased selection:bg-[#f5f1e9] selection:text-[#0b0b0b]"
@@ -45,10 +49,10 @@
       class="sticky top-0 z-40 border-b border-white/10 bg-[#111111]/95 backdrop-blur-xl"
     >
       <div
-        class="mx-auto flex h-[92px] max-w-[1370px] items-center justify-between px-6 lg:px-10"
+        class="mx-auto flex h-23 max-w-342.5 items-center justify-between px-6 lg:px-10"
       >
         <a
-          href="../index.html"
+          href="<?php echo home_url('/'); ?>"
           aria-label="Powrót do strony głównej"
           class="group flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white/80 transition hover:text-white"
         >
@@ -82,7 +86,7 @@
 
     <main>
       <section
-        class="mx-auto max-w-[1370px] px-6 pb-16 pt-24 lg:px-10 lg:pb-24 lg:pt-32"
+        class="mx-auto max-w-342.5 px-6 pb-16 pt-24 lg:px-10 lg:pb-24 lg:pt-32"
       >
         <div class="grid gap-12 lg:grid-cols-[1.25fr_.75fr] lg:items-end">
           <div>
@@ -120,7 +124,7 @@
       </section>
 
       <section
-        class="mx-auto max-w-[1370px] px-6 pb-28 lg:px-10"
+        class="mx-auto max-w-342.5 px-6 pb-28 lg:px-10"
         aria-label="Strony menu"
       >
         <div class="grid gap-5 md:grid-cols-2">
@@ -140,7 +144,7 @@
                 loading="eager"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
+                class="absolute inset-0 bg-linear-to-t` from-black/80 via-transparent to-transparent opacity-80"
               ></div>
               <div
                 class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
@@ -169,13 +173,13 @@
           >
             <div class="relative overflow-hidden bg-[#151515]">
               <img
-                src="../assets/menu/menu-02.avif"
+                src="<?php echo get_template_directory_uri(); ?>/assets/menu/menu-02.avif"
                 alt="Menu Montownia Smaków — koktajle"
                 class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
                 loading="lazy"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
+                class="absolute inset-0 bg-linear-to-t` from-black/80 via-transparent to-transparent opacity-80"
               ></div>
               <div
                 class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
@@ -204,13 +208,13 @@
           >
             <div class="relative overflow-hidden bg-[#151515]">
               <img
-                src="../assets/menu/menu-03.avif"
+                src="<?php echo get_template_directory_uri(); ?>/assets/menu/menu-03.avif"
                 alt="Menu Montownia Smaków — dania główne"
                 class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
                 loading="lazy"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
+                class="absolute inset-0 bg-linear-to-t` from-black/80 via-transparent to-transparent opacity-80"
               ></div>
               <div
                 class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
@@ -239,13 +243,13 @@
           >
             <div class="relative overflow-hidden bg-[#151515]">
               <img
-                src="../assets/menu/menu-04.avif"
+                src="<?php echo get_template_directory_uri(); ?>/assets/menu/menu-04.avif"
                 alt="Menu Montownia Smaków — burgery, pizza i napoje"
                 class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
                 loading="lazy"
               />
               <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
+                class="absolute inset-0 bg-linear-to-t` from-black/80 via-transparent to-transparent opacity-80"
               ></div>
               <div
                 class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
@@ -271,7 +275,7 @@
       </section>
 
       <section class="border-y border-black/10 bg-[#eeeae2] text-[#111111]">
-        <div class="mx-auto max-w-[1370px] px-6 py-20 lg:px-10 lg:py-28">
+        <div class="mx-auto max-w-342.5 px-6 py-20 lg:px-10 lg:py-28">
           <div class="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
               <p
@@ -307,16 +311,16 @@
     <footer
       class="border-t border-white/10 px-6 py-8 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-white/30"
     >
-      © <span id="year"></span> Montownia Smaków · Wszystkie prawa zastrzeżone
+      © <?php echo date('Y'); ?> Montownia Smaków · Wszystkie prawa zastrzeżone
     </footer>
 
     <div
       id="viewer"
-      class="fixed inset-0 z-[100] hidden bg-[#080808]/98 opacity-0 transition-opacity duration-300"
+      class="fixed inset-0 z-100 hidden bg-[#080808]/98 opacity-0 transition-opacity duration-300"
       aria-hidden="true"
     >
       <div
-        class="absolute inset-x-0 top-0 z-30 flex h-[82px] items-center justify-between border-b border-white/10 bg-[#0b0b0b]/90 px-5 backdrop-blur-xl lg:px-8"
+        class="absolute inset-x-0 top-0 z-30 flex h-20.5 items-center justify-between border-b border-white/10 bg-[#0b0b0b]/90 px-5 backdrop-blur-xl lg:px-8"
       >
         <div class="flex items-center gap-5">
           <button
@@ -348,7 +352,7 @@
           </button>
           <button
             id="zoomReset"
-            class="hidden h-10 min-w-[68px] border border-white/15 px-3 text-[10px] font-bold tracking-[0.12em] text-white/60 transition hover:bg-white hover:text-black sm:block"
+            class="hidden h-10 min-w-17 border border-white/15 px-3 text-[10px] font-bold tracking-[0.12em] text-white/60 transition hover:bg-white hover:text-black sm:block"
             aria-label="Resetuj powiększenie"
           >
             100%
@@ -372,7 +376,7 @@
 
       <div
         id="viewerStage"
-        class="absolute inset-0 overflow-hidden touch-none select-none pt-[82px]"
+        class="absolute inset-0 overflow-hidden touch-none select-none pt-20.5"
       >
         <div
           id="imageWrap"
@@ -410,6 +414,6 @@
       </div>
     </div>
 
-    <script src="../scripts/main-menu.js" type="module"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/scripts/main-menu.js" type="module"></script>
   </body>
 </html>

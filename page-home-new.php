@@ -1,11 +1,16 @@
+<?php
+/*
+Template Name: Nowy design (główna)
+*/
+?>
 <!doctype html>
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Montownia Smaków – Restauracja w Warszawie | Popularna 71</title>
-    <link rel="icon" type="image/png" href="./assets/logo-black.png" />
-    <link rel="apple-touch-icon" href="./assets/logo-black.png" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png" />
+    <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png" />
     <meta
       name="description"
       content="Montownia Smaków – restauracja w Warszawie przy Popularnej 71. Kuchnia fusion, burgery, ramen, pasta, curry, żeberka, catering. Rezerwacje: +48 883 199 177."
@@ -50,75 +55,14 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-blackfood: #0c0c0b;
-        --color-paper: #f2eee7;
-        --color-cream: #fbf8f1;
-        --color-gold: #d88943;
-        --color-muted: #77736b;
-      }
-
-      .animate-hero-first {
-        animation: heroFirst 18s ease-in-out infinite;
-      }
-
-      @keyframes heroFirst {
-        0%,
-        30% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        30% {
-          transform: scale(1.03);
-        }
-        36% {
-          opacity: 0;
-          transform: scale(1.04);
-        }
-        100% {
-          opacity: 0;
-          transform: scale(1);
-        }
-      }
-
-      .animate-hero-show {
-        animation: heroShow 18s ease-in-out infinite backwards;
-      }
-
-      @keyframes heroShow {
-        0% {
-          opacity: 0;
-          transform: scale(1);
-        }
-        5% {
-          opacity: 1;
-        }
-
-        30% {
-          opacity: 1;
-          transform: scale(1.03);
-        }
-
-        36% {
-          opacity: 0;
-          transform: scale(1.04);
-        }
-
-        100% {
-          opacity: 0;
-          transform: scale(1);
-        }
-      }
-    </style>
-    <script type="application/ld+json" src="./schema.json"></script>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <script type="application/ld+json" src="<?php echo get_template_directory_uri(); ?>/schema.json"></script>
   </head>
   <body class="relative bg-paper font-sans text-[#151513] selection:bg-gold">
     <div
       id="pageLoader"
       aria-hidden="true"
-      class="fixed inset-0 z-[9999] grid place-items-center bg-black duration-200"
+      class="fixed inset-0 z-9999 grid place-items-center bg-black duration-200"
     >
       <span
         class="grid size-14.5 place-items-center rounded-full border border-white font-serif text-2xl font-medium text-white"
@@ -136,7 +80,7 @@
         class="font-black text-[10px] tracking-wider relative flex flex-col"
       >
         <img
-          src="./assets/logo.png"
+          src="<?php echo get_template_directory_uri(); ?>/assets/logo.png"
           loading="eager"
           fetchpriority="high"
           alt="logo"
@@ -204,7 +148,7 @@
         class="relative overflow-hidden flex items-center text-white"
       >
         <img
-          src="./assets/wnentrze-1.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/wnentrze-1.avif"
           alt="Wnętrze"
           fetchpriority="high"
           loading="eager"
@@ -212,7 +156,7 @@
         />
 
         <img
-          src="./assets/lunch-7.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/lunch-7.avif"
           alt="Lunch"
           loading="lazy"
           class="absolute z-10 inset-0 w-full h-full max-w-[100vw] object-cover opacity-0 animate-hero-show"
@@ -220,7 +164,7 @@
         />
 
         <img
-          src="./assets/lunch-5.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/lunch-5.avif"
           alt="Lunch"
           loading="lazy"
           class="absolute z-10 inset-0 w-full h-full max-w-[100vw] object-cover opacity-0 animate-hero-show"
@@ -243,7 +187,7 @@
             Smak,<br /><em class="font-normal">który łączy.</em>
           </h1>
           <p
-            class="max-w-[550px] leading-[1.7] text-[#ddd]"
+            class="max-w-137.5 leading-[1.7] text-[#ddd]"
             data-i18n="hero_text"
           >
             Kuchnia fusion, świeże składniki i wyjątkowa atmosfera przy
@@ -342,7 +286,7 @@
             </p>
             <a
               href="#galeria"
-              class="inline-flex items-center w-fit gap-[17px] border-b border-[#aaa] pb-2 text-[0.56rem] font-bold tracking-[.15em]"
+              class="inline-flex items-center w-fit gap-4.25 border-b border-[#aaa] pb-2 text-[0.56rem] font-bold tracking-[.15em]"
               data-i18n="about_gallery"
               >ZOBACZ GALERIĘ <span class="text-base">→</span></a
             >
@@ -375,12 +319,12 @@
             muted
             playsinline
             preload="metadata"
-            poster="./assets/video-poster.jpg"
+            poster="<?php echo get_template_directory_uri(); ?>/assets/video-poster.jpg"
             loop
             class="absolute inset-0 block h-full w-full object-cover"
             aria-label="Film Montownia Smaków"
           >
-            <source src="./assets/video.mp4" type="video/mp4" />
+            <source src="<?php echo get_template_directory_uri(); ?>/assets/video.mp4" type="video/mp4" />
             Twoja przeglądarka nie obsługuje odtwarzania wideo.
           </video>
           <div
@@ -435,7 +379,7 @@
             </p>
           </div>
           <a
-            href="./menu/index.html"
+            href="<?php echo home_url('/menu/'); ?>"
             rel="noopener"
             class="inline-flex items-center border border-white/45 px-4.5 py-3.5 text-[0.56rem] font-bold tracking-[.13em] transition hover:bg-white hover:text-[#111]"
             data-i18n="full_menu"
@@ -565,7 +509,7 @@
           </div>
           <div class="flex items-center gap-3.5">
             <strong class="font-serif text-6xl font-medium">4.6</strong
-            ><span class="text-xs tracking-[.1em]"
+            ><span class="text-xs tracking-widest"
               >★★★★★<small
                 class="mt-1 block font-sans text-[0.56rem] text-[#777]"
                 data-i18n="google"
@@ -574,7 +518,7 @@
             >
           </div>
         </div>
-        <div class="grid grid-cols-1 gap-[18px] md:grid-cols-3">
+        <div class="grid grid-cols-1 gap-4.5 md:grid-cols-3">
           <article class="flex flex-col bg-[#e7e1d7] p-7">
             <span class="font-serif text-6xl leading-[.6]">“</span>
             <p class="font-serif text-xl font-medium leading-[1.35]">
@@ -642,7 +586,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/wnentrze-1.avif"
+              src="<?php echo get_template_directory_uri(); ?>/assets/wnentrze-1.avif"
               alt="Montownia Smaków — wnętrze"
               loading="lazy"
               decoding="async"
@@ -655,7 +599,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/lunch-7.avif"
+              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-7.avif"
               alt="Montownia Smaków — napój"
               loading="lazy"
               decoding="async"
@@ -668,7 +612,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/lunch-1.jpg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-1.jpg"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -681,7 +625,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/danie-01.jpeg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/danie-01.jpeg"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -694,7 +638,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/lunch-8.jpeg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-8.jpeg"
               alt="Montownia Smaków — pizza"
               loading="lazy"
               decoding="async"
@@ -707,7 +651,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/lunch-5.avif"
+              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-5.avif"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -720,7 +664,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/lunch-2.jpg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-2.jpg"
               alt="Montownia Smaków — obiad"
               loading="lazy"
               decoding="async"
@@ -733,7 +677,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/lunch-3.jpg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-3.jpg"
               alt="Montownia Smaków — żeberka"
               loading="lazy"
               decoding="async"
@@ -746,7 +690,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/lunch-4.jpg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-4.jpg"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -759,7 +703,7 @@
             <img
               width="1200"
               height="800"
-              src="./assets/lunch-6.jpeg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-6.jpeg"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -906,7 +850,7 @@
       <div
         class="flex flex-col justify-between gap-2 border-t border-[#222] pt-4 text-[7px] tracking-[.12em] w-full text-[#777] md:col-span-2 lg:col-span-4 lg:flex-row"
       >
-        <span>© <b id="year"></b> MONTOWNIA SMAKÓW</span
+        <span>© <?php echo date('Y'); ?> MONTOWNIA SMAKÓW</span
         ><span data-i18n="presentation">STRONA PREZENTACYJNA</span>
       </div>
     </footer>
@@ -914,7 +858,7 @@
     <div
       id="galleryModal"
       aria-hidden="true"
-      class="pointer-events-none fixed inset-0 z-[500] hidden items-center justify-center bg-black/95 p-6 opacity-0 transition-opacity"
+      class="pointer-events-none fixed inset-0 z-500 hidden items-center justify-center bg-black/95 p-6 opacity-0 transition-opacity"
     >
       <button
         id="galleryClose"
@@ -947,6 +891,6 @@
         >01 / 12</span
       >
     </div>
-    <script src="./scripts/main.js" type="module"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/scripts/main.js" type="module"></script>
   </body>
 </html>
