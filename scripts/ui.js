@@ -198,4 +198,83 @@ export function initUI($, $$) {
     if (e.key === "ArrowRight") showGallery(gi + 1);
     if (e.key === "ArrowLeft") showGallery(gi - 1);
   });
+  function waveHeroTitle() {
+  const title = document.querySelector('[data-i18n="hero_title"]');
+
+  if (!title || title.dataset.waveReady === "true") return;
+
+  title.dataset.waveReady = "true";
+
+  const walker = document.createTreeWalker(
+    title,
+    NodeFilter.SHOW_TEXT,
+    {
+      acceptNode(node) {
+        if (!node.textContent.trim()) {
+          return NodeFilter.FILTER_REJECT;
+        }
+
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    }
+  );
+
+  const textNodes = [];
+  let node;
+
+  while ((node = walker.nextNode())) {
+    textNodes.push(node);
+  }
+
+  let letterIndex = 0;
+
+  textNodes.forEach((textNode) => {
+    const text = textNode.textContent;
+    const fragment = document.createDocumentFragment();
+
+    [...text].forEach((char) => {
+      if (char === " ") {
+        fragment.appendChild(document.createTextNode(" "));
+        return;
+      }
+
+      const span = document.createElement("span");
+
+      span.textContent = char;
+
+      // Tailwind-класс для правильного transform
+      span.className = "inline-block";
+
+      span.animate(
+        [
+          {
+            transform: "translateY(0)",
+          },
+          {
+            transform: "translateY(-18px)",
+          },
+          {
+            transform: "translateY(0)",
+          },
+        ],
+        {
+          duration: 1300,
+          delay: letterIndex * 100,
+          easing: "ease-in-out",
+          fill: "both",
+        }
+      );
+
+      letterIndex++;
+
+      fragment.appendChild(span);
+    });
+
+    textNode.parentNode.replaceChild(fragment, textNode);
+  });
+}
+
+window.addEventListener("load", () => {
+  setTimeout(waveHeroTitle, 300);
+});
 }
