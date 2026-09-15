@@ -1,5 +1,5 @@
 export function initUI($, $$) {
-  // Page Loader & Year
+  // Page Loader
   const loader = $("#pageLoader");
   setTimeout(() => loader?.classList.add("opacity-20"), 1200);
   setTimeout(() => loader?.remove(), 1400);

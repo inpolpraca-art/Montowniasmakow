@@ -2,25 +2,25 @@ export function initMenuUI($, $$) {
   const lockBody = (locked) =>
     document.body.classList.toggle("overflow-hidden", locked);
 
-  // Используем абсолютные пути от корня, чтобы код работал везде
+  const themeUrl = window.themeUrl || '';
   const menuImages = [
     {
-      src: "/assets/menu/menu-01.avif",
+      src: `${themeUrl}/assets/menu/menu-01.avif`,
       alt: "Menu Montownia Smaków — wina i piwo",
       title: "Wina & piwo",
     },
     {
-      src: "/assets/menu/menu-02.avif",
+      src: `${themeUrl}/assets/menu/menu-02.avif`,
       alt: "Menu Montownia Smaków — koktajle",
       title: "Drink menu",
     },
     {
-      src: "/assets/menu/menu-03.avif",
+      src: `${themeUrl}/assets/menu/menu-03.avif`,
       alt: "Menu Montownia Smaków — dania główne",
       title: "Dania główne",
     },
     {
-      src: "/assets/menu/menu-04.avif",
+      src: `${themeUrl}/assets/menu/menu-04.avif`,
       alt: "Menu Montownia Smaków — burgery, pizza i napoje",
       title: "Pizza, burgery & napoje",
     },
@@ -33,7 +33,6 @@ export function initMenuUI($, $$) {
   const zoomReset = $("#zoomReset");
   const viewerTitle = $("#viewerTitle");
 
-  // Защита: если просмотрщик не найден в HTML, выходим без ошибок
   if (!viewer || !stage || !image || !wrap) return;
 
   let index = 0;
@@ -42,8 +41,8 @@ export function initMenuUI($, $$) {
   let x = 0;
   let y = 0;
   let dragging = false;
-  let isPinching = false; // Флаг для блокировки драга во время pinch-to-zoom
-  let isMoved = false; // Флаг для предотвращения закрытия при Drag
+  let isPinching = false; 
+  let isMoved = false;
   let activePointerId = null;
   let lastX = 0;
   let lastY = 0;
@@ -156,7 +155,6 @@ export function initMenuUI($, $$) {
     return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2 };
   }
 
-  // Навешиваем слушатели с безопастным опциональным оператором (?.)
   $$("[data-menu-index]").forEach((button) => {
     button.addEventListener("click", () =>
       openViewer(Number(button.dataset.menuIndex)),
@@ -181,10 +179,9 @@ export function initMenuUI($, $$) {
     { passive: false },
   );
 
-  // DRAG (Перетаскивание)
   stage.addEventListener("pointerdown", (event) => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
-    if (isPinching) return; // Игнорируем если работает Pinch
+    if (isPinching) return; 
 
     dragging = true;
     isMoved = false;
@@ -200,7 +197,6 @@ export function initMenuUI($, $$) {
     const deltaX = event.clientX - lastX;
     const deltaY = event.clientY - lastY;
 
-    // Если сместились больше чем на 3px — это перетаскивание, а не обычный клик
     if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
       isMoved = true;
     }
@@ -219,13 +215,12 @@ export function initMenuUI($, $$) {
   stage.addEventListener("pointerup", stopPointer);
   stage.addEventListener("pointercancel", stopPointer);
 
-  // PINCH-TO-ZOOM (Тачскрины)
   stage.addEventListener(
     "touchstart",
     (event) => {
       if (event.touches.length === 2) {
         isPinching = true;
-        dragging = false; // Блокируем одиночное перетаскивание
+        dragging = false; 
         pinchStartDistance = pointerDistance(
           event.touches[0],
           event.touches[1],
@@ -273,13 +268,9 @@ export function initMenuUI($, $$) {
     if (event.key === "0") resetView();
   });
 
-  // Закрытие при клике по темному фону (но не после перетаскивания)
   stage.addEventListener("click", (event) => {
     if (event.target === stage && !isMoved) {
       closeViewer();
     }
   });
-
-  const yearEl = $("#year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
 }

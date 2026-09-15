@@ -138,7 +138,7 @@ Template Name: Nowy design (Menu)
           >
             <div class="relative overflow-hidden bg-[#151515]">
               <img
-                src="../assets/menu/menu-01.avif"
+                src="<?php echo get_template_directory_uri(); ?>/assets/menu/menu-01.avif"
                 alt="Menu Montownia Smaków — wina i piwo"
                 class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
                 loading="eager"
@@ -414,6 +414,10 @@ Template Name: Nowy design (Menu)
       </div>
     </div>
 
-    <script src="<?php echo get_template_directory_uri(); ?>/scripts/main-menu.js" type="module"></script>
+    <script>
+      window.themeUrl = "<?php echo get_template_directory_uri(); ?>";
+    </script>
+    <script src="<?php echo get_template_directory_uri(); ?>/scripts/main-menu.js" type="module">
+    </script>
   </body>
 </html>

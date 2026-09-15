@@ -571,7 +571,7 @@ Template Name: Nowy design (główna)
           <span
             class="text-[0.56rem] tracking-[.16em] text-blackfood"
             data-i18n="photos"
-            >12 ZDJĘĆ</span
+            >10 ZDJĘĆ</span
           >
         </div>
 
