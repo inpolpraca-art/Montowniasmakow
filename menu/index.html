@@ -55,6 +55,7 @@
           loading="eager"
           fetchpriority="high"
           alt="logo"
+          data-i18n-attr="alt:logo_alt"
           width="60"
           height="60"
           class="max-h-15 max-w-15 rounded-full"
@@ -87,6 +88,7 @@
           id="mobileMenu"
           class="rounded-md border-0 bg-transparent p-2.5 lg:hidden"
           aria-label="Otwórz menu"
+          data-i18n-attr="aria-label:aria_open_menu"
           aria-expanded="false"
           type="button"
         >
@@ -121,17 +123,22 @@
           <div>
             <p
               class="mb-8 text-[10px] font-bold uppercase tracking-[0.35em] text-white/45"
+              data-i18n="section_number"
             >
               04 / Menu
             </p>
             <h1
               class="font-serif text-[clamp(4rem,9vw,8.5rem)] leading-[.82] tracking-[-0.055em]"
             >
-              Nasze <span class="italic">menu.</span>
+              <span data-i18n="hero_title_1">Nasze </span
+              ><span class="italic" data-i18n="hero_title_italic">menu.</span>
             </h1>
           </div>
           <div class="max-w-md lg:pb-2">
-            <p class="text-base leading-7 text-white/55 sm:text-lg">
+            <p
+              class="text-base leading-7 text-white/55 sm:text-lg"
+              data-i18n="hero_description"
+            >
               Nowa karta w jakości z pliku PDF. Kliknij stronę, aby otworzyć ją
               na pełnym ekranie i powiększyć bez utraty czytelności.
             </p>
@@ -143,6 +150,7 @@
         >
           <span
             class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+            data-i18n="menu_category_food"
             >Karta dań</span
           >
         </div>
@@ -161,13 +169,16 @@
             <div>
               <p
                 class="text-[10px] font-bold uppercase tracking-[0.32em] text-black/45"
+                data-i18n="cta_location"
               >
                 Montownia Smaków · Warszawa
               </p>
               <h2
                 class="mt-5 max-w-3xl font-serif text-5xl leading-[.92] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
               >
-                Masz ochotę?<br /><span class="italic"
+                <span data-i18n="cta_title_1">Masz ochotę?</span><br /><span
+                  class="italic"
+                  data-i18n="cta_title_italic"
                   >Widzimy się przy stole.</span
                 >
               </h2>
@@ -176,11 +187,13 @@
               <a
                 href="tel:+48883199177"
                 class="border border-black/25 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-black hover:text-white"
+                data-i18n="cta_call"
                 >Zadzwoń</a
               >
               <a
                 href="../index.html#kontakt"
                 class="border border-black/25 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-black hover:text-white"
+                data-i18n="cta_contact"
                 >Kontakt</a
               >
             </div>
@@ -192,7 +205,10 @@
     <footer
       class="border-t border-white/10 px-6 py-8 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-white/30"
     >
-      © <span id="year"></span> Montownia Smaków · Wszystkie prawa zastrzeżone
+      © <span id="year"></span>
+      <span data-i18n="footer_rights"
+        >Montownia Smaków · Wszystkie prawa zastrzeżone</span
+      >
     </footer>
 
     <div
@@ -208,17 +224,19 @@
             id="viewerBack"
             class="group inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-black/65 transition hover:text-black"
             aria-label="Wróć do menu"
+            data-i18n-attr="aria-label:aria_back_to_menu"
           >
             <span
               class="text-xl transition-transform group-hover:-translate-x-1"
               >←</span
             >
-            Menu
+            <span data-i18n="viewer_back">Menu</span>
           </button>
           <span class="hidden h-5 w-px bg-black/10 sm:block"></span>
           <span
             id="viewerTitle"
             class="hidden text-[10px] font-bold uppercase tracking-[0.2em] text-black/45 sm:block"
+            data-i18n="viewer_title"
             >Menu</span
           >
         </div>
@@ -228,6 +246,7 @@
             id="zoomOut"
             class="grid h-10 w-10 place-items-center border border-black/15 text-xl text-black/75 transition hover:bg-black hover:text-white"
             aria-label="Pomniejsz"
+            data-i18n-attr="aria-label:aria_zoom_out"
           >
             −
           </button>
@@ -235,6 +254,7 @@
             id="zoomReset"
             class="h-10 min-w-[68px] border border-black/15 px-3 text-[10px] font-bold tracking-[0.12em] text-black/55 transition hover:bg-black hover:text-white"
             aria-label="Resetuj powiększenie"
+            data-i18n-attr="aria-label:aria_zoom_reset"
           >
             100%
           </button>
@@ -242,6 +262,7 @@
             id="zoomIn"
             class="grid h-10 w-10 place-items-center border border-black/15 text-xl text-black/75 transition hover:bg-black hover:text-white"
             aria-label="Powiększ"
+            data-i18n-attr="aria-label:aria_zoom_in"
           >
             +
           </button>
@@ -249,6 +270,7 @@
             id="viewerClose"
             class="ml-2 grid h-10 w-10 place-items-center bg-[#111111] text-xl font-light text-white transition hover:scale-105"
             aria-label="Zamknij"
+            data-i18n-attr="aria-label:aria_close"
           >
             ×
           </button>
@@ -281,6 +303,7 @@
         id="prevMenu"
         class="absolute left-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-black/15 bg-[#eeeae2]/90 text-3xl font-light text-black/75 transition hover:bg-black hover:text-white lg:left-8"
         aria-label="Poprzednia strona"
+        data-i18n-attr="aria-label:aria_prev_page"
       >
         ‹
       </button>
@@ -288,12 +311,14 @@
         id="nextMenu"
         class="absolute right-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-black/15 bg-[#eeeae2]/90 text-3xl font-light text-black/75 transition hover:bg-black hover:text-white lg:right-8"
         aria-label="Następna strona"
+        data-i18n-attr="aria-label:aria_next_page"
       >
         ›
       </button>
 
       <div
         class="pointer-events-none absolute bottom-5 left-1/2 z-30 hidden -translate-x-1/2 border border-black/10 bg-[#eeeae2]/90 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-black/40 backdrop-blur sm:block"
+        data-i18n="viewer_controls_hint"
       >
         Kółko = zoom · przeciągnij = przesuwanie · ← → = strony · Esc = zamknij
       </div>
