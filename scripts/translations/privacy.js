@@ -143,7 +143,7 @@ export const privacyTranslations = {
     s12p: "This privacy policy may be updated when the website, services used or applicable law change. The current version is published on this page.",
     footerTitle: "See you<br><em>on Popularna.</em>",
   },
-  ua: {
+  uk: {
     back: "НАЗАД",
     back2: "ПОВЕРНУТИСЯ НА САЙТ",
     label: "ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ",
