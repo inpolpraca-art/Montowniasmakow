@@ -36,48 +36,81 @@
     <link rel="icon" href="../assets/logo-black.png" />
     <link rel="apple-touch-icon" href="../assets/logo-black.png" />
 
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../output.css" />
   </head>
   <body
     class="min-h-screen bg-[#0b0b0b] text-[#f5f1e9] antialiased selection:bg-[#f5f1e9] selection:text-[#0b0b0b]"
   >
     <header
-      class="sticky top-0 z-40 border-b border-white/10 bg-[#111111]/95 backdrop-blur-xl"
+      id="siteHeader"
+      class="sticky top-0 z-100 flex items-center justify-between bg-neutral-900 px-[8vw] py-2.5 text-white"
     >
-      <div
-        class="mx-auto flex h-[92px] max-w-[1370px] items-center justify-between px-6 lg:px-10"
+      <a
+        href="../index.html"
+        aria-label="Montownia Smaków — start"
+        class="relative flex flex-col text-[10px] font-black tracking-wider"
       >
-        <a
-          href="../index.html"
-          aria-label="Powrót do strony głównej"
-          class="group flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white/80 transition hover:text-white"
+        <img
+          src="../assets/logo.png"
+          loading="eager"
+          fetchpriority="high"
+          alt="logo"
+          width="60"
+          height="60"
+          class="max-h-15 max-w-15 rounded-full"
+        />
+      </a>
+      <div class="flex gap-x-2.5">
+        <div
+          class="flex items-center gap-1 rounded-full border border-white/20 bg-black/20 p-1 text-[0.5rem] font-bold tracking-[.12em] py-1.5 *:min-h-7 *:min-w-5 *:cursor-pointer *:rounded-full *:border-0 *:px-2"
+          aria-label="Language"
+        >
+          <button class="lang-btn text-[#111]" data-lang="pl" type="button">
+            PL
+          </button>
+          <button
+            class="lang-btn bg-transparent text-white/60"
+            data-lang="en"
+            type="button"
+          >
+            EN
+          </button>
+          <button
+            class="lang-btn bg-transparent text-white/60"
+            data-lang="uk"
+            type="button"
+          >
+            UA
+          </button>
+        </div>
+        <button
+          id="mobileMenu"
+          class="rounded-md border-0 bg-transparent p-2.5 lg:hidden"
+          aria-label="Otwórz menu"
+          aria-expanded="false"
+          type="button"
         >
           <span
-            class="text-xl leading-none transition-transform duration-300 group-hover:-translate-x-1"
-            >←</span
-          >
-          <span>Strona główna</span>
-        </a>
-
-        <div
-          class="absolute left-1/2 hidden -translate-x-1/2 text-center sm:block"
-        >
-          <p
-            class="text-[9px] font-bold uppercase tracking-[0.38em] text-white/45"
-          >
-            Montownia Smaków
-          </p>
-          <p class="mt-1 text-xs font-bold uppercase tracking-[0.25em]">Menu</p>
-        </div>
-
-        <a
-          href="tel:+48883199177"
-          class="border border-white/25 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-white hover:text-black sm:px-5"
-        >
-          <span class="hidden sm:inline">883 199 177</span>
-          <span class="sm:hidden">Zadzwoń</span>
-        </a>
+            class="mb-1.5 block h-px w-6 bg-white transition-transform"
+          ></span
+          ><span class="block h-px w-6 bg-white transition-transform"></span>
+        </button>
       </div>
+      <nav
+        id="mainNav"
+        class="absolute left-0 top-full hidden w-full items-center justify-end text-[0.688rem] font-bold tracking-[.12em] lg:static lg:z-auto lg:flex lg:max-w-160 *:inline-block *:p-2 *:duration-200 *:hover:text-white/60"
+      >
+        <a href="../index.html#start" data-i18n="nav_start">START</a>
+        <a href="../index.html#oferta" data-i18n="nav_offer">OFERTA</a>
+        <a href="../index.html#o-nas" data-i18n="nav_about">O NAS</a>
+        <a href="../index.html#video" data-i18n="nav_video">VIDEO</a>
+        <a href="../index.html#menu" data-i18n="nav_menu">MENU</a>
+        <a href="../index.html#opinie" data-i18n="nav_reviews">RECENZJE</a>
+        <a href="../index.html#galeria" data-i18n="nav_gallery">GALERIA</a>
+        <a href="tel:+48883199177" data-i18n="nav_reserve" class="border"
+          >REZERWACJA</a
+        >
+      </nav>
     </header>
 
     <main>
@@ -99,175 +132,27 @@
           </div>
           <div class="max-w-md lg:pb-2">
             <p class="text-base leading-7 text-white/55 sm:text-lg">
-              Przeglądaj kartę strona po stronie. Kliknij dowolną stronę, aby
-              otworzyć ją na pełnym ekranie i dokładnie powiększyć.
+              Nowa karta w jakości z pliku PDF. Kliknij stronę, aby otworzyć ją
+              na pełnym ekranie i powiększyć bez utraty czytelności.
             </p>
           </div>
         </div>
 
         <div
-          class="mt-16 border-t border-white/10 pt-5 flex items-center justify-between"
+          class="mt-16 flex flex-col gap-5 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between"
         >
           <span
             class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
             >Karta dań</span
           >
-          <span
-            class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
-            >4 strony · kliknij zdjęcie</span
-          >
         </div>
       </section>
 
       <section
-        class="mx-auto max-w-[1370px] px-6 pb-28 lg:px-10"
+        class="mx-auto max-w-342.5 px-6 pb-28 lg:px-10"
         aria-label="Strony menu"
       >
-        <div class="grid gap-5 md:grid-cols-2">
-          <div class="sr-only">
-            <h3>Wina i piwo</h3>
-            <p>Wina czerwone, białe, musujące, piwa rzemieślnicze...</p>
-          </div>
-          <button
-            data-menu-index="0"
-            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-          >
-            <div class="relative overflow-hidden bg-[#151515]">
-              <img
-                src="../assets/menu/menu-01.avif"
-                alt="Menu Montownia Smaków — wina i piwo"
-                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
-                loading="eager"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
-              ></div>
-              <div
-                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
-              >
-                <div>
-                  <p
-                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
-                  >
-                    01 / 04
-                  </p>
-                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
-                    Wina &amp; piwo
-                  </h2>
-                </div>
-                <span
-                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
-                  >↗</span
-                >
-              </div>
-            </div>
-          </button>
-
-          <button
-            data-menu-index="1"
-            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-          >
-            <div class="relative overflow-hidden bg-[#151515]">
-              <img
-                src="../assets/menu/menu-02.avif"
-                alt="Menu Montownia Smaków — koktajle"
-                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
-              ></div>
-              <div
-                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
-              >
-                <div>
-                  <p
-                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
-                  >
-                    02 / 04
-                  </p>
-                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
-                    Drink menu
-                  </h2>
-                </div>
-                <span
-                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
-                  >↗</span
-                >
-              </div>
-            </div>
-          </button>
-
-          <button
-            data-menu-index="2"
-            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-          >
-            <div class="relative overflow-hidden bg-[#151515]">
-              <img
-                src="../assets/menu/menu-03.avif"
-                alt="Menu Montownia Smaków — dania główne"
-                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
-              ></div>
-              <div
-                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
-              >
-                <div>
-                  <p
-                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
-                  >
-                    03 / 04
-                  </p>
-                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
-                    Dania główne
-                  </h2>
-                </div>
-                <span
-                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
-                  >↗</span
-                >
-              </div>
-            </div>
-          </button>
-
-          <button
-            data-menu-index="3"
-            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-          >
-            <div class="relative overflow-hidden bg-[#151515]">
-              <img
-                src="../assets/menu/menu-04.avif"
-                alt="Menu Montownia Smaków — burgery, pizza i napoje"
-                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"
-              ></div>
-              <div
-                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
-              >
-                <div>
-                  <p
-                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
-                  >
-                    04 / 04
-                  </p>
-                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
-                    Pizza, burgery &amp; napoje
-                  </h2>
-                </div>
-                <span
-                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
-                  >↗</span
-                >
-              </div>
-            </div>
-          </button>
-        </div>
+        <div id="menuGrid" class="grid gap-5 md:grid-cols-2"></div>
       </section>
 
       <section class="border-y border-black/10 bg-[#eeeae2] text-[#111111]">
@@ -312,16 +197,16 @@
 
     <div
       id="viewer"
-      class="fixed inset-0 z-[100] hidden bg-[#080808]/98 opacity-0 transition-opacity duration-300"
+      class="fixed inset-0 z-[100] hidden bg-[#eeeae2] text-[#111111] opacity-0 transition-opacity duration-300"
       aria-hidden="true"
     >
       <div
-        class="absolute inset-x-0 top-0 z-30 flex h-[82px] items-center justify-between border-b border-white/10 bg-[#0b0b0b]/90 px-5 backdrop-blur-xl lg:px-8"
+        class="absolute inset-x-0 top-0 z-30 flex h-[82px] items-center justify-between border-b border-black/10 bg-[#eeeae2]/95 px-5 backdrop-blur-xl lg:px-8"
       >
         <div class="flex items-center gap-5">
           <button
             id="viewerBack"
-            class="group inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/65 transition hover:text-white"
+            class="group inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-black/65 transition hover:text-black"
             aria-label="Wróć do menu"
           >
             <span
@@ -330,39 +215,39 @@
             >
             Menu
           </button>
-          <span class="hidden h-5 w-px bg-white/15 sm:block"></span>
+          <span class="hidden h-5 w-px bg-black/10 sm:block"></span>
           <span
             id="viewerTitle"
-            class="hidden text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 sm:block"
-            >Wina &amp; piwo</span
+            class="hidden text-[10px] font-bold uppercase tracking-[0.2em] text-black/45 sm:block"
+            >Menu</span
           >
         </div>
 
         <div class="flex items-center gap-2">
           <button
             id="zoomOut"
-            class="grid h-10 w-10 place-items-center border border-white/15 text-xl text-white/80 transition hover:bg-white hover:text-black"
+            class="grid h-10 w-10 place-items-center border border-black/15 text-xl text-black/75 transition hover:bg-black hover:text-white"
             aria-label="Pomniejsz"
           >
             −
           </button>
           <button
             id="zoomReset"
-            class="hidden h-10 min-w-[68px] border border-white/15 px-3 text-[10px] font-bold tracking-[0.12em] text-white/60 transition hover:bg-white hover:text-black sm:block"
+            class="h-10 min-w-[68px] border border-black/15 px-3 text-[10px] font-bold tracking-[0.12em] text-black/55 transition hover:bg-black hover:text-white"
             aria-label="Resetuj powiększenie"
           >
             100%
           </button>
           <button
             id="zoomIn"
-            class="grid h-10 w-10 place-items-center border border-white/15 text-xl text-white/80 transition hover:bg-white hover:text-black"
+            class="grid h-10 w-10 place-items-center border border-black/15 text-xl text-black/75 transition hover:bg-black hover:text-white"
             aria-label="Powiększ"
           >
             +
           </button>
           <button
             id="viewerClose"
-            class="ml-2 grid h-10 w-10 place-items-center bg-white text-xl font-light text-black transition hover:scale-105"
+            class="ml-2 grid h-10 w-10 place-items-center bg-[#111111] text-xl font-light text-white transition hover:scale-105"
             aria-label="Zamknij"
           >
             ×
@@ -372,39 +257,43 @@
 
       <div
         id="viewerStage"
-        class="absolute inset-0 overflow-hidden touch-none select-none pt-[82px]"
+        class="absolute inset-0 overflow-hidden touch-none select-none bg-[#eeeae2] pt-[82px]"
       >
         <div
           id="imageWrap"
-          class="absolute left-1/2 top-[calc(50%+41px)] origin-center will-change-transform"
+          class="absolute left-1/2 top-[calc(50%+41px)] origin-center rounded-sm shadow-[0_18px_70px_rgba(0,0,0,0.16)] will-change-transform"
         >
+          <canvas
+            id="viewerCanvas"
+            class="block max-w-none select-none"
+          ></canvas>
           <img
-            id="viewerImage"
+            id="fallbackImage"
             src=""
             alt=""
+            class="hidden max-w-none select-none"
             draggable="false"
-            class="block max-w-none select-none"
           />
         </div>
       </div>
 
       <button
         id="prevMenu"
-        class="absolute left-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-white/15 bg-black/50 text-3xl font-light text-white transition hover:bg-white hover:text-black lg:left-8"
+        class="absolute left-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-black/15 bg-[#eeeae2]/90 text-3xl font-light text-black/75 transition hover:bg-black hover:text-white lg:left-8"
         aria-label="Poprzednia strona"
       >
         ‹
       </button>
       <button
         id="nextMenu"
-        class="absolute right-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-white/15 bg-black/50 text-3xl font-light text-white transition hover:bg-white hover:text-black lg:right-8"
+        class="absolute right-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-black/15 bg-[#eeeae2]/90 text-3xl font-light text-black/75 transition hover:bg-black hover:text-white lg:right-8"
         aria-label="Następna strona"
       >
         ›
       </button>
 
       <div
-        class="pointer-events-none absolute bottom-5 left-1/2 z-30 hidden -translate-x-1/2 border border-white/10 bg-black/60 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/40 backdrop-blur sm:block"
+        class="pointer-events-none absolute bottom-5 left-1/2 z-30 hidden -translate-x-1/2 border border-black/10 bg-[#eeeae2]/90 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-black/40 backdrop-blur sm:block"
       >
         Kółko = zoom · przeciągnij = przesuwanie · ← → = strony · Esc = zamknij
       </div>
