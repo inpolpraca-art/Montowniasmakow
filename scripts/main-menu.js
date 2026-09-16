@@ -1,4 +1,5 @@
 import { initMenuUI } from "./menu-ui.js";
+import { initI18n } from "./i18n.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -7,4 +8,5 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   initMenuUI($, $$);
+  initI18n($$, $$(".lang-btn"));
 });

@@ -1,61 +1,61 @@
 @import "tailwindcss";
 
 @theme {
-        --color-blackfood: #0c0c0b;
-        --color-paper: #f2eee7;
-        --color-cream: #fbf8f1;
-        --color-gold: #d88943;
-        --color-muted: #77736b;
-      }
+  --color-blackfood: #0c0c0b;
+  --color-paper: #f2eee7;
+  --color-cream: #fbf8f1;
+  --color-gold: #d88943;
+  --color-muted: #77736b;
+}
 
-      .animate-hero-first {
-        animation: heroFirst 18s ease-in-out infinite;
-      }
+.animate-hero-first {
+  animation: heroFirst 18s ease-in-out infinite;
+}
 
-      @keyframes heroFirst {
-        0%,
-        30% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        30% {
-          transform: scale(1.03);
-        }
-        36% {
-          opacity: 0;
-          transform: scale(1.04);
-        }
-        100% {
-          opacity: 0;
-          transform: scale(1);
-        }
-      }
+@keyframes heroFirst {
+  0%,
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.03);
+  }
+  36% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
 
-      .animate-hero-show {
-        animation: heroShow 18s ease-in-out infinite backwards;
-      }
+.animate-hero-show {
+  animation: heroShow 18s ease-in-out infinite backwards;
+}
 
-      @keyframes heroShow {
-        0% {
-          opacity: 0;
-          transform: scale(1);
-        }
-        5% {
-          opacity: 1;
-        }
+@keyframes heroShow {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  5% {
+    opacity: 1;
+  }
 
-        30% {
-          opacity: 1;
-          transform: scale(1.03);
-        }
+  30% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
 
-        36% {
-          opacity: 0;
-          transform: scale(1.04);
-        }
+  36% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
 
-        100% {
-          opacity: 0;
-          transform: scale(1);
-        }
-      }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
