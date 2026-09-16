@@ -15,7 +15,8 @@
   "type": "commonjs",
   "main": "./scripts/main.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build": "npx @tailwindcss/cli -i ./input.css -o ./style.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^4.3.3"

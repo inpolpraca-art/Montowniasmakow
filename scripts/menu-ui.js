@@ -2,55 +2,70 @@ export function initMenuUI($, $$) {
   const lockBody = (locked) =>
     document.body.classList.toggle("overflow-hidden", locked);
 
-  const themeUrl = window.themeUrl || '';
-  const menuImages = [
+  const themeUrl = window.wpData?.themeUrl || window.themeUrl || '';
+  const pages = [
     {
-      src: `${themeUrl}/assets/menu/menu-01.avif`,
-      alt: "Menu Montownia Smaków — wina i piwo",
-      title: "Wina & piwo",
+      pdf: `${themeUrl}/assets/pdf/menu-pl.pdf`,
+      page: 1,
+      thumb: `${themeUrl}/assets/menu/pl-1.webp`,
+      title: "Menu · strona 1",
+      alt: "Montownia Smaków — menu, strona 1",
     },
     {
-      src: `${themeUrl}/assets/menu/menu-02.avif`,
-      alt: "Menu Montownia Smaków — koktajle",
-      title: "Drink menu",
+      pdf: `${themeUrl}/assets/pdf/menu-pl.pdf`,
+      page: 2,
+      thumb: `${themeUrl}/assets/menu/pl-2.webp`,
+      title: "Menu · strona 2",
+      alt: "Montownia Smaków — menu, strona 2",
     },
     {
-      src: `${themeUrl}/assets/menu/menu-03.avif`,
-      alt: "Menu Montownia Smaków — dania główne",
-      title: "Dania główne",
+      pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
+      page: 1,
+      thumb: `${themeUrl}/assets/menu/drink-1.webp`,
+      title: "Drink menu · strona 1",
+      alt: "Montownia Smaków — drink menu, strona 1",
     },
     {
-      src: `${themeUrl}/assets/menu/menu-04.avif`,
-      alt: "Menu Montownia Smaków — burgery, pizza i napoje",
-      title: "Pizza, burgery & napoje",
+      pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
+      page: 2,
+      thumb: `${themeUrl}/assets/menu/drink-2.webp`,
+      title: "Drink menu · strona 2",
+      alt: "Montownia Smaków — drink menu, strona 2",
     },
   ];
 
+  const menuGrid = $("#menuGrid");
   const viewer = $("#viewer");
   const stage = $("#viewerStage");
   const wrap = $("#imageWrap");
-  const image = $("#viewerImage");
+  const canvas = $("#viewerCanvas");
+  const fallbackImage = $("#fallbackImage");
   const zoomReset = $("#zoomReset");
   const viewerTitle = $("#viewerTitle");
 
-  if (!viewer || !stage || !image || !wrap) return;
+  if (!menuGrid || !viewer || !stage || !wrap) return;
 
   let index = 0;
+  let pdfDoc = null;
+  let pdfPage = null;
+  let renderTask = null;
   let scale = 1;
   let baseScale = 1;
   let x = 0;
   let y = 0;
   let dragging = false;
-  let isPinching = false; 
   let isMoved = false;
   let activePointerId = null;
   let lastX = 0;
   let lastY = 0;
   let pinchStartDistance = 0;
   let pinchStartScale = 1;
+  let pinchStartCenter = null;
+  let renderToken = 0;
+  let renderTimeout = null;
 
-  const MAX_ZOOM = 4;
-  const MIN_ZOOM = 0.25;
+  const MAX_ZOOM = 8;
+  const MIN_ZOOM = 0.35;
 
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
@@ -65,26 +80,38 @@ export function initMenuUI($, $$) {
     const rect = stage.getBoundingClientRect();
     return {
       x: rect.left + rect.width / 2,
-      y: rect.top + rect.height / 2 + 41,
+      y: rect.top + rect.height / 2,
     };
   }
 
   function fitImage() {
+    if (!pdfPage) return;
     const rect = stage.getBoundingClientRect();
-    const naturalWidth = image.naturalWidth || 1;
-    const naturalHeight = image.naturalHeight || 1;
-    const availableWidth = Math.max(320, rect.width - 120);
-    const availableHeight = Math.max(260, rect.height - 130);
+    const viewport = pdfPage.getViewport({ scale: 1 });
+    const availableWidth = Math.max(280, rect.width - 150);
+    const availableHeight = Math.max(240, rect.height - 145);
 
     baseScale = Math.min(
-      availableWidth / naturalWidth,
-      availableHeight / naturalHeight,
+      availableWidth / viewport.width,
+      availableHeight / viewport.height,
     );
-    baseScale = clamp(baseScale, MIN_ZOOM, 1);
+    baseScale = clamp(baseScale, MIN_ZOOM, 1.5);
     scale = baseScale;
     x = 0;
     y = 0;
+
+    wrap.style.width = `${viewport.width}px`;
+    wrap.style.height = `${viewport.height}px`;
+
     renderTransform();
+    renderPdf();
+  }
+
+  function debouncedRenderPdf() {
+    clearTimeout(renderTimeout);
+    renderTimeout = setTimeout(() => {
+      renderPdf();
+    }, 150);
   }
 
   function zoomTo(
@@ -94,7 +121,7 @@ export function initMenuUI($, $$) {
   ) {
     const oldScale = scale || baseScale || 1;
     const next = clamp(nextScale, MIN_ZOOM, MAX_ZOOM);
-    if (next === oldScale) return;
+    if (Math.abs(next - oldScale) < 0.0001) return;
 
     const center = stageCenter();
     const pointX = clientX - center.x;
@@ -104,7 +131,9 @@ export function initMenuUI($, $$) {
     x = pointX - (pointX - x) * ratio;
     y = pointY - (pointY - y) * ratio;
     scale = next;
+
     renderTransform();
+    debouncedRenderPdf();
   }
 
   function resetView() {
@@ -112,25 +141,139 @@ export function initMenuUI($, $$) {
     x = 0;
     y = 0;
     renderTransform();
+    renderPdf();
   }
 
-  function loadImage(nextIndex) {
-    index = (nextIndex + menuImages.length) % menuImages.length;
-    const item = menuImages[index];
-    if (viewerTitle) viewerTitle.textContent = item.title;
-    image.alt = item.alt;
+  async function renderPdf() {
+    if (!pdfPage) return;
+    const token = ++renderToken;
+    if (renderTask) {
+      try {
+        renderTask.cancel();
+      } catch (_) {}
+    }
 
-    image.onload = () => fitImage();
-    image.src = item.src;
-    if (image.complete) fitImage();
+    fallbackImage?.classList.add("hidden");
+    canvas?.classList.remove("hidden");
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const viewportAtOne = pdfPage.getViewport({ scale: 1 });
+
+    let renderScale = Math.max(1, scale * dpr);
+    const maxPixels = 28_000_000;
+    const requested =
+      viewportAtOne.width * viewportAtOne.height * renderScale * renderScale;
+    if (requested > maxPixels) {
+      renderScale *= Math.sqrt(maxPixels / requested);
+    }
+
+    const renderViewport = pdfPage.getViewport({ scale: renderScale });
+    const cssWidth = viewportAtOne.width;
+    const cssHeight = viewportAtOne.height;
+
+    canvas.width = Math.ceil(renderViewport.width);
+    canvas.height = Math.ceil(renderViewport.height);
+    canvas.style.width = `${cssWidth}px`;
+    canvas.style.height = `${cssHeight}px`;
+
+    const ctx = canvas.getContext("2d", { alpha: false });
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    renderTask = pdfPage.render({
+      canvasContext: ctx,
+      viewport: renderViewport,
+    });
+    try {
+      await renderTask.promise;
+    } catch (error) {
+      if (error?.name !== "RenderingCancelledException") {
+        canvas?.classList.add("hidden");
+        if (fallbackImage) {
+          fallbackImage.src = pages[index].thumb;
+          fallbackImage.alt = pages[index].alt;
+          fallbackImage.classList.remove("hidden");
+        }
+      }
+    } finally {
+      if (token === renderToken) renderTask = null;
+    }
+  }
+
+  async function loadPdfPage(nextIndex) {
+    index = (nextIndex + pages.length) % pages.length;
+    const item = pages[index];
+    if (viewerTitle) viewerTitle.textContent = item.title;
+
+    if (!item.pdf) {
+      pdfDoc = null;
+      pdfPage = null;
+      if (renderTask) {
+        try {
+          renderTask.cancel();
+        } catch (_) {}
+      }
+      canvas?.classList.add("hidden");
+      if (fallbackImage) {
+        fallbackImage.src = item.thumb;
+        fallbackImage.alt = item.alt;
+        fallbackImage.classList.remove("hidden");
+      }
+      const rect = stage.getBoundingClientRect();
+      const img = new Image();
+      img.onload = () => {
+        const availableWidth = Math.max(280, rect.width - 150);
+        const availableHeight = Math.max(240, rect.height - 145);
+        baseScale = clamp(
+          Math.min(
+            availableWidth / img.naturalWidth,
+            availableHeight / img.naturalHeight,
+          ),
+          MIN_ZOOM,
+          1.5,
+        );
+        scale = baseScale;
+        x = 0;
+        y = 0;
+        wrap.style.width = `${img.naturalWidth}px`;
+        wrap.style.height = `${img.naturalHeight}px`;
+        renderTransform();
+      };
+      img.src = item.thumb;
+      return;
+    }
+
+    fallbackImage?.classList.add("hidden");
+    canvas?.classList.remove("hidden");
+    try {
+      if (!pdfDoc || pdfDoc._url !== item.pdf) {
+        pdfDoc = await window.pdfjsLib.getDocument(item.pdf).promise;
+        pdfDoc._url = item.pdf;
+      }
+      pdfPage = await pdfDoc.getPage(item.page);
+      fitImage();
+    } catch (error) {
+      pdfPage = null;
+      canvas?.classList.add("hidden");
+      if (fallbackImage) {
+        fallbackImage.src = item.thumb;
+        fallbackImage.alt = item.alt;
+        fallbackImage.classList.remove("hidden");
+      }
+      baseScale = 1;
+      scale = 1;
+      x = 0;
+      y = 0;
+      renderTransform();
+    }
   }
 
   function openViewer(nextIndex) {
-    loadImage(nextIndex);
     viewer.classList.remove("hidden");
-    requestAnimationFrame(() => viewer.classList.remove("opacity-0"));
     viewer.setAttribute("aria-hidden", "false");
     lockBody(true);
+    requestAnimationFrame(() => viewer.classList.remove("opacity-0"));
+    loadPdfPage(nextIndex);
   }
 
   function closeViewer() {
@@ -139,12 +282,11 @@ export function initMenuUI($, $$) {
     setTimeout(() => viewer.classList.add("hidden"), 280);
     lockBody(false);
     dragging = false;
-    isPinching = false;
     activePointerId = null;
   }
 
   function changePage(delta) {
-    loadImage(index + delta);
+    loadPdfPage(index + delta);
   }
 
   function pointerDistance(a, b) {
@@ -155,11 +297,36 @@ export function initMenuUI($, $$) {
     return { x: (a.clientX + b.clientX) / 2, y: (a.clientY + b.clientY) / 2 };
   }
 
-  $$("[data-menu-index]").forEach((button) => {
-    button.addEventListener("click", () =>
-      openViewer(Number(button.dataset.menuIndex)),
-    );
-  });
+  function renderCards() {
+    const totalPages = String(pages.length).padStart(2, "0");
+
+    menuGrid.innerHTML = pages
+      .map(
+        (item, i) => `
+    <button data-menu-index="${i}" class="menu-card group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white">
+      <div class="relative overflow-hidden bg-[#151515]">
+        <img src="${item.thumb}" alt="${item.alt}" class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.012]" loading="${i < 2 ? "eager" : "lazy"}">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
+        <div class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8">
+          <div>
+            <p class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50">${String(i + 1).padStart(2, "0")} / ${totalPages}</p>
+            <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">${item.title}</h2>
+          </div>
+          <span class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black">↗</span>
+        </div>
+      </div>
+    </button>
+  `,
+      )
+      .join("");
+
+    const cardButtons = $$(".menu-card", menuGrid);
+    cardButtons.forEach((button) => {
+      button.addEventListener("click", () =>
+        openViewer(Number(button.dataset.menuIndex)),
+      );
+    });
+  }
 
   $("#viewerClose")?.addEventListener("click", closeViewer);
   $("#viewerBack")?.addEventListener("click", closeViewer);
@@ -181,8 +348,6 @@ export function initMenuUI($, $$) {
 
   stage.addEventListener("pointerdown", (event) => {
     if (event.pointerType === "mouse" && event.button !== 0) return;
-    if (isPinching) return; 
-
     dragging = true;
     isMoved = false;
     activePointerId = event.pointerId;
@@ -192,17 +357,19 @@ export function initMenuUI($, $$) {
   });
 
   stage.addEventListener("pointermove", (event) => {
-    if (!dragging || isPinching || activePointerId !== event.pointerId) return;
-
-    const deltaX = event.clientX - lastX;
-    const deltaY = event.clientY - lastY;
-
-    if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
+    if (
+      !dragging ||
+      activePointerId !== event.pointerId ||
+      pinchStartDistance > 0
+    )
+      return;
+    const dx = event.clientX - lastX;
+    const dy = event.clientY - lastY;
+    if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
       isMoved = true;
     }
-
-    x += deltaX;
-    y += deltaY;
+    x += dx;
+    y += dy;
     lastX = event.clientX;
     lastY = event.clientY;
     renderTransform();
@@ -212,21 +379,18 @@ export function initMenuUI($, $$) {
     dragging = false;
     activePointerId = null;
   };
+
   stage.addEventListener("pointerup", stopPointer);
   stage.addEventListener("pointercancel", stopPointer);
 
   stage.addEventListener(
     "touchstart",
     (event) => {
-      if (event.touches.length === 2) {
-        isPinching = true;
-        dragging = false; 
-        pinchStartDistance = pointerDistance(
-          event.touches[0],
-          event.touches[1],
-        );
-        pinchStartScale = scale;
-      }
+      if (event.touches.length !== 2) return;
+      dragging = false;
+      pinchStartDistance = pointerDistance(event.touches[0], event.touches[1]);
+      pinchStartScale = scale;
+      pinchStartCenter = pointerCenter(event.touches[0], event.touches[1]);
     },
     { passive: true },
   );
@@ -236,26 +400,30 @@ export function initMenuUI($, $$) {
     (event) => {
       if (event.touches.length !== 2 || !pinchStartDistance) return;
       event.preventDefault();
-
       const distance = pointerDistance(event.touches[0], event.touches[1]);
       const center = pointerCenter(event.touches[0], event.touches[1]);
       const nextScale = pinchStartScale * (distance / pinchStartDistance);
-
-      zoomTo(nextScale, center.x, center.y);
+      zoomTo(
+        nextScale,
+        pinchStartCenter?.x ?? center.x,
+        pinchStartCenter?.y ?? center.y,
+      );
     },
     { passive: false },
   );
 
   stage.addEventListener("touchend", () => {
     pinchStartDistance = 0;
-    isPinching = false;
+    pinchStartCenter = null;
   });
 
   window.addEventListener("resize", () => {
-    if (viewer.classList.contains("hidden")) return;
-    const previousBase = baseScale;
+    if (viewer.classList.contains("hidden") || !pdfPage) return;
+    const relativeZoom = scale / Math.max(baseScale, 0.001);
     fitImage();
-    if (previousBase > 0 && scale !== previousBase) renderTransform();
+    scale = clamp(baseScale * relativeZoom, MIN_ZOOM, MAX_ZOOM);
+    renderTransform();
+    renderPdf();
   });
 
   document.addEventListener("keydown", (event) => {
@@ -273,4 +441,11 @@ export function initMenuUI($, $$) {
       closeViewer();
     }
   });
+
+  if (window.pdfjsLib) {
+    window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  }
+
+  renderCards();
 }

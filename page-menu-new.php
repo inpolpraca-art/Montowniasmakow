@@ -15,74 +15,47 @@ Template Name: Nowy design (Menu)
     />
     <meta name="theme-color" content="#0b0b0b" />
     <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://montowniasmakow.pl/menu/" />
+    <link rel="canonical" href="<?php echo home_url('/menu/'); ?>" />
 
     <!-- og: -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Menu | Montownia Smaków" />
+    <meta property="og:site_name" content="Menu | Montownia Smaków" />
     <meta
       property="og:description"
       content="Zobacz menu Montownia Smaków w wysokiej jakości."
     />
-    <meta property="og:url" content="https://montowniasmakow.pl/menu/" />
+    <meta property="og:url" content="<?php echo home_url('/menu/'); ?>" />
+    <meta property="og:locale" content="pl_PL" />
     <meta
       property="og:image"
-      content="https://montowniasmakow.pl/assets/menu/menu-01.png"
+      content="<?php echo get_template_directory_uri(); ?>/assets/menu/pl-1.webp"
     />
 
     <!-- twitter: -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
+      name="twitter:title"
+      content="Montownia Smaków – Menu"
+    />
+    <meta
+      name="twitter:description"
+      content="Restauracja Montownia Smaków, Popularna 71, Warszawa."
+    />
+    <meta
       name="twitter:image"
-      content="https://montowniasmakow.pl/assets/menu/menu-01.png"
+      content="<?php echo get_template_directory_uri(); ?>/assets/menu/pl-1.webp"
     />
 
     <!-- favicon -->
-    <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png" />
+    <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png" />
     <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
+    <?php wp_head(); ?>
   </head>
   <body
     class="min-h-screen bg-[#0b0b0b] text-[#f5f1e9] antialiased selection:bg-[#f5f1e9] selection:text-[#0b0b0b]"
   >
-    <header
-      class="sticky top-0 z-40 border-b border-white/10 bg-[#111111]/95 backdrop-blur-xl"
-    >
-      <div
-        class="mx-auto flex h-23 max-w-342.5 items-center justify-between px-6 lg:px-10"
-      >
-        <a
-          href="<?php echo home_url('/'); ?>"
-          aria-label="Powrót do strony głównej"
-          class="group flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.18em] text-white/80 transition hover:text-white"
-        >
-          <span
-            class="text-xl leading-none transition-transform duration-300 group-hover:-translate-x-1"
-            >←</span
-          >
-          <span>Strona główna</span>
-        </a>
-
-        <div
-          class="absolute left-1/2 hidden -translate-x-1/2 text-center sm:block"
-        >
-          <p
-            class="text-[9px] font-bold uppercase tracking-[0.38em] text-white/45"
-          >
-            Montownia Smaków
-          </p>
-          <p class="mt-1 text-xs font-bold uppercase tracking-[0.25em]">Menu</p>
-        </div>
-
-        <a
-          href="tel:+48883199177"
-          class="border border-white/25 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-white hover:text-black sm:px-5"
-        >
-          <span class="hidden sm:inline">883 199 177</span>
-          <span class="sm:hidden">Zadzwoń</span>
-        </a>
-      </div>
-    </header>
+    <?php get_header(); ?>
 
     <main>
       <section
@@ -92,33 +65,35 @@ Template Name: Nowy design (Menu)
           <div>
             <p
               class="mb-8 text-[10px] font-bold uppercase tracking-[0.35em] text-white/45"
+              data-i18n="section_number"
             >
               04 / Menu
             </p>
             <h1
               class="font-serif text-[clamp(4rem,9vw,8.5rem)] leading-[.82] tracking-[-0.055em]"
             >
-              Nasze <span class="italic">menu.</span>
+              <span data-i18n="hero_title_1">Nasze </span
+              ><span class="italic" data-i18n="hero_title_italic">menu.</span>
             </h1>
           </div>
           <div class="max-w-md lg:pb-2">
-            <p class="text-base leading-7 text-white/55 sm:text-lg">
-              Przeglądaj kartę strona po stronie. Kliknij dowolną stronę, aby
-              otworzyć ją na pełnym ekranie i dokładnie powiększyć.
+            <p
+              class="text-base leading-7 text-white/55 sm:text-lg"
+              data-i18n="hero_description"
+            >
+              Nowa karta w jakości z pliku PDF. Kliknij stronę, aby otworzyć ją
+              na pełnym ekranie i powiększyć bez utraty czytelności.
             </p>
           </div>
         </div>
 
         <div
-          class="mt-16 border-t border-white/10 pt-5 flex items-center justify-between"
+          class="mt-16 flex flex-col gap-5 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between"
         >
           <span
             class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+            data-i18n="menu_category_food"
             >Karta dań</span
-          >
-          <span
-            class="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
-            >4 strony · kliknij zdjęcie</span
           >
         </div>
       </section>
@@ -127,151 +102,7 @@ Template Name: Nowy design (Menu)
         class="mx-auto max-w-342.5 px-6 pb-28 lg:px-10"
         aria-label="Strony menu"
       >
-        <div class="grid gap-5 md:grid-cols-2">
-          <div class="sr-only">
-            <h3>Wina i piwo</h3>
-            <p>Wina czerwone, białe, musujące, piwa rzemieślnicze...</p>
-          </div>
-          <button
-            data-menu-index="0"
-            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-          >
-            <div class="relative overflow-hidden bg-[#151515]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/menu/menu-01.avif"
-                alt="Menu Montownia Smaków — wina i piwo"
-                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
-                loading="eager"
-              />
-              <div
-                class="absolute inset-0 bg-linear-to-t` from-black/80 via-transparent to-transparent opacity-80"
-              ></div>
-              <div
-                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
-              >
-                <div>
-                  <p
-                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
-                  >
-                    01 / 04
-                  </p>
-                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
-                    Wina &amp; piwo
-                  </h2>
-                </div>
-                <span
-                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
-                  >↗</span
-                >
-              </div>
-            </div>
-          </button>
-
-          <button
-            data-menu-index="1"
-            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-          >
-            <div class="relative overflow-hidden bg-[#151515]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/menu/menu-02.avif"
-                alt="Menu Montownia Smaków — koktajle"
-                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-linear-to-t` from-black/80 via-transparent to-transparent opacity-80"
-              ></div>
-              <div
-                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
-              >
-                <div>
-                  <p
-                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
-                  >
-                    02 / 04
-                  </p>
-                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
-                    Drink menu
-                  </h2>
-                </div>
-                <span
-                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
-                  >↗</span
-                >
-              </div>
-            </div>
-          </button>
-
-          <button
-            data-menu-index="2"
-            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-          >
-            <div class="relative overflow-hidden bg-[#151515]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/menu/menu-03.avif"
-                alt="Menu Montownia Smaków — dania główne"
-                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-linear-to-t` from-black/80 via-transparent to-transparent opacity-80"
-              ></div>
-              <div
-                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
-              >
-                <div>
-                  <p
-                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
-                  >
-                    03 / 04
-                  </p>
-                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
-                    Dania główne
-                  </h2>
-                </div>
-                <span
-                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
-                  >↗</span
-                >
-              </div>
-            </div>
-          </button>
-
-          <button
-            data-menu-index="3"
-            class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white"
-          >
-            <div class="relative overflow-hidden bg-[#151515]">
-              <img
-                src="<?php echo get_template_directory_uri(); ?>/assets/menu/menu-04.avif"
-                alt="Menu Montownia Smaków — burgery, pizza i napoje"
-                class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.015]"
-                loading="lazy"
-              />
-              <div
-                class="absolute inset-0 bg-linear-to-t` from-black/80 via-transparent to-transparent opacity-80"
-              ></div>
-              <div
-                class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8"
-              >
-                <div>
-                  <p
-                    class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50"
-                  >
-                    04 / 04
-                  </p>
-                  <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">
-                    Pizza, burgery &amp; napoje
-                  </h2>
-                </div>
-                <span
-                  class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black"
-                  >↗</span
-                >
-              </div>
-            </div>
-          </button>
-        </div>
+        <div id="menuGrid" class="grid gap-5 md:grid-cols-2"></div>
       </section>
 
       <section class="border-y border-black/10 bg-[#eeeae2] text-[#111111]">
@@ -280,13 +111,16 @@ Template Name: Nowy design (Menu)
             <div>
               <p
                 class="text-[10px] font-bold uppercase tracking-[0.32em] text-black/45"
+                data-i18n="cta_location"
               >
                 Montownia Smaków · Warszawa
               </p>
               <h2
                 class="mt-5 max-w-3xl font-serif text-5xl leading-[.92] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
               >
-                Masz ochotę?<br /><span class="italic"
+                <span data-i18n="cta_title_1">Masz ochotę?</span><br /><span
+                  class="italic"
+                  data-i18n="cta_title_italic"
                   >Widzimy się przy stole.</span
                 >
               </h2>
@@ -295,11 +129,13 @@ Template Name: Nowy design (Menu)
               <a
                 href="tel:+48883199177"
                 class="border border-black/25 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-black hover:text-white"
+                data-i18n="cta_call"
                 >Zadzwoń</a
               >
               <a
-                href="../index.html#kontakt"
+                href="<?php echo home_url('/'); ?>#kontakt"
                 class="border border-black/25 px-5 py-3 text-[10px] font-bold uppercase tracking-[0.18em] transition hover:bg-black hover:text-white"
+                data-i18n="cta_contact"
                 >Kontakt</a
               >
             </div>
@@ -308,66 +144,68 @@ Template Name: Nowy design (Menu)
       </section>
     </main>
 
-    <footer
-      class="border-t border-white/10 px-6 py-8 text-center text-[10px] font-bold uppercase tracking-[0.25em] text-white/30"
-    >
-      © <?php echo date('Y'); ?> Montownia Smaków · Wszystkie prawa zastrzeżone
-    </footer>
+    <?php get_footer(); ?>
 
     <div
       id="viewer"
-      class="fixed inset-0 z-100 hidden bg-[#080808]/98 opacity-0 transition-opacity duration-300"
+      class="fixed inset-0 z-100 hidden bg-[#eeeae2] text-[#111111] opacity-0 transition-opacity duration-300"
       aria-hidden="true"
     >
       <div
-        class="absolute inset-x-0 top-0 z-30 flex h-20.5 items-center justify-between border-b border-white/10 bg-[#0b0b0b]/90 px-5 backdrop-blur-xl lg:px-8"
+        class="absolute inset-x-0 top-0 z-30 flex h-20.5 items-center justify-between border-b border-black/10 bg-[#eeeae2]/95 px-5 backdrop-blur-xl lg:px-8"
       >
         <div class="flex items-center gap-5">
           <button
             id="viewerBack"
-            class="group inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/65 transition hover:text-white"
+            class="group inline-flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-black/65 transition hover:text-black"
             aria-label="Wróć do menu"
+            data-i18n-attr="aria-label:aria_back_to_menu"
           >
             <span
               class="text-xl transition-transform group-hover:-translate-x-1"
               >←</span
             >
-            Menu
+            <span data-i18n="viewer_back">Menu</span>
           </button>
-          <span class="hidden h-5 w-px bg-white/15 sm:block"></span>
+          <span class="hidden h-5 w-px bg-black/10 sm:block"></span>
           <span
             id="viewerTitle"
-            class="hidden text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 sm:block"
-            >Wina &amp; piwo</span
+            class="hidden text-[10px] font-bold uppercase tracking-[0.2em] text-black/45 sm:block"
+            data-i18n="viewer_title"
+            >Menu</span
           >
         </div>
 
         <div class="flex items-center gap-2">
           <button
             id="zoomOut"
-            class="grid h-10 w-10 place-items-center border border-white/15 text-xl text-white/80 transition hover:bg-white hover:text-black"
+            class="grid h-10 w-10 place-items-center border border-black/15 text-xl text-black/75 transition hover:bg-black hover:text-white"
             aria-label="Pomniejsz"
+            data-i18n-attr="aria-label:aria_zoom_out"
           >
             −
           </button>
           <button
             id="zoomReset"
-            class="hidden h-10 min-w-17 border border-white/15 px-3 text-[10px] font-bold tracking-[0.12em] text-white/60 transition hover:bg-white hover:text-black sm:block"
+            class="h-10 min-w-17 border border-black/15 px-3 text-[10px] font-bold tracking-[0.12em] text-black/55 transition hover:bg-black hover:text-white"
             aria-label="Resetuj powiększenie"
+            data-i18n-attr="aria-label:aria_zoom_reset"
           >
             100%
           </button>
           <button
             id="zoomIn"
-            class="grid h-10 w-10 place-items-center border border-white/15 text-xl text-white/80 transition hover:bg-white hover:text-black"
+            class="grid h-10 w-10 place-items-center border border-black/15 text-xl text-black/75 transition hover:bg-black hover:text-white"
             aria-label="Powiększ"
+            data-i18n-attr="aria-label:aria_zoom_in"
           >
             +
           </button>
           <button
             id="viewerClose"
-            class="ml-2 grid h-10 w-10 place-items-center bg-white text-xl font-light text-black transition hover:scale-105"
+            class="ml-2 grid h-10 w-10 place-items-center bg-[#111111] text-xl font-light text-white transition hover:scale-105"
             aria-label="Zamknij"
+            data-i18n-attr="aria-label:aria_close"
           >
             ×
           </button>
@@ -376,48 +214,51 @@ Template Name: Nowy design (Menu)
 
       <div
         id="viewerStage"
-        class="absolute inset-0 overflow-hidden touch-none select-none pt-20.5"
+        class="absolute inset-0 overflow-hidden touch-none select-none bg-[#eeeae2] pt-20.5"
       >
         <div
           id="imageWrap"
-          class="absolute left-1/2 top-[calc(50%+41px)] origin-center will-change-transform"
+          class="absolute left-1/2 top-[calc(50%+41px)] origin-center rounded-sm shadow-[0_18px_70px_rgba(0,0,0,0.16)] will-change-transform"
         >
+          <canvas
+            id="viewerCanvas"
+            class="block max-w-none select-none"
+          ></canvas>
           <img
-            id="viewerImage"
+            id="fallbackImage"
             src=""
             alt=""
+            class="hidden max-w-none select-none"
             draggable="false"
-            class="block max-w-none select-none"
           />
         </div>
       </div>
 
       <button
         id="prevMenu"
-        class="absolute left-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-white/15 bg-black/50 text-3xl font-light text-white transition hover:bg-white hover:text-black lg:left-8"
+        class="absolute left-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-black/15 bg-[#eeeae2]/90 text-3xl font-light text-black/75 transition hover:bg-black hover:text-white lg:left-8"
         aria-label="Poprzednia strona"
+        data-i18n-attr="aria-label:aria_prev_page"
       >
         ‹
       </button>
       <button
         id="nextMenu"
-        class="absolute right-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-white/15 bg-black/50 text-3xl font-light text-white transition hover:bg-white hover:text-black lg:right-8"
+        class="absolute right-4 top-1/2 z-30 grid h-12 w-12 -translate-y-1/2 place-items-center border border-black/15 bg-[#eeeae2]/90 text-3xl font-light text-black/75 transition hover:bg-black hover:text-white lg:right-8"
         aria-label="Następna strona"
+        data-i18n-attr="aria-label:aria_next_page"
       >
         ›
       </button>
 
       <div
-        class="pointer-events-none absolute bottom-5 left-1/2 z-30 hidden -translate-x-1/2 border border-white/10 bg-black/60 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-white/40 backdrop-blur sm:block"
+        class="pointer-events-none absolute bottom-5 left-1/2 z-30 hidden -translate-x-1/2 border border-black/10 bg-[#eeeae2]/90 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.18em] text-black/40 backdrop-blur sm:block"
+        data-i18n="viewer_controls_hint"
       >
         Kółko = zoom · przeciągnij = przesuwanie · ← → = strony · Esc = zamknij
       </div>
     </div>
 
-    <script>
-      window.themeUrl = "<?php echo get_template_directory_uri(); ?>";
-    </script>
-    <script src="<?php echo get_template_directory_uri(); ?>/scripts/main-menu.js" type="module">
-    </script>
+    <?php wp_footer(); ?>
   </body>
 </html>

@@ -20,6 +20,8 @@ Template Name: Nowy design (główna)
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
     <link rel="canonical" href="https://montowniasmakow.pl/" />
+
+    <!-- og: -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Montownia Smaków" />
     <meta
@@ -34,8 +36,10 @@ Template Name: Nowy design (główna)
     <meta property="og:locale" content="pl_PL" />
     <meta
       property="og:image"
-      content="https://montowniasmakow.pl/assets/wnentrze-1.avif"
+      content="<?php echo get_template_directory_uri(); ?>/assets/wnentrze-1.avif"
     />
+
+    <!-- twitter: -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -47,16 +51,27 @@ Template Name: Nowy design (główna)
     />
     <meta
       name="twitter:image"
-      content="https://montowniasmakow.pl/assets/wnentrze-1.avif"
+      content="<?php echo get_template_directory_uri(); ?>/assets/wnentrze-1.avif"
     />
+
+    <!-- links -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-    <script type="application/ld+json" src="<?php echo get_template_directory_uri(); ?>/schema.json"></script>
+
+    <!-- schema -->
+    <script type="application/ld+json">
+    <?php 
+      $schema_file = get_template_directory() . '/schema.json';
+      if (file_exists($schema_file)) {
+          echo file_get_contents($schema_file);
+      }
+    ?>
+    </script>
+    <?php wp_head(); ?>
   </head>
   <body class="relative bg-paper font-sans text-[#151513] selection:bg-gold">
     <div
@@ -70,77 +85,7 @@ Template Name: Nowy design (główna)
       >
     </div>
 
-    <header
-      id="siteHeader"
-      class="flex sticky top-0 z-100 text-white bg-neutral-900 py-2.5 items-center justify-between px-[8vw]"
-    >
-      <a
-        href="#start"
-        aria-label="Montownia Smaków — start"
-        class="font-black text-[10px] tracking-wider relative flex flex-col"
-      >
-        <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/logo.png"
-          loading="eager"
-          fetchpriority="high"
-          alt="logo"
-          width="60"
-          height="60"
-          class="rounded-full max-w-15 max-h-15"
-        />
-      </a>
-      <div class="flex gap-x-2.5">
-        <div
-          class="flex items-center gap-1 rounded-full border *:cursor-pointer border-white/20 bg-black/20 p-1 *:min-h-7 *:min-w-5 *:rounded-full *:border-0 *:px-2 py-1.5 text-[0.5rem] font-bold tracking-[.12em]"
-          aria-label="Language"
-        >
-          <button class="lang-btn text-[#111]" data-lang="pl" type="button">
-            PL
-          </button>
-          <button
-            class="lang-btn text-white/60 bg-transparent"
-            data-lang="en"
-            type="button"
-          >
-            EN
-          </button>
-          <button
-            class="lang-btn text-white/60 bg-transparent"
-            data-lang="uk"
-            type="button"
-          >
-            UA
-          </button>
-        </div>
-        <button
-          id="mobileMenu"
-          class="rounded-md border-0 bg-transparent p-2.5 lg:hidden"
-          aria-label="Otwórz menu"
-          aria-expanded="false"
-          type="button"
-        >
-          <span
-            class="mb-1.5 block h-px w-6 bg-white transition-transform"
-          ></span
-          ><span class="block h-px w-6 bg-white transition-transform"></span>
-        </button>
-      </div>
-      <nav
-        id="mainNav"
-        class="absolute top-full hidden left-0 lg:static lg:flex lg:z-auto justify-end w-full lg:max-w-160 text-[0.688rem] font-bold tracking-[.12em] *:inline-block *:hover:text-white/60 *:p-2 *:duration-200 items-center"
-      >
-        <a href="#start" data-i18n="nav_start">START</a>
-        <a href="#oferta" data-i18n="nav_offer">OFERTA</a>
-        <a href="#o-nas" data-i18n="nav_about">O NAS</a>
-        <a href="#video" data-i18n="nav_video">VIDEO</a>
-        <a href="#menu" data-i18n="nav_menu">MENU</a>
-        <a href="#opinie" data-i18n="nav_reviews">RECENZJE</a>
-        <a href="#galeria" data-i18n="nav_gallery">GALERIA</a>
-        <a href="tel:+48883199177" data-i18n="nav_reserve" class="border"
-          >REZERWACJA</a
-        >
-      </nav>
-    </header>
+    <?php get_header(); ?>
 
     <main>
       <section
@@ -156,7 +101,7 @@ Template Name: Nowy design (główna)
         />
 
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/lunch-7.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/backg.webp"
           alt="Lunch"
           loading="lazy"
           class="absolute z-10 inset-0 w-full h-full max-w-[100vw] object-cover opacity-0 animate-hero-show"
@@ -164,7 +109,7 @@ Template Name: Nowy design (główna)
         />
 
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/lunch-5.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/backg-2.webp"
           alt="Lunch"
           loading="lazy"
           class="absolute z-10 inset-0 w-full h-full max-w-[100vw] object-cover opacity-0 animate-hero-show"
@@ -276,7 +221,7 @@ Template Name: Nowy design (główna)
             class="max-w-142.5 flex flex-col gap-y-5 leading-[1.75] text-[#5e5a52]"
           >
             <p data-i18n="about_p1">
-              Montownia Smaków to klimatyczne miejsce na warszawskiej Woli,
+              Montownia Smaków to klimatyczne miejsce na warszawa włochy,
               gdzie nowoczesne wnętrze spotyka się z kuchnią pełną różnych
               smaków.
             </p>
@@ -791,69 +736,7 @@ Template Name: Nowy design (główna)
       </section>
     </main>
 
-    <footer
-      class="grid grid-cols-1 lg:justify-items-center gap-9 bg-[#0b0b0a] px-[8vw] pb-5 pt-8.75 text-white md:grid-cols-2 lg:grid-cols-4"
-    >
-      <div class="flex flex-col gap-y-3 lg:col-span-1">
-        <strong class="font-serif text-2xl font-medium"
-          >MONTOWNIA <em>SMAKÓW</em></strong
-        >
-        <p class="text-[0.625rem] text-[#999]" data-i18n="footer_desc">
-          Tworzymy, komponujemy, montujemy… smaki!
-        </p>
-      </div>
-      <div class="grid grid-cols-[auto_1fr] gap-2">
-        <span
-          class="mb-2 col-span-2 text-[0.56rem] tracking-[.18em] text-[#777]"
-          data-i18n="shortcuts"
-          >NA SKRÓTY</span
-        ><a href="#oferta" data-i18n="nav_offer" class="text-[0.56rem]"
-          >OFERTA</a
-        ><a href="#o-nas" data-i18n="nav_about" class="text-[0.56rem]">O NAS</a
-        ><a href="#video" data-i18n="nav_video" class="text-[0.56rem]">VIDEO</a
-        ><a href="#menu" data-i18n="nav_menu" class="text-[0.56rem]">MENU</a
-        ><a href="#opinie" data-i18n="nav_reviews" class="text-[0.56rem]"
-          >RECENZJE</a
-        ><a href="#galeria" data-i18n="nav_gallery" class="text-[0.56rem]"
-          >GALERIA</a
-        >
-      </div>
-      <div class="flex flex-col gap-2">
-        <span
-          class="mb-2 text-[0.56rem] tracking-[.18em] text-[#777]"
-          data-i18n="contact"
-          >KONTAKT</span
-        ><a href="tel:+48883199177" class="text-[0.56rem]">+48 883 199 177</a
-        ><a href="mailto:biuro@montowniasmakow.pl" class="text-[0.56rem]"
-          >biuro@montowniasmakow.pl</a
-        ><small class="text-[9px] text-[#999]">Popularna 71, Warszawa</small>
-      </div>
-      <div class="flex flex-col gap-2">
-        <span
-          class="mb-2 text-[0.56rem] tracking-[.18em] text-[#777]"
-          data-i18n="follow"
-          >ŚLEDŹ NAS</span
-        ><a
-          href="https://www.instagram.com/montowniasmakow/"
-          target="_blank"
-          rel="noopener"
-          class="text-[0.56rem]"
-          >INSTAGRAM ↗</a
-        ><a
-          href="https://www.facebook.com/montowniasmakow"
-          target="_blank"
-          rel="noopener"
-          class="text-[0.56rem]"
-          >FACEBOOK ↗</a
-        >
-      </div>
-      <div
-        class="flex flex-col justify-between gap-2 border-t border-[#222] pt-4 text-[7px] tracking-[.12em] w-full text-[#777] md:col-span-2 lg:col-span-4 lg:flex-row"
-      >
-        <span>© <?php echo date('Y'); ?> MONTOWNIA SMAKÓW</span
-        ><span data-i18n="presentation">STRONA PREZENTACYJNA</span>
-      </div>
-    </footer>
+    <?php get_footer(); ?>
 
     <div
       id="galleryModal"
@@ -888,9 +771,9 @@ Template Name: Nowy design (główna)
       ><span
         id="galleryCounter"
         class="absolute bottom-5 text-[9px] tracking-[.15em] text-white"
-        >01 / 12</span
+        >01 / 10</span
       >
     </div>
-    <script src="<?php echo get_template_directory_uri(); ?>/scripts/main.js" type="module"></script>
+    <?php wp_footer(); ?>
   </body>
 </html>
