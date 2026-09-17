@@ -1,8 +1,15 @@
 export function initUI($, $$) {
   // Page Loader
+  const sessionVisited = Boolean(sessionStorage.getItem("montownia-visited"));
   const loader = $("#pageLoader");
-  setTimeout(() => loader?.classList.add("opacity-20"), 1200);
-  setTimeout(() => loader?.remove(), 1400);
+
+  if (!sessionVisited && loader) {
+    sessionStorage.setItem("montownia-visited", "true");
+    setTimeout(() => loader?.classList.add("opacity-20"), 1200);
+    setTimeout(() => loader?.remove(), 1400);
+  } else {
+    loader?.remove();
+  }
 
   // Smooth Scroll
   $$('a[href^="#"]').forEach((a) =>
