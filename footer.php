@@ -14,14 +14,14 @@
           class="mb-2 col-span-2 text-[0.56rem] tracking-[.18em] text-[#777]"
           data-i18n="shortcuts"
           >NA SKRÓTY</span
-        ><a href="#oferta" data-i18n="nav_offer" class="text-[0.56rem]"
+        ><a href="<?php echo home_url('/'); ?>#oferta" data-i18n="nav_offer" class="text-[0.56rem]"
           >OFERTA</a
-        ><a href="#o-nas" data-i18n="nav_about" class="text-[0.56rem]">O NAS</a
-        ><a href="#video" data-i18n="nav_video" class="text-[0.56rem]">VIDEO</a
-        ><a href="#menu" data-i18n="nav_menu" class="text-[0.56rem]">MENU</a
-        ><a href="#opinie" data-i18n="nav_reviews" class="text-[0.56rem]"
+        ><a href="<?php echo home_url('/'); ?>#o-nas" data-i18n="nav_about" class="text-[0.56rem]">O NAS</a
+        ><a href="<?php echo home_url('/'); ?>#video" data-i18n="nav_video" class="text-[0.56rem]">VIDEO</a
+        ><a href="<?php echo home_url('/'); ?>#menu" data-i18n="nav_menu" class="text-[0.56rem]">MENU</a
+        ><a href="<?php echo home_url('/'); ?>#opinie" data-i18n="nav_reviews" class="text-[0.56rem]"
           >RECENZJE</a
-        ><a href="#galeria" data-i18n="nav_gallery" class="text-[0.56rem]"
+        ><a href="<?php echo home_url('/'); ?>#galeria" data-i18n="nav_gallery" class="text-[0.56rem]"
           >GALERIA</a
         >
       </div>
