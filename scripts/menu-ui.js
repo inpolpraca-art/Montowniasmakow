@@ -1,38 +1,110 @@
-export function initMenuUI($, $$) {
+export function initMenuUI($,$$) {
   const lockBody = (locked) =>
     document.body.classList.toggle("overflow-hidden", locked);
 
   const themeUrl = window.wpData?.themeUrl || window.themeUrl || '';
-  const pages = [
-    {
-      pdf: `${themeUrl}/assets/pdf/menu-pl.pdf`,
-      page: 1,
-      thumb: `${themeUrl}/assets/menu/pl-1.webp`,
-      title: "Menu · strona 1",
-      alt: "Montownia Smaków — menu, strona 1",
+
+  const languages = {
+    pl: {
+      label: "PL",
+      pages: [
+        {
+          pdf: `${themeUrl}/assets/pdf/menu-pl.pdf`,
+          page: 1,
+          thumb: `${themeUrl}/assets/menu/pl-1.webp`,
+          title: "Menu · strona 1",
+          alt: "Montownia Smaków — menu, strona 1",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/menu-pl.pdf`,
+          page: 2,
+          thumb: `${themeUrl}/assets/menu/pl-2.webp`,
+          title: "Menu · strona 2",
+          alt: "Montownia Smaków — menu, strona 2",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
+          page: 1,
+          thumb: `${themeUrl}/assets/menu/drink-1.webp`,
+          title: "Drink menu · strona 1",
+          alt: "Montownia Smaków — drink menu, strona 1",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
+          page: 2,
+          thumb: `${themeUrl}/assets/menu/drink-2.webp`,
+          title: "Drink menu · strona 2",
+          alt: "Montownia Smaków — drink menu, strona 2",
+        },
+      ],
     },
-    {
-      pdf: `${themeUrl}/assets/pdf/menu-pl.pdf`,
-      page: 2,
-      thumb: `${themeUrl}/assets/menu/pl-2.webp`,
-      title: "Menu · strona 2",
-      alt: "Montownia Smaków — menu, strona 2",
+    en: {
+      label: "EN",
+      pages: [
+        {
+          pdf: `${themeUrl}/assets/pdf/menu-eng.pdf`,
+          page: 1,
+          thumb: `${themeUrl}/assets/menu/en-1.webp`,
+          title: "Menu · page 1",
+          alt: "Montownia Smaków — menu, page 1",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/menu-eng.pdf`,
+          page: 2,
+          thumb: `${themeUrl}/assets/menu/en-2.webp`,
+          title: "Menu · page 2",
+          alt: "Montownia Smaków — menu, page 2",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
+          page: 1,
+          thumb: `${themeUrl}/assets/menu/drink-1.webp`,
+          title: "Drink menu · page 1",
+          alt: "Montownia Smaków — drink menu, page 1",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
+          page: 2,
+          thumb: `${themeUrl}/assets/menu/drink-2.webp`,
+          title: "Drink menu · page 2",
+          alt: "Montownia Smaków — drink menu, page 2",
+        },
+      ],
     },
-    {
-      pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
-      page: 1,
-      thumb: `${themeUrl}/assets/menu/drink-1.webp`,
-      title: "Drink menu · strona 1",
-      alt: "Montownia Smaków — drink menu, strona 1",
+    uk: {
+      label: "UK",
+      pages: [
+        {
+          pdf: `${themeUrl}/assets/pdf/menu-pl.pdf`,
+          page: 1,
+          thumb: `${themeUrl}/assets/menu/pl-1.webp`,
+          title: "Меню · сторінка 1",
+          alt: "Montownia Smaków — меню, сторінка 1",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/menu-pl.pdf`,
+          page: 2,
+          thumb: `${themeUrl}/assets/menu/pl-2.webp`,
+          title: "Меню · сторінка 2",
+          alt: "Montownia Smaków — меню, сторінка 2",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
+          page: 1,
+          thumb: `${themeUrl}/assets/menu/drink-1.webp`,
+          title: "Карта напоїв · сторінка 1",
+          alt: "Montownia Smaków — карта напоїв, сторінка 1",
+        },
+        {
+          pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
+          page: 2,
+          thumb: `${themeUrl}/assets/menu/drink-2.webp`,
+          title: "Карта напоїв · сторінка 2",
+          alt: "Montownia Smaków — карта напоїв, сторінка 2",
+        },
+      ],
     },
-    {
-      pdf: `${themeUrl}/assets/pdf/drink-menu.pdf`,
-      page: 2,
-      thumb: `${themeUrl}/assets/menu/drink-2.webp`,
-      title: "Drink menu · strona 2",
-      alt: "Montownia Smaków — drink menu, strona 2",
-    },
-  ];
+  };
 
   const menuGrid = $("#menuGrid");
   const viewer = $("#viewer");
@@ -45,6 +117,8 @@ export function initMenuUI($, $$) {
 
   if (!menuGrid || !viewer || !stage || !wrap) return;
 
+  let language = "pl";
+  let pages = languages[language].pages;
   let index = 0;
   let pdfDoc = null;
   let pdfPage = null;
@@ -62,7 +136,6 @@ export function initMenuUI($, $$) {
   let pinchStartScale = 1;
   let pinchStartCenter = null;
   let renderToken = 0;
-  let renderTimeout = null;
 
   const MAX_ZOOM = 8;
   const MIN_ZOOM = 0.35;
@@ -70,6 +143,7 @@ export function initMenuUI($, $$) {
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   function renderTransform() {
+    if (!wrap) return;
     wrap.style.transform = `translate3d(calc(-50% + ${x}px), calc(-50% + ${y}px), 0) scale(${scale})`;
     if (zoomReset) {
       zoomReset.textContent = `${Math.round((scale / baseScale) * 100)}%`;
@@ -77,15 +151,16 @@ export function initMenuUI($, $$) {
   }
 
   function stageCenter() {
+    if (!stage) return { x: 0, y: 0 };
     const rect = stage.getBoundingClientRect();
     return {
       x: rect.left + rect.width / 2,
-      y: rect.top + rect.height / 2,
+      y: rect.top + rect.height / 2 + 41,
     };
   }
 
   function fitImage() {
-    if (!pdfPage) return;
+    if (!pdfPage || !stage) return;
     const rect = stage.getBoundingClientRect();
     const viewport = pdfPage.getViewport({ scale: 1 });
     const availableWidth = Math.max(280, rect.width - 150);
@@ -99,19 +174,8 @@ export function initMenuUI($, $$) {
     scale = baseScale;
     x = 0;
     y = 0;
-
-    wrap.style.width = `${viewport.width}px`;
-    wrap.style.height = `${viewport.height}px`;
-
     renderTransform();
     renderPdf();
-  }
-
-  function debouncedRenderPdf() {
-    clearTimeout(renderTimeout);
-    renderTimeout = setTimeout(() => {
-      renderPdf();
-    }, 150);
   }
 
   function zoomTo(
@@ -131,9 +195,8 @@ export function initMenuUI($, $$) {
     x = pointX - (pointX - x) * ratio;
     y = pointY - (pointY - y) * ratio;
     scale = next;
-
     renderTransform();
-    debouncedRenderPdf();
+    // Przesunięcie i skalowanie via CSS bez ponownego ciężkiego renderingu Canvasu
   }
 
   function resetView() {
@@ -141,11 +204,10 @@ export function initMenuUI($, $$) {
     x = 0;
     y = 0;
     renderTransform();
-    renderPdf();
   }
 
   async function renderPdf() {
-    if (!pdfPage) return;
+    if (!pdfPage || !canvas) return;
     const token = ++renderToken;
     if (renderTask) {
       try {
@@ -154,7 +216,7 @@ export function initMenuUI($, $$) {
     }
 
     fallbackImage?.classList.add("hidden");
-    canvas?.classList.remove("hidden");
+    canvas.classList.remove("hidden");
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const viewportAtOne = pdfPage.getViewport({ scale: 1 });
@@ -188,7 +250,7 @@ export function initMenuUI($, $$) {
       await renderTask.promise;
     } catch (error) {
       if (error?.name !== "RenderingCancelledException") {
-        canvas?.classList.add("hidden");
+        canvas.classList.add("hidden");
         if (fallbackImage) {
           fallbackImage.src = pages[index].thumb;
           fallbackImage.alt = pages[index].alt;
@@ -219,27 +281,29 @@ export function initMenuUI($, $$) {
         fallbackImage.alt = item.alt;
         fallbackImage.classList.remove("hidden");
       }
-      const rect = stage.getBoundingClientRect();
-      const img = new Image();
-      img.onload = () => {
-        const availableWidth = Math.max(280, rect.width - 150);
-        const availableHeight = Math.max(240, rect.height - 145);
-        baseScale = clamp(
-          Math.min(
-            availableWidth / img.naturalWidth,
-            availableHeight / img.naturalHeight,
-          ),
-          MIN_ZOOM,
-          1.5,
-        );
-        scale = baseScale;
-        x = 0;
-        y = 0;
-        wrap.style.width = `${img.naturalWidth}px`;
-        wrap.style.height = `${img.naturalHeight}px`;
-        renderTransform();
-      };
-      img.src = item.thumb;
+      if (stage && wrap) {
+        const rect = stage.getBoundingClientRect();
+        const img = new Image();
+        img.onload = () => {
+          const availableWidth = Math.max(280, rect.width - 150);
+          const availableHeight = Math.max(240, rect.height - 145);
+          baseScale = clamp(
+            Math.min(
+              availableWidth / img.naturalWidth,
+              availableHeight / img.naturalHeight,
+            ),
+            MIN_ZOOM,
+            1.5,
+          );
+          scale = baseScale;
+          x = 0;
+          y = 0;
+          wrap.style.width = `${img.naturalWidth}px`;
+          wrap.style.height = `${img.naturalHeight}px`;
+          renderTransform();
+        };
+        img.src = item.thumb;
+      }
       return;
     }
 
@@ -269,6 +333,7 @@ export function initMenuUI($, $$) {
   }
 
   function openViewer(nextIndex) {
+    if (!viewer) return;
     viewer.classList.remove("hidden");
     viewer.setAttribute("aria-hidden", "false");
     lockBody(true);
@@ -277,11 +342,13 @@ export function initMenuUI($, $$) {
   }
 
   function closeViewer() {
+    if (!viewer) return;
     viewer.classList.add("opacity-0");
     viewer.setAttribute("aria-hidden", "true");
     setTimeout(() => viewer.classList.add("hidden"), 280);
     lockBody(false);
     dragging = false;
+    isMoved = false;
     activePointerId = null;
   }
 
@@ -298,18 +365,18 @@ export function initMenuUI($, $$) {
   }
 
   function renderCards() {
-    const totalPages = String(pages.length).padStart(2, "0");
-
+    if (!menuGrid) return;
+    pages = languages[language].pages;
     menuGrid.innerHTML = pages
       .map(
         (item, i) => `
-    <button data-menu-index="${i}" class="menu-card group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white">
+    <button data-menu-index="${i}" class="group block w-full cursor-zoom-in text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-white">
       <div class="relative overflow-hidden bg-[#151515]">
         <img src="${item.thumb}" alt="${item.alt}" class="w-full h-auto object-contain transition duration-700 ease-out group-hover:scale-[1.012]" loading="${i < 2 ? "eager" : "lazy"}">
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80"></div>
         <div class="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 lg:p-8">
           <div>
-            <p class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50">${String(i + 1).padStart(2, "0")} / ${totalPages}</p>
+            <p class="text-[10px] font-bold uppercase tracking-[0.28em] text-white/50">${String(i + 1).padStart(2, "0")} / 04</p>
             <h2 class="mt-2 font-serif text-3xl italic lg:text-4xl">${item.title}</h2>
           </div>
           <span class="grid h-12 w-12 place-items-center border border-white/35 bg-black/20 text-xl transition duration-300 group-hover:bg-white group-hover:text-black">↗</span>
@@ -319,14 +386,31 @@ export function initMenuUI($, $$) {
   `,
       )
       .join("");
-
-    const cardButtons = $$(".menu-card", menuGrid);
-    cardButtons.forEach((button) => {
-      button.addEventListener("click", () =>
-        openViewer(Number(button.dataset.menuIndex)),
-      );
-    });
   }
+
+  // Delegacja zdarzeń zamiast ponownego podpinania po przełączeniu języka
+  menuGrid?.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-menu-index]");
+    if (btn) openViewer(Number(btn.dataset.menuIndex));
+  });
+
+  $$("[data-lang]").forEach((button) => {     button.addEventListener("click", () => {       language = button.dataset.lang;       $$
+("[data-lang]").forEach((tab) => {
+        const active = tab.dataset.lang === language;
+        tab.classList.toggle("bg-white", active);
+        tab.classList.toggle("text-black", active);
+        tab.classList.toggle("border-white", active);
+        tab.classList.toggle("text-white/50", !active);
+        tab.classList.toggle("border-white/15", !active);
+      });
+      renderCards();
+      
+      // Jeżeli przeglądarka PDF jest otwarta, przełącz od razu język w viewerze
+      if (viewer && !viewer.classList.contains("hidden")) {
+        loadPdfPage(index);
+      }
+    });
+  });
 
   $("#viewerClose")?.addEventListener("click", closeViewer);
   $("#viewerBack")?.addEventListener("click", closeViewer);
@@ -336,98 +420,101 @@ export function initMenuUI($, $$) {
   $("#zoomOut")?.addEventListener("click", () => zoomTo(scale / 1.25));
   $("#zoomReset")?.addEventListener("click", resetView);
 
-  stage.addEventListener(
-    "wheel",
-    (event) => {
-      event.preventDefault();
-      const factor = event.deltaY < 0 ? 1.18 : 1 / 1.18;
-      zoomTo(scale * factor, event.clientX, event.clientY);
-    },
-    { passive: false },
-  );
+  if (stage) {
+    stage.addEventListener(
+      "wheel",
+      (event) => {
+        event.preventDefault();
+        const factor = event.deltaY < 0 ? 1.18 : 1 / 1.18;
+        zoomTo(scale * factor, event.clientX, event.clientY);
+      },
+      { passive: false },
+    );
 
-  stage.addEventListener("pointerdown", (event) => {
-    if (event.pointerType === "mouse" && event.button !== 0) return;
-    dragging = true;
-    isMoved = false;
-    activePointerId = event.pointerId;
-    lastX = event.clientX;
-    lastY = event.clientY;
-    stage.setPointerCapture?.(event.pointerId);
-  });
+    stage.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+      dragging = true;
+      isMoved = false;
+      activePointerId = event.pointerId;
+      lastX = event.clientX;
+      lastY = event.clientY;
+      stage.setPointerCapture?.(event.pointerId);
+    });
 
-  stage.addEventListener("pointermove", (event) => {
-    if (
-      !dragging ||
-      activePointerId !== event.pointerId ||
-      pinchStartDistance > 0
-    )
-      return;
-    const dx = event.clientX - lastX;
-    const dy = event.clientY - lastY;
-    if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
-      isMoved = true;
-    }
-    x += dx;
-    y += dy;
-    lastX = event.clientX;
-    lastY = event.clientY;
-    renderTransform();
-  });
+    stage.addEventListener("pointermove", (event) => {
+      if (!dragging || activePointerId !== event.pointerId) return;
+      const dx = event.clientX - lastX;
+      const dy = event.clientY - lastY;
+      if (Math.abs(dx) > 2 || Math.abs(dy) > 2) {
+        isMoved = true;
+      }
+      x += dx;
+      y += dy;
+      lastX = event.clientX;
+      lastY = event.clientY;
+      renderTransform();
+    });
 
-  const stopPointer = () => {
-    dragging = false;
-    activePointerId = null;
-  };
-
-  stage.addEventListener("pointerup", stopPointer);
-  stage.addEventListener("pointercancel", stopPointer);
-
-  stage.addEventListener(
-    "touchstart",
-    (event) => {
-      if (event.touches.length !== 2) return;
+    const stopPointer = () => {
       dragging = false;
-      pinchStartDistance = pointerDistance(event.touches[0], event.touches[1]);
-      pinchStartScale = scale;
-      pinchStartCenter = pointerCenter(event.touches[0], event.touches[1]);
-    },
-    { passive: true },
-  );
+      activePointerId = null;
+    };
+    stage.addEventListener("pointerup", stopPointer);
+    stage.addEventListener("pointercancel", stopPointer);
 
-  stage.addEventListener(
-    "touchmove",
-    (event) => {
-      if (event.touches.length !== 2 || !pinchStartDistance) return;
-      event.preventDefault();
-      const distance = pointerDistance(event.touches[0], event.touches[1]);
-      const center = pointerCenter(event.touches[0], event.touches[1]);
-      const nextScale = pinchStartScale * (distance / pinchStartDistance);
-      zoomTo(
-        nextScale,
-        pinchStartCenter?.x ?? center.x,
-        pinchStartCenter?.y ?? center.y,
-      );
-    },
-    { passive: false },
-  );
+    stage.addEventListener(
+      "touchstart",
+      (event) => {
+        if (event.touches.length !== 2) return;
+        pinchStartDistance = pointerDistance(
+          event.touches[0],
+          event.touches[1],
+        );
+        pinchStartScale = scale;
+        pinchStartCenter = pointerCenter(event.touches[0], event.touches[1]);
+      },
+      { passive: true },
+    );
 
-  stage.addEventListener("touchend", () => {
-    pinchStartDistance = 0;
-    pinchStartCenter = null;
-  });
+    stage.addEventListener(
+      "touchmove",
+      (event) => {
+        if (event.touches.length !== 2 || !pinchStartDistance) return;
+        event.preventDefault();
+        const distance = pointerDistance(event.touches[0], event.touches[1]);
+        const center = pointerCenter(event.touches[0], event.touches[1]);
+        const nextScale = pinchStartScale * (distance / pinchStartDistance);
+        zoomTo(
+          nextScale,
+          pinchStartCenter?.x ?? center.x,
+          pinchStartCenter?.y ?? center.y,
+        );
+      },
+      { passive: false },
+    );
+
+    stage.addEventListener("touchend", () => {
+      pinchStartDistance = 0;
+      pinchStartCenter = null;
+    });
+
+    stage.addEventListener("click", (event) => {
+      if (event.target === stage && !isMoved) {
+        closeViewer();
+      }
+    });
+  }
 
   window.addEventListener("resize", () => {
-    if (viewer.classList.contains("hidden") || !pdfPage) return;
+    if (viewer?.classList.contains("hidden") || !pdfPage) return;
     const relativeZoom = scale / Math.max(baseScale, 0.001);
     fitImage();
     scale = clamp(baseScale * relativeZoom, MIN_ZOOM, MAX_ZOOM);
     renderTransform();
-    renderPdf();
   });
 
   document.addEventListener("keydown", (event) => {
-    if (viewer.classList.contains("hidden")) return;
+    if (viewer?.classList.contains("hidden")) return;
     if (event.key === "Escape") closeViewer();
     if (event.key === "ArrowLeft") changePage(-1);
     if (event.key === "ArrowRight") changePage(1);
@@ -436,16 +523,37 @@ export function initMenuUI($, $$) {
     if (event.key === "0") resetView();
   });
 
-  stage.addEventListener("click", (event) => {
-    if (event.target === stage && !isMoved) {
-      closeViewer();
-    }
-  });
-
   if (window.pdfjsLib) {
     window.pdfjsLib.GlobalWorkerOptions.workerSrc =
       "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
   }
+
+  const themeToggle = $("#themeToggle");
+  const themeColor = $("#themeColor");
+
+  function applyTheme(theme) {
+    const light = theme === "light";
+    document.body.classList.toggle("theme-light", light);
+    document.body.classList.toggle("theme-dark", !light);
+    if (themeToggle) {
+      themeToggle.textContent = light ? "DARK" : "LIGHT";
+      themeToggle.setAttribute(
+        "aria-label",
+        light ? "Włącz ciemny motyw" : "Włącz jasny motyw",
+      );
+    }
+    themeColor?.setAttribute("content", light ? "#f1eee7" : "#151515");
+    localStorage.setItem("montownia-theme", theme);
+  }
+
+  const savedTheme = localStorage.getItem("montownia-theme") || "dark";
+  applyTheme(savedTheme);
+
+  themeToggle?.addEventListener("click", () =>
+    applyTheme(
+      document.body.classList.contains("theme-light") ? "dark" : "light",
+    ),
+  );
 
   renderCards();
 }
