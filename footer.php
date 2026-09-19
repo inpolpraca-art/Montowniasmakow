@@ -60,6 +60,6 @@
         class="flex flex-col justify-between gap-2 border-t border-[#222] pt-4 text-[7px] tracking-[.12em] w-full text-[#777] md:col-span-2 lg:col-span-4 lg:flex-row"
       >
         <span>© <?php echo date('Y'); ?> MONTOWNIA SMAKÓW</span
-        ><a href="<?php echo home_url('/polityka-pryvatnosci/'); ?>" class="text-[0.625rem] underline" data-i18n="privacy">Polityka pryvatności</a>
+        ><a href="<?php echo home_url('/polityka-prywatnosci/'); ?>" class="text-[0.625rem] underline" data-i18n="privacy">Polityka pryvatności</a>
       </div>
     </footer>
