@@ -1,22 +1,26 @@
 import { homeTranslations } from "./translations/home.js";
 import { menuTranslations } from "./translations/menu.js";
 import { privacyTranslations } from "./translations/privacy.js";
+import { cateringTranslation } from './translations/catering.js'
 
 const translations = {
   pl: {
     ...homeTranslations.pl,
     ...menuTranslations.pl,
     ...privacyTranslations.pl,
+    ...cateringTranslation.pl
   },
   en: {
     ...homeTranslations.en,
     ...menuTranslations.en,
     ...privacyTranslations.en,
+    ...cateringTranslation.en
   },
   uk: {
     ...homeTranslations.uk,
     ...menuTranslations.uk,
     ...privacyTranslations.uk,
+    ...cateringTranslation.uk
   },
 };
 export function initI18n($$, langButtons) {

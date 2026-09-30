@@ -42,6 +42,16 @@ function montownia_enqueue_assets() {
             true
         );
     }
+    elseif (is_page('catering') || is_page_template('page-catering-new.php')) {
+        $script_handle = 'montownia-catering';
+        wp_enqueue_script(
+            $script_handle,
+            $theme_uri . '/scripts/main-catering.js', 
+            array(),
+            $theme_ver,
+            true
+        );
+    }
 
     if (!empty($script_handle)) {
         wp_localize_script($script_handle, 'wpData', array(

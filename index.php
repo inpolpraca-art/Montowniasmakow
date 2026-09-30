@@ -18,5 +18,10 @@ if ( is_page('polityka-prywatnosci') || is_page('privacy') ) {
     return;
 }
 
+if ( is_page('catering') ) {
+    include get_template_directory() . '/page-catering-new.php';
+    return;
+}
+
 wp_redirect( home_url() );
 exit;

@@ -7,17 +7,21 @@
       <a
         href="<?php echo home_url('/'); ?>"
         aria-label="Montownia Smaków — start"
-        class="font-black text-[10px] tracking-wider relative flex flex-col"
+        class="font-black text-[10px] tracking-wider relative flex gap-x-2.5"
       >
         <img
           src="<?php echo get_template_directory_uri(); ?>/assets/logo.png"
           loading="eager"
           fetchpriority="high"
           alt="logo"
-          width="60"
-          height="60"
-          class="rounded-full max-w-15 max-h-15"
+          width="72"
+          height="72"
+          class="rounded-full max-w-18 max-h-18"
         />
+        <div class="flex text-2xl justify-center flex-col gap-y-1">
+          <span>MONTOWNIA</span>
+          <span>SMAKÓW</span>
+        </div>
       </a>
       <div class="flex gap-x-2.5">
         <div
@@ -63,7 +67,7 @@
         <a href="<?php echo $hash_prefix; ?>#oferta" data-i18n="nav_offer">OFERTA</a>
         <a href="<?php echo $hash_prefix; ?>#o-nas" data-i18n="nav_about">O NAS</a>
         <a href="<?php echo $hash_prefix; ?>#video" data-i18n="nav_video">VIDEO</a>
-        <a href="<?php echo $hash_prefix; ?>#menu" data-i18n="nav_menu">MENU</a>
+        <a href="<?php echo home_url('/menu/'); ?>" data-i18n="nav_menu">MENU</a>
         <a href="<?php echo $hash_prefix; ?>#opinie" data-i18n="nav_reviews">RECENZJE</a>
         <a href="<?php echo $hash_prefix; ?>#galeria" data-i18n="nav_gallery">GALERIA</a>
         <a href="tel:+48883199177" data-i18n="nav_reserve" class="border"

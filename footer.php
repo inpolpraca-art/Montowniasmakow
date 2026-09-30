@@ -43,13 +43,13 @@
           data-i18n="follow"
           >ŚLEDŹ NAS</span
         ><a
-          href="https://www.instagram.com/montowniasmakow/"
+          href="https://www.instagram.com/montownia_smakow/"
           target="_blank"
           rel="noopener"
           class="text-[0.56rem]"
           >INSTAGRAM ↗</a
         ><a
-          href="https://www.facebook.com/montowniasmakow"
+          href="https://www.facebook.com/montowniasmakowwlochy/?locale=pl_PL"
           target="_blank"
           rel="noopener"
           class="text-[0.56rem]"

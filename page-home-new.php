@@ -126,10 +126,10 @@ Template Name: Nowy design (główna)
             WARSZAWA • WŁOCHY
           </p>
           <h1
-            class="font-serif text-[clamp(58px,8vw,118px)] font-medium leading-[.88]"
+            class="text-[clamp(58px,8vw,118px)] font-medium leading-[.88]"
             data-i18n="hero_title"
           >
-            Smak,<br /><em class="font-normal">który łączy.</em>
+            SMAK,<br />KTÓRY ŁĄCZY NAS.
           </h1>
           <p
             class="max-w-137.5 leading-[1.7] text-[#ddd]"
@@ -140,13 +140,13 @@ Template Name: Nowy design (główna)
           </p>
           <div class="flex flex-wrap gap-2">
             <a
-              href="#menu"
+              href="<?php echo home_url('/menu/'); ?>"
               class="inline-flex items-center justify-between gap-6 bg-cream px-4.5 py-3.5 text-[0.57rem] font-bold tracking-[.13em] text-[#111] transition hover:-translate-y-0.5"
               ><span data-i18n="hero_menu">ZOBACZ MENU</span
               ><span class="text-[15px] font-normal">↓</span></a
             >
             <a
-              href="https://www.facebook.com/montowniasmakow"
+              href="https://www.facebook.com/montowniasmakowwlochy/?locale=pl_PL"
               target="_blank"
               rel="noopener"
               class="inline-flex min-h-11 items-center justify-between gap-5 border border-white/45 bg-transparent px-4.5 py-3.5 text-[9px] font-bold tracking-[.13em] text-white transition hover:bg-white hover:text-[#111]"
@@ -169,7 +169,7 @@ Template Name: Nowy design (główna)
       >
         <div class="max-w-180 grid gap-y-5">
           <div
-            class="text-[0.6rem] font-bold tracking-[.22em]"
+            class="text-[0.6rem] text-light-gold font-bold tracking-[.22em]"
             data-i18n="offer_label"
           >
             01 / OFERTA
@@ -184,11 +184,11 @@ Template Name: Nowy design (główna)
             Dostawa, na wynos, rezerwacje, ogródek i catering.
           </p>
           <div
-            class="mt-2.5 flex flex-wrap justify-center gap-2 *:border *:border-[#444] *:px-4 *:py-3 *:text-[0.56rem] *:tracking-[.15em] *:transition *:hover:bg-paper *:hover:text-[#111]"
+            class="mt-2.5 grid grid-cols-2 gap-2 *:border *:border-[#444] *:px-4 *:py-3 *:text-[0.56rem] *:tracking-[.15em] *:transition *:hover:bg-paper *:hover:text-[#111]"
           >
-            <a href="tel:+48883199177" data-i18n="reservation">REZERWACJA</a
-            ><a href="tel:+48883199177" data-i18n="call">ZADZWOŃ</a
-            ><a href="mailto:biuro@montowniasmakow.pl" data-i18n="catering"
+          <a href="tel:+48883199177" data-i18n="call">ZADZWOŃ</a>
+          <a href="mailto:biuro@montowniasmakow.pl" data-i18n="reservation">NAPISZ</a>
+            <a href="<?php echo home_url('/catering/'); ?>" class="col-span-2" data-i18n="catering"
               >CATERING</a
             >
           </div>
@@ -197,7 +197,7 @@ Template Name: Nowy design (główna)
 
       <section id="o-nas" class="bg-paper px-[8vw] py-30">
         <div
-          class="text-[0.56rem] font-bold tracking-[.22em]"
+          class="text-[0.56rem] text-light-gold font-bold tracking-[.22em]"
           data-i18n="about_label"
         >
           02 / O NAS
@@ -211,7 +211,7 @@ Template Name: Nowy design (główna)
               MONTOWNIA SMAKÓW
             </p>
             <h2
-              class="font-serif text-[clamp(48px,6.4vw,88px)] font-medium leading-[.92]"
+              class="text-light-gold font-serif text-[clamp(48px,6.4vw,88px)] font-medium leading-[.92]"
               data-i18n="about_title"
             >
               Więcej niż<br /><em class="font-normal">restauracja.</em>
@@ -221,13 +221,16 @@ Template Name: Nowy design (główna)
             class="max-w-142.5 flex flex-col gap-y-5 leading-[1.75] text-[#5e5a52]"
           >
             <p data-i18n="about_p1">
-              Montownia Smaków to klimatyczne miejsce na warszawa włochy,
-              gdzie nowoczesne wnętrze spotyka się z kuchnią pełną różnych
-              smaków.
+              Montownia Smaków to restauracja na <b>Popularnej 71</b> w Warszawskich Włochach, stworzona z miłości do dobrego jedzenia, swobodnej atmosfery i spotkań przy wspólnym stole.
             </p>
             <p data-i18n="about_p2">
-              W karcie znajdziesz m.in. burgery, pasty, ramen, curry, żeberka,
-              sałatki, desery i sezonowe propozycje.
+              Inspirujemy się kuchniami z różnych stron świata, łącząc znane smaki z nowoczesnym spojrzeniem. W naszej kuchni znajdziesz zarówno klasyczne dania, jak i autorskie propozycje, które potrafią zaskoczyć.
+            </p>
+            <p data-i18n="about_p2">
+              Stawiamy na dobry produkt, staranne przygotowanie I smak, który zostaje w pamięci.
+            </p>
+            <p data-i18n="about_p2">
+              Bo restauracja to nie tylko to, co pojawia się na talerzu. To również atmosfera, ludzie i chwile, które tworzą się przy stole.
             </p>
             <a
               href="#galeria"
@@ -238,7 +241,7 @@ Template Name: Nowy design (główna)
           </div>
         </div>
         <figure
-          class="mx-auto flex flex-col gap-y-5 mt-30 text-center font-serif text-[clamp(27px,4vw,52px)] font-medium leading-[1.12]"
+          class="mx-auto flex flex-col gap-y-5 mt-50 text-center font-serif text-[clamp(27px,4vw,52px)] font-medium leading-[1.12]"
         >
           <blockquote>
             <p data-i18n="quote_cite">
@@ -279,7 +282,7 @@ Template Name: Nowy design (główna)
             class="absolute flex flex-col gap-y-2.5 bottom-[10%] left-[6%] text-white"
           >
             <span
-              class="text-[0.56rem] tracking-[.17em]"
+              class="text-[0.56rem] text-light-gold tracking-[.17em]"
               data-i18n="video_section_label"
               >03 / VIDEO</span
             >
@@ -299,148 +302,13 @@ Template Name: Nowy design (główna)
         </div>
       </section>
 
-      <section
-        id="menu"
-        class="bg-blackfood flex flex-col gap-y-12 px-[8vw] py-30 text-cream"
-      >
-        <div
-          class="flex flex-col items-start justify-between gap-7 md:flex-row md:items-end"
-        >
-          <div class="flex flex-col gap-y-4">
-            <div
-              class="text-[0.56rem] font-bold tracking-[.22em]"
-              data-i18n="menu_label"
-            >
-              04 / MENU
-            </div>
-            <h2
-              class="font-serif text-[clamp(48px,6.4vw,88px)] font-medium leading-[.92]"
-              data-i18n="menu_title"
-            >
-              Nasze <em>menu.</em>
-            </h2>
-            <p class="text-sm text-[#aaa]" data-i18n="menu_intro">
-              Przeglądaj kartę strona po stronie.
-            </p>
-          </div>
-          <a
-            href="<?php echo home_url('/menu/'); ?>"
-            rel="noopener"
-            class="inline-flex items-center border border-white/45 px-4.5 py-3.5 text-[0.56rem] font-bold tracking-[.13em] transition hover:bg-white hover:text-[#111]"
-            data-i18n="full_menu"
-            >PEŁNE MENU</a
-          >
-        </div>
-        <ul class="divide-y divide-white/10 border-y border-white/10">
-          <li
-            class="flex flex-col justify-between gap-2 py-6 md:flex-row md:items-center"
-          >
-            <div class="max-w-xl">
-              <h3
-                class="font-serif text-xl font-medium tracking-wide text-white"
-                data-i18n="menu_ramen_title"
-              >
-                Ramen Chashu
-              </h3>
-              <p class="mt-1 text-sm text-[#888]" data-i18n="menu_ramen_desc">
-                Powolnie gotowany wywar, boczek chashu, makaron ramen, jajko
-                ajitsuke, nori, szczypiorek.
-              </p>
-            </div>
-            <span class="font-serif text-lg font-semibold md:text-xl"
-              >49 PLN</span
-            >
-          </li>
-
-          <li
-            class="flex flex-col justify-between gap-2 py-6 md:flex-row md:items-center"
-          >
-            <div class="max-w-xl">
-              <h3
-                class="font-serif text-xl font-medium tracking-wide text-white"
-                data-i18n="menu_burger_title"
-              >
-                Burger Montownia
-              </h3>
-              <p class="mt-1 text-sm text-[#888]" data-i18n="menu_burger_desc">
-                100% wołowina, ser cheddar, bekon, prażona cebulka, sos
-                autorski, bułka brioche.
-              </p>
-            </div>
-            <span class="font-serif text-lg font-semibold md:text-xl"
-              >46 PLN</span
-            >
-          </li>
-
-          <li
-            class="flex flex-col justify-between gap-2 py-6 md:flex-row md:items-center"
-          >
-            <div class="max-w-xl">
-              <h3
-                class="font-serif text-xl font-medium tracking-wide text-white"
-                data-i18n="menu_ribs_title"
-              >
-                Żeberka BBQ
-              </h3>
-              <p class="mt-1 text-sm text-[#888]" data-i18n="menu_ribs_desc">
-                Pieczone żeberka wieprzowe w domowym sosie BBQ, podawane z
-                frytkami i surówką colesław.
-              </p>
-            </div>
-            <span class="font-serif text-lg font-semibold md:text-xl"
-              >58 PLN</span
-            >
-          </li>
-
-          <li
-            class="flex flex-col justify-between gap-2 py-6 md:flex-row md:items-center"
-          >
-            <div class="max-w-xl">
-              <h3
-                class="font-serif text-xl font-medium tracking-wide text-white"
-                data-i18n="menu_curry_title"
-              >
-                Butter Chicken Curry
-              </h3>
-              <p class="mt-1 text-sm text-[#888]" data-i18n="menu_curry_desc">
-                Soczyste kawałki kurczaka w aksamitnym sosie
-                pomidorowo-maślanym, ryż basmati, chlebek naan.
-              </p>
-            </div>
-            <span class="font-serif text-lg font-semibold md:text-xl"
-              >44 PLN</span
-            >
-          </li>
-
-          <li
-            class="flex flex-col justify-between gap-2 py-6 md:flex-row md:items-center"
-          >
-            <div class="max-w-xl">
-              <h3
-                class="font-serif text-xl font-medium tracking-wide text-white"
-                data-i18n="menu_pasta_title"
-              >
-                Tagliatelle z Krewetkami
-              </h3>
-              <p class="mt-1 text-sm text-[#888]" data-i18n="menu_pasta_desc">
-                Świeży makaron, krewetki królewskie, czosnek, chili, pomidorki
-                koktajlowe, białe wino, masło.
-              </p>
-            </div>
-            <span class="font-serif text-lg font-semibold md:text-xl"
-              >48 PLN</span
-            >
-          </li>
-        </ul>
-      </section>
-
       <section id="opinie" class="bg-paper px-[8vw] py-30">
         <div
           class="flex mb-15 flex-col items-start justify-between gap-7 md:flex-row md:items-end"
         >
           <div class="flex flex-col gap-y-4.5">
             <div
-              class="text-[0.56rem] font-bold tracking-[.22em]"
+              class="text-[0.56rem] text-light-gold font-bold tracking-[.22em]"
               data-i18n="reviews_label"
             >
               05 / RECENZJE
@@ -501,7 +369,7 @@ Template Name: Nowy design (główna)
         >
           <div class="flex flex-col gap-y-4.5">
             <div
-              class="text-[0.56rem] font-bold tracking-[.22em]"
+              class="text-[0.56rem] text-light-gold font-bold tracking-[.22em]"
               data-i18n="gallery_label"
             >
               06 / GALERIA
@@ -664,7 +532,7 @@ Template Name: Nowy design (główna)
       >
         <div class="px-[8vw] flex flex-col gap-y-6 pb-15.5 pt-22.5 lg:py-22.5">
           <div
-            class="text-[0.56rem] font-bold tracking-[.22em]"
+            class="text-[0.56rem] text-light-gold font-bold tracking-[.22em]"
             data-i18n="contact_label"
           >
             07 / KONTAKT
@@ -673,7 +541,7 @@ Template Name: Nowy design (główna)
             class="font-serif text-[clamp(40px,6vw,60px)] font-medium leading-[.94]"
             data-i18n="contact_title"
           >
-            Widzimy się<br /><em>na Popularnej.</em>
+            Widzimy się<br />na Popularnej.
           </h2>
           <p class="leading-[1.8] text-[#aaa]">
             Popularna 71<br />02-473 Warszawa
