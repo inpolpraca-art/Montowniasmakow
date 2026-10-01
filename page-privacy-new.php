@@ -75,18 +75,14 @@ Template Name: Nowy design (polityka prywatności)
       >
         <div class="mx-auto max-w-340">
           <p
-            class="mb-10 text-[10px] font-bold uppercase tracking-[0.32em] text-white/60"
+            class="mb-10 text-[10px] font-bold uppercase tracking-[0.32em] text-light-gold"
           >
             08 / <span data-i18n="label">POLITYKA PRYWATNOŚCI</span>
           </p>
           <div class="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:items-end">
             <h1
-              class="max-w-5xl font-serif text-6xl leading-[0.9] tracking-[-0.045em] sm:text-7xl lg:text-[6rem]"
-            >
-              <span data-i18n="hero1">Twoja prywatność.</span><br />
-              <em class="font-serif font-normal" data-i18n="hero2"
-                >Nasz obowiązek.</em
-              >
+              class="max-w-5xl font-serif text-6xl leading-[0.9] tracking-[-0.045em] sm:text-7xl lg:text-[6rem]" data-i18n="hero1"
+            >Twoja prywatność.<br />Nasz obowiązek.
             </h1>
             <p
               class="max-w-md pb-2 text-base leading-7 text-white/65 lg:text-lg"

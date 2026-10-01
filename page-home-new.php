@@ -19,7 +19,7 @@ Template Name: Nowy design (główna)
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <link rel="canonical" href="https://montowniasmakow.pl/" />
+    <link rel="canonical" href="<?php echo home_url('/'); ?>" />
 
     <!-- og: -->
     <meta property="og:type" content="website" />
@@ -32,7 +32,7 @@ Template Name: Nowy design (główna)
       property="og:description"
       content="Kuchnia fusion, burgery, ramen, pasta, curry i wyjątkowa atmosfera przy Popularnej 71 w Warszawie."
     />
-    <meta property="og:url" content="https://montowniasmakow.pl/" />
+    <meta property="og:url" content="<?php echo home_url('/'); ?>" />
     <meta property="og:locale" content="pl_PL" />
     <meta
       property="og:image"
@@ -226,10 +226,10 @@ Template Name: Nowy design (główna)
             <p data-i18n="about_p2">
               Inspirujemy się kuchniami z różnych stron świata, łącząc znane smaki z nowoczesnym spojrzeniem. W naszej kuchni znajdziesz zarówno klasyczne dania, jak i autorskie propozycje, które potrafią zaskoczyć.
             </p>
-            <p data-i18n="about_p2">
+            <p data-i18n="about_p3">
               Stawiamy na dobry produkt, staranne przygotowanie I smak, który zostaje w pamięci.
             </p>
-            <p data-i18n="about_p2">
+            <p data-i18n="about_p4">
               Bo restauracja to nie tylko to, co pojawia się na talerzu. To również atmosfera, ludzie i chwile, które tworzą się przy stole.
             </p>
             <a
@@ -541,7 +541,7 @@ Template Name: Nowy design (główna)
             class="font-serif text-[clamp(40px,6vw,60px)] font-medium leading-[.94]"
             data-i18n="contact_title"
           >
-            Widzimy się<br />na Popularnej.
+            Widzimy się na Popularnej.
           </h2>
           <p class="leading-[1.8] text-[#aaa]">
             Popularna 71<br />02-473 Warszawa

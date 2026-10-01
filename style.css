@@ -669,6 +669,9 @@
   .gap-x-2\.5 {
     column-gap: calc(var(--spacing) * 2.5);
   }
+  .gap-x-4 {
+    column-gap: calc(var(--spacing) * 4);
+  }
   .gap-y-1 {
     row-gap: var(--spacing);
   }
@@ -1548,6 +1551,9 @@
   :is(.\*\:tracking-\[\.15em\] > *) {
     --tw-tracking: .15em;
     letter-spacing: .15em;
+  }
+  :is(.\*\:whitespace-nowrap > *) {
+    white-space: nowrap;
   }
   :is(.\*\:transition > *) {
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;

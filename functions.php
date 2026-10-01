@@ -22,7 +22,7 @@ function montownia_enqueue_assets() {
             true
         );
     } 
-    elseif (is_page('menu') || is_page_template('page-menu-new.php')) {
+    elseif (is_page('menu') && is_page_template('page-menu-new.php')) {
         $script_handle = 'montownia-menu';
         wp_enqueue_script(
             $script_handle,
@@ -32,7 +32,7 @@ function montownia_enqueue_assets() {
             true
         );
     } 
-    elseif (is_page('polityka-pryvatnosci') || is_page_template('page-privacy-new.php')) {
+    elseif (is_page('polityka-prywatnosci') || is_page_template('page-privacy-new.php')) {
         $script_handle = 'montownia-privacy';
         wp_enqueue_script(
             $script_handle,

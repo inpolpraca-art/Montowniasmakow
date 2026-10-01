@@ -9,7 +9,7 @@ if ( is_front_page() || is_home() ) {
 }
 
 if ( is_page('menu') ) {
-    include get_template_directory() . '/page-menu-new.php';
+    include get_template_directory() . '/page-menu-pdf.php';
     return;
 }
 

@@ -23,9 +23,13 @@ export const homeTranslations = {
     about_eyebrow: "MONTOWNIA SMAKÓW",
     about_title: "Więcej niż<br>restauracja.",
     about_p1:
-      "Montownia Smaków to klimatyczne miejsce na warszawskiej Woli, gdzie nowoczesne wnętrze spotyka się z kuchnią pełną różnych smaków.",
+      "Montownia Smaków to restauracja na <b>Popularnej 71</b> w Warszawskich Włochach, stworzona z miłości do dobrego jedzenia, swobodnej atmosfery i spotkań przy wspólnym stole.",
     about_p2:
-      "W karcie znajdziesz m.in. burgery, pasty, ramen, curry, żeberka, sałatki, desery i sezonowe propozycje.",
+      "Inspirujemy się kuchniami z różnych stron świata, łącząc znane smaki z nowoczesnym spojrzeniem. W naszej kuchni znajdziesz zarówno klasyczne dania, jak i autorskie propozycje, które potrafią zaskoczyć.",
+    about_p3:
+      "Stawiamy na dobry produkt, staranne przygotowanie I smak, który zostaje w pamięci.",
+    about_p4:
+      "Bo restauracja to nie tylko to, co pojawia się na talerzu. To również atmosfera, ludzie i chwile, które tworzą się przy stole.",
     about_gallery: "ZOBACZ GALERIĘ",
     quote_cite:
       "„Nie ma bardziej szczerej miłości<br />niż miłość do jedzenia…”",
@@ -60,13 +64,13 @@ export const homeTranslations = {
     gallery_title: "Montownia<br>w obiektywie.",
     photos: "10 ZDJĘĆ",
     contact_label: "07 / KONTAKT",
-    contact_title: "Widzimy się<br>na Popularnej.",
+    contact_title: "Widzimy się na Popularnej.",
     hours: "GODZINY OTWARCIA",
     map: "OTWÓRZ MAPĘ ↗",
     shortcuts: "NA SKRÓTY",
     contact: "KONTAKT",
     follow: "ŚLEDŹ NAS",
-    privacy: "Polityka pryvatności",
+    privacy: "Polityka prywatności",
     footer_desc: "Tworzymy, komponujemy, montujemy… smaki!",
     reservation: "REZERWACJA",
     call: "ZADZWOŃ",
@@ -83,7 +87,7 @@ export const homeTranslations = {
     nav_reviews: "REVIEWS",
     nav_gallery: "GALLERY",
     hero_eyebrow: "WARSAW • WŁOCHY",
-    hero_title: "A taste<br>that brings us together.",
+    hero_title: "A TASTE<br>THAT BRINGS US TOGETHER.",
     hero_text:
       "Fusion cuisine, fresh ingredients and a unique atmosphere at Popularna 71.",
     hero_menu: "VIEW MENU",
@@ -97,9 +101,13 @@ export const homeTranslations = {
     about_eyebrow: "MONTOWNIA SMAKÓW",
     about_title: "More than a<br>restaurant.",
     about_p1:
-      "Montownia Smaków is a welcoming place in Warsaw where a modern interior meets a kitchen full of different flavours.",
+      "Montownia Smaków is a restaurant located at <b>71 Popularna Street</b> in Warsaw's Włochy district, created out of a love for good food, a relaxed atmosphere, and gathering around a shared table.",
     about_p2:
-      "The menu includes burgers, pasta, ramen, curry, ribs, salads, desserts and seasonal specials.",
+      "We draw inspiration from cuisines around the world, combining familiar flavors with a modern touch. In our kitchen, you will find both classic dishes and original creations that are sure to surprise you.",
+    about_p3:
+      "We focus on high-quality ingredients, careful preparation, and flavors that stay in your memory.",
+    about_p4:
+      "Because a restaurant is not just about what appears on the plate. It is also about the atmosphere, the people, and the moments created around the table.",
     about_gallery: "VIEW GALLERY",
     quote_cite: "“There is no love sincerer<br />than the love of food…”",
     quote_author: "GEORGE BERNARD SHAW",
@@ -133,7 +141,7 @@ export const homeTranslations = {
     gallery_title: "Montownia<br>through the lens.",
     photos: "10 PHOTOS",
     contact_label: "07 / CONTACT",
-    contact_title: "See you<br>at Popularna.",
+    contact_title: "See you at Popularna.",
     hours: "OPENING HOURS",
     map: "OPEN MAP ↗",
     shortcuts: "SHORTCUTS",
@@ -156,7 +164,7 @@ export const homeTranslations = {
     nav_reviews: "ВІДГУКИ",
     nav_gallery: "ГАЛЕРЕЯ",
     hero_eyebrow: "ВАРШАВА • ВЛОХИ",
-    hero_title: "Смак,<br>що об'єднує.",
+    hero_title: "СМАК,<br>ЩО ОБ'ЄДНУЄ НАС.",
     hero_text:
       "Ф'южн-кухня, свіжі інгредієнти та особлива атмосфера на Popularna 71.",
     hero_menu: "ПЕРЕГЛЯНУТИ МЕНЮ",
@@ -170,9 +178,13 @@ export const homeTranslations = {
     about_eyebrow: "MONTOWNIA SMAKÓW",
     about_title: "Більше ніж<br>ресторан.",
     about_p1:
-      "Montownia Smaków — атмосферне місце у Варшаві, де сучасний інтер'єр поєднується з кухнею, сповненою різноманітних смаків.",
+      "Montownia Smaków — це ресторан на <b>Popularna 71</b> у варшавському районі Влохи, створений із любові до смачної їжі, невимушеної атмосфери та зустрічей за спільним столом.",
     about_p2:
-      "У меню ви знайдете бургери, пасту, рамен, карі, реберця, салати, десерти та сезонні страви.",
+      "Ми натхненні кухнями різних куточків світу, поєднуючи знайомі смаки з сучасним поглядом. У нашій кухні ви знайдете як класичні страви, так і авторські пропозиції, що здатні здивувати.",
+    about_p3:
+      "Ми робимо ставку на якісні продукти, ретельне приготування та смак, який залишається у пам'яті.",
+    about_p4:
+      "Адже ресторан — це не лише те, що з'являється на тарілці. Це також атмосфера, люди та миті, які створюються за столом.",
     about_gallery: "ПЕРЕГЛЯНУТИ ГАЛЕРЕЮ",
     quote_cite: "„Немає щирішої любові,<br />ніж любов до їжі…”",
     quote_author: "ДЖОРДЖ БЕРНАРД ШОУ",
@@ -206,7 +218,7 @@ export const homeTranslations = {
     gallery_title: "Montownia<br>в об'єктиві.",
     photos: "10 ФОТО",
     contact_label: "07 / КОНТАКТ",
-    contact_title: "Зустрінемось<br>на Popularna.",
+    contact_title: "Зустрінемось на Popularna.",
     hours: "ГОДИНИ РОБОТИ",
     map: "ВІДКРИТИ МАПУ ↗",
     shortcuts: "ШВИДКІ ПОСИЛАННЯ",

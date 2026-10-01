@@ -2,7 +2,7 @@
 
 <header
       id="siteHeader"
-      class="flex sticky top-0 z-100 text-white bg-neutral-900 py-2.5 items-center justify-between px-[8vw]"
+      class="flex sticky gap-x-4 top-0 z-100 text-white bg-neutral-900 py-2.5 items-center justify-between px-[8vw]"
     >
       <a
         href="<?php echo home_url('/'); ?>"
@@ -61,9 +61,8 @@
       </div>
       <nav
         id="mainNav"
-        class="absolute top-full hidden left-0 lg:static lg:flex lg:z-auto justify-end w-full lg:max-w-160 text-[0.688rem] font-bold tracking-[.12em] *:inline-block *:hover:text-white/60 *:p-2 *:duration-200 items-center"
+        class="absolute *:whitespace-nowrap top-full hidden left-0 lg:static lg:flex lg:z-auto justify-end w-full lg:max-w-160 text-[0.688rem] font-bold tracking-[.12em] *:inline-block *:hover:text-white/60 *:p-2 *:duration-200 items-center"
       >
-        <a href="<?php echo $hash_prefix; ?>#start" data-i18n="nav_start">START</a>
         <a href="<?php echo $hash_prefix; ?>#oferta" data-i18n="nav_offer">OFERTA</a>
         <a href="<?php echo $hash_prefix; ?>#o-nas" data-i18n="nav_about">O NAS</a>
         <a href="<?php echo $hash_prefix; ?>#video" data-i18n="nav_video">VIDEO</a>

@@ -3,8 +3,7 @@ export const privacyTranslations = {
     back: "POWRÓT",
     back2: "WRÓĆ NA STRONĘ",
     label: "POLITYKA PRYWATNOŚCI",
-    hero1: "Twoja prywatność.",
-    hero2: "Nasz obowiązek.",
+    hero1: "Twoja prywatność.<br />Nasz obowiązek.",
     intro:
       "Jasne informacje o tym, jakie dane możemy przetwarzać, dlaczego to robimy i jakie prawa Ci przysługują.",
     side: "Informacje o prywatności i ochronie danych.",
@@ -75,8 +74,7 @@ export const privacyTranslations = {
     back: "BACK",
     back2: "BACK TO WEBSITE",
     label: "PRIVACY POLICY",
-    hero1: "Your privacy.",
-    hero2: "Our responsibility.",
+    hero1: "Your privacy.<br />Our responsibility.",
     intro:
       "Clear information about what data we may process, why we do it and what rights you have.",
     side: "Information about privacy and personal data protection.",
@@ -147,8 +145,7 @@ export const privacyTranslations = {
     back: "НАЗАД",
     back2: "ПОВЕРНУТИСЯ НА САЙТ",
     label: "ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ",
-    hero1: "Твоя приватність.",
-    hero2: "Наш обов'язок.",
+    hero1: "Твоя приватність.<br />Наш обов'язок.",
     intro:
       "Зрозуміла інформація про те, які дані ми можемо обробляти, навіщо це робимо та які права ти маєш.",
     side: "Інформація про приватність і захист персональних даних.",
