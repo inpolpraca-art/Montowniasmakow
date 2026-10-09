@@ -447,8 +447,8 @@
   .h-px {
     height: 1px;
   }
-  .max-h-18 {
-    max-height: calc(var(--spacing) * 18);
+  .max-h-12 {
+    max-height: calc(var(--spacing) * 12);
   }
   .max-h-\[78vh\] {
     max-height: 78vh;
@@ -498,8 +498,8 @@
   .max-w-5xl {
     max-width: var(--container-5xl);
   }
-  .max-w-18 {
-    max-width: calc(var(--spacing) * 18);
+  .max-w-12 {
+    max-width: calc(var(--spacing) * 12);
   }
   .max-w-55 {
     max-width: calc(var(--spacing) * 55);
@@ -1704,6 +1704,12 @@
   @media (width >= 48rem) {
     .md\:col-span-2 {
       grid-column: span 2 / span 2;
+    }
+    .md\:max-h-16 {
+      max-height: calc(var(--spacing) * 16);
+    }
+    .md\:max-w-16 {
+      max-width: calc(var(--spacing) * 16);
     }
     .md\:auto-rows-52\.5 {
       grid-auto-rows: calc(var(--spacing) * 52.5);

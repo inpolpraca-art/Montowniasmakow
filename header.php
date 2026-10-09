@@ -7,7 +7,7 @@
       <a
         href="<?php echo home_url('/'); ?>"
         aria-label="Montownia Smaków — start"
-        class="font-black text-[10px] tracking-wider relative flex gap-x-2.5"
+        class="font-black tracking-wider relative flex items-center gap-x-2.5"
       >
         <img
           src="<?php echo get_template_directory_uri(); ?>/assets/logo.png"
@@ -16,9 +16,9 @@
           alt="logo"
           width="72"
           height="72"
-          class="rounded-full max-w-18 max-h-18"
+          class="rounded-full max-w-12 max-h-12 md:max-w-16 md:max-h-16"
         />
-        <div class="flex text-2xl justify-center flex-col gap-y-1">
+        <div class="flex text-xs lg:text-lg justify-center flex-col gap-y-1">
           <span>MONTOWNIA</span>
           <span>SMAKÓW</span>
         </div>
