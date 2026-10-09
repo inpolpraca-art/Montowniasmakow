@@ -320,17 +320,8 @@
   .col-span-2 {
     grid-column: span 2 / span 2;
   }
-  .col-start-3 {
-    grid-column-start: 3;
-  }
   .row-span-2 {
     grid-row: span 2 / span 2;
-  }
-  .row-start-1 {
-    grid-row-start: 1;
-  }
-  .row-start-3 {
-    grid-row-start: 3;
   }
   .mx-auto {
     margin-inline: auto;
@@ -1317,9 +1308,6 @@
   }
   .text-\[\#aaa\] {
     color: #aaa;
-  }
-  .text-\[\#ddd\] {
-    color: #ddd;
   }
   .text-\[\#f5f1e9\] {
     color: #f5f1e9;

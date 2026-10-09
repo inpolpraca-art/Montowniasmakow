@@ -93,7 +93,7 @@ Template Name: Nowy design (główna)
         class="relative overflow-hidden flex items-center text-white"
       >
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/wnentrze-1.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-5.avif"
           alt="Wnętrze"
           fetchpriority="high"
           loading="eager"
@@ -101,7 +101,7 @@ Template Name: Nowy design (główna)
         />
 
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/backg.webp"
+          src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-3.avif"
           alt="Lunch"
           loading="lazy"
           class="absolute z-10 inset-0 w-full h-full max-w-[100vw] object-cover opacity-0 animate-hero-show"
@@ -109,7 +109,7 @@ Template Name: Nowy design (główna)
         />
 
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/backg-2.webp"
+          src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-1.avif"
           alt="Lunch"
           loading="lazy"
           class="absolute z-10 inset-0 w-full h-full max-w-[100vw] object-cover opacity-0 animate-hero-show"
@@ -132,7 +132,7 @@ Template Name: Nowy design (główna)
             SMAK,<br />KTÓRY ŁĄCZY NAS.
           </h1>
           <p
-            class="max-w-137.5 leading-[1.7] text-[#ddd]"
+            class="max-w-137.5 leading-[1.7] text-white"
             data-i18n="hero_text"
           >
             Kuchnia fusion, świeże składniki i wyjątkowa atmosfera przy
