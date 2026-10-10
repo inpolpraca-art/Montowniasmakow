@@ -1,6 +1,6 @@
-import { initMenuUI } from "./menu-ui.js";
+import { initMenuUI } from "./ui/menu-ui.js";
 import { initI18n } from "./i18n.js";
-import { initHeaderUI } from './header-ui.js'
+import { initHeaderUI } from './ui/header-ui.js'
 
 document.addEventListener("DOMContentLoaded", () => {
   const $ = (selector, root = document) => root.querySelector(selector);

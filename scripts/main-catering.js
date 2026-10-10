@@ -1,5 +1,6 @@
 import { initI18n } from "./i18n.js";
-import { initHeaderUI } from './header-ui.js'
+import { initHeaderUI } from "./ui/header-ui.js";
+import { initModalImg } from "./shared/modal-img.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -8,5 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   initI18n($$, $$(".lang-btn"));
-  initHeaderUI($, $$)
+  initHeaderUI($, $$);
+  initModalImg($, $$);
 });

@@ -91,7 +91,7 @@ Template Name: Nowy design (catering)
         </div>
         <div id="galleryGrid" class="grid grid-cols-2 auto-rows-36.5 gap-2.5 md:grid-cols-4 md:auto-rows-52.5">
               <button class="gallery-card group col-span-2 row-span-2 overflow-hidden border-0 bg-[#ddd] p-0" data-index="0">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/oferta-catering.avif" alt="Montownia Smaków — oferta" data-i18n-alt="alt_interior" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/oferta-lokal.avif" alt="Montownia Smaków — oferta" data-i18n-alt="alt_interior" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="1">
                 <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-2.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
@@ -137,7 +137,7 @@ Template Name: Nowy design (catering)
           </p>
         </div>
 
-        <div class="grid grid-cols-2 auto-rows-36.5 gap-2.5 md:grid-cols-4 md:auto-rows-52.5">
+        <div id="galleryGrid" class="grid grid-cols-2 auto-rows-36.5 gap-2.5 md:grid-cols-4 md:auto-rows-52.5">
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="10">
             <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-1.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
@@ -145,7 +145,7 @@ Template Name: Nowy design (catering)
             <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-2.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group col-span-2 row-span-2 overflow-hidden border-0 bg-[#222] p-0" data-index="12">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/oferta-lokal.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/oferta-catering.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="13">
             <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-3.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
@@ -241,6 +241,42 @@ Template Name: Nowy design (catering)
     </main>
 
     <?php get_footer(); ?>
+    <div
+      id="galleryModal"
+      aria-hidden="true"
+      class="pointer-events-none fixed inset-0 z-500 hidden items-center justify-center bg-black/95 p-6 opacity-0 transition-opacity"
+    >
+      <button
+        id="galleryClose"
+        class="absolute right-5 top-3 z-10 text-4xl text-white"
+        aria-label="Close"
+      >
+        ×</button
+      ><button
+        id="galleryPrev"
+        class="absolute left-0 z-10 p-3 text-3xl text-white"
+        aria-label="Previous photo"
+      >
+        ←</button
+      ><img
+        id="galleryModalImage"
+        width="1200"
+        height="800"
+        src=""
+        alt="Montownia Smaków — zdjęcie"
+        class="max-h-[78vh] max-w-[90vw] object-contain"
+      /><button
+        id="galleryNext"
+        class="absolute right-0 z-10 p-3 text-3xl text-white"
+        aria-label="Next photo"
+      >
+        →</button
+      ><span
+        id="galleryCounter"
+        class="absolute bottom-5 text-[9px] tracking-[.15em] text-white"
+        >01 / 10</span
+      >
+    </div>
     <?php wp_footer(); ?>
   </body>
 </html>
