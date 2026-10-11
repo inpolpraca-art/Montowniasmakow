@@ -94,31 +94,31 @@ Template Name: Nowy design (catering)
                 <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/oferta-lokal.avif" alt="Montownia Smaków — oferta" data-i18n-alt="alt_interior" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="1">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-2.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-2.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="2">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-3.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-3.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="3">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-4.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-4.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="4">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-5.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-5.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group col-span-2 row-span-2 overflow-hidden border-0 bg-[#ddd] p-0" data-index="5">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-6.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-6.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="6">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-7.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-7.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="7">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-8.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-8.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="8">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-9.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-9.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
               <button class="gallery-card group overflow-hidden border-0 bg-[#ddd] p-0" data-index="9">
-                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-1.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+                <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-1.avif" alt="Montownia Smaków — danie" data-i18n-alt="alt_dish" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
               </button>
         </div>
       </section>
@@ -139,34 +139,34 @@ Template Name: Nowy design (catering)
 
         <div id="galleryGrid" class="grid grid-cols-2 auto-rows-36.5 gap-2.5 md:grid-cols-4 md:auto-rows-52.5">
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="10">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-1.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-1.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="11">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-2.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-2.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group col-span-2 row-span-2 overflow-hidden border-0 bg-[#222] p-0" data-index="12">
             <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/oferta-catering.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="13">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-3.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-3.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="14">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-4.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-4.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="15">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-5.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-5.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="16">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-6.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-6.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group col-span-2 row-span-2 overflow-hidden border-0 bg-[#222] p-0" data-index="17">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-9.avif" alt="Montownia Smaków" data-i18n-alt="alt_interior" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-9.avif" alt="Montownia Smaków" data-i18n-alt="alt_interior" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="18">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-7.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-7.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
           <button class="gallery-card group overflow-hidden border-0 bg-[#222] p-0" data-index="19">
-            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-8.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
+            <img width="1200" height="800" src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-8.avif" alt="Catering Montownia Smaków" data-i18n-alt="alt_catering" loading="lazy" decoding="async" class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]" />
           </button>
         </div>
 

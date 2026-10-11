@@ -93,7 +93,7 @@ Template Name: Nowy design (główna)
         class="relative overflow-hidden flex items-center text-white"
       >
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/catering/catering-5.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/slides/slides2.avif"
           alt="Wnętrze"
           fetchpriority="high"
           loading="eager"
@@ -101,7 +101,7 @@ Template Name: Nowy design (główna)
         />
 
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-3.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/slides/slides1.avif"
           alt="Lunch"
           loading="lazy"
           class="absolute z-10 inset-0 w-full h-full max-w-[100vw] object-cover opacity-0 animate-hero-show"
@@ -109,7 +109,7 @@ Template Name: Nowy design (główna)
         />
 
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/catering/lokal-1.avif"
+          src="<?php echo get_template_directory_uri(); ?>/assets/slides/slides3.avif"
           alt="Lunch"
           loading="lazy"
           class="absolute z-10 inset-0 w-full h-full max-w-[100vw] object-cover opacity-0 animate-hero-show"
@@ -402,8 +402,8 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/wnentrze-1.avif"
-              alt="Montownia Smaków — wnętrze"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery1.avif"
+              alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
               class="block h-full w-full object-cover transition duration-500 group-hover:scale-[1.045] group-hover:brightness-[.82]"
@@ -415,7 +415,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-7.avif"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery3.avif"
               alt="Montownia Smaków — napój"
               loading="lazy"
               decoding="async"
@@ -428,7 +428,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-1.jpg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery6.jpg"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -441,7 +441,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/danie-01.jpeg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery4.avif"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -454,7 +454,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-8.jpeg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery5.avif"
               alt="Montownia Smaków — pizza"
               loading="lazy"
               decoding="async"
@@ -467,7 +467,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-5.avif"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery2.avif"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -480,7 +480,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-2.jpg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery7.jpg"
               alt="Montownia Smaków — obiad"
               loading="lazy"
               decoding="async"
@@ -493,7 +493,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-3.jpg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery8.avif"
               alt="Montownia Smaków — żeberka"
               loading="lazy"
               decoding="async"
@@ -506,7 +506,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-4.jpg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/galery/galery9.jpeg"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
@@ -519,7 +519,7 @@ Template Name: Nowy design (główna)
             <img
               width="1200"
               height="800"
-              src="<?php echo get_template_directory_uri(); ?>/assets/lunch-6.jpeg"
+              src="<?php echo get_template_directory_uri(); ?>/assets/slides/slides1.avif"
               alt="Montownia Smaków — danie"
               loading="lazy"
               decoding="async"
