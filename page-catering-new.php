@@ -82,12 +82,12 @@ Template Name: Nowy design (catering)
           <div class="flex flex-col gap-y-4.5">
             <div class="text-[0.56rem] text-light-gold font-bold tracking-[.22em]" data-i18n="venue_label">01 / W LOKALU</div>
             <h1 class="font-serif text-[clamp(48px,6.4vw,88px)] font-medium leading-[.92]" data-i18n="venue_title_1">
-              Spotkajmy się przy stole.
+              Dobre rzeczy zaczynają się przy stole.
             </h1>
           </div>
           <p class="max-w-120 leading-[1.7] text-[#777] md:pb-1" data-i18n="venue_desc">
-            W Montowni Smaków możesz zorganizować spotkanie, uroczystość lub wydarzenie w wyjątkowej atmosferze przy Popularnej 71.
-          </p>
+            Tworzymy miejsce na codzienne przyjemności, rodzinne uroczystości i wyjątkowe spotkania. Dobra kuchnia i gościnność, które zostają w pamięci na długo.
+        </p>
         </div>
         <div id="galleryGrid" class="grid grid-cols-2 auto-rows-36.5 gap-2.5 md:grid-cols-4 md:auto-rows-52.5">
               <button class="gallery-card group col-span-2 row-span-2 overflow-hidden border-0 bg-[#ddd] p-0" data-index="0">
@@ -133,7 +133,7 @@ Template Name: Nowy design (catering)
             </h2>
           </div>
           <p class="max-w-120 leading-[1.7] text-[#aaa] md:pb-1" data-i18n="catering_desc">
-            Przygotujemy catering dopasowany do charakteru Twojego wydarzenia — od kameralnych spotkań po większe imprezy.
+            Ty wybierasz miejsce i okazję, my dbamy o resztę. Przygotowujemy dopracowane menu na spotkania firmowe, rodzinne uroczystości i wyjątkowe wydarzenia - od pierwszego kęsa po ostatni toast.
           </p>
         </div>
 

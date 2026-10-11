@@ -1,15 +1,15 @@
 export const cateringTranslation = {
   pl: {
     venue_label: "01 / W LOKALU",
-    venue_title_1: "Spotkajmy się przy stole.",
-    venue_desc: "W Montowni Smaków możesz zorganizować spotkanie, uroczystość lub wydarzenie w wyjątkowej atmosferze przy Popularnej 71.",
+    venue_title_1: "Dobre rzeczy zaczynają się przy stole.",
+    venue_desc: "Tworzymy miejsce na codzienne przyjemności, rodzinne uroczystości i wyjątkowe spotkania. Dobra kuchnia i gościnność, które zostają w pamięci na długo.",
     alt_interior: "Montownia Smaków — wnętrze",
     alt_drink: "Montownia Smaków — napój",
     alt_dish: "Montownia Smaków — danie",
 
     catering_label: "02 / CATERING",
     catering_title_1: "Smak, który przyjeżdża do Ciebie.",
-    catering_desc: "Przygotujemy catering dopasowany do charakteru Twojego wydarzenia — od kameralnych spotkań po większe imprezy.",
+    catering_desc: "Ty wybierasz miejsce i okazję, my dbamy o resztę. Przygotowujemy dopracowane menu na spotkania firmowe, rodzinne uroczystości i wyjątkowe wydarzenia - od pierwszego kęsa po ostatni toast.",
     alt_catering: "Catering Montownia Smaków",
     for_whom_label: "DLA KOGO",
     for_whom_text: "Firmy, urodziny, komunie, imprezy rodzinne i wydarzenia specjalne.",
@@ -19,7 +19,7 @@ export const cateringTranslation = {
     location_text: "Catering przygotowywany przez Montownię Smaków.",
 
     contact_label: "03 / KONTAKT",
-    contact_title_1: "Widzimy się na Popularnej.",
+    contact_title_1: "Widzimy się w Montowni Smaków.",
     address_street: "Popularna 71",
     address_city: "02-473 Warszawa",
     hours_label: "GODZINY OTWARCIA",
@@ -30,15 +30,15 @@ export const cateringTranslation = {
   },
   en: {
     venue_label: "01 / ON SITE",
-    venue_title_1: "Let's meet at the table.",
-    venue_desc: "At Montownia Smaków, you can organize a meeting, celebration, or event in a unique atmosphere at Popularna 71.",
+    venue_title_1: "Good things happen around the table.",
+    venue_desc: "We create a place for everyday pleasures, family celebrations, and exceptional gatherings. Good food and hospitality that stay in your memory for a long time.",
     alt_interior: "Montownia Smaków — interior",
     alt_drink: "Montownia Smaków — drink",
     alt_dish: "Montownia Smaków — dish",
 
     catering_label: "02 / CATERING",
     catering_title_1: "Taste that comes to you.",
-    catering_desc: "We will prepare catering tailored to the character of your event — from intimate gatherings to larger occasions.",
+    catering_desc: "You choose the place and occasion, we take care of the rest. We prepare a refined menu for corporate meetings, family celebrations, and special events - from the first bite to the last toast.",
     alt_catering: "Catering Montownia Smaków",
     for_whom_label: "FOR WHOM",
     for_whom_text: "Corporate events, birthdays, holy communions, family parties, and special occasions.",
@@ -48,7 +48,7 @@ export const cateringTranslation = {
     location_text: "Catering prepared by Montownia Smaków.",
 
     contact_label: "03 / CONTACT",
-    contact_title_1: "See you on Popularna.",
+    contact_title_1: "See you at Montownia Smaków.",
     address_street: "Popularna 71",
     address_city: "02-473 Warsaw",
     hours_label: "OPENING HOURS",
@@ -59,15 +59,15 @@ export const cateringTranslation = {
   },
   uk: {
     venue_label: "01 / У ЗАКЛАДІ",
-    venue_title_1: "Зустрінемося за столом.",
-    venue_desc: "У Montownia Smaków ви можете організувати зустріч, урочистість або подію в унікальній атмосфері на Popularna 71.",
+    venue_title_1: "Добрі речі відбуваються за столом.",
+    venue_desc: "Ми створюємо місце для щоденних задоволень, сімейних свят та особливих зустрічей. Смачна кухня та гостинність, які залишаються в пам'яті надовго.",
     alt_interior: "Montownia Smaków — інтер'єр",
     alt_drink: "Montownia Smaków — напій",
     alt_dish: "Montownia Smaków — страва",
 
     catering_label: "02 / КЕЙТЕРИНГ",
     catering_title_1: "Смак, який приїжджає до Вас.",
-    catering_desc: "Ми підготуємо кейтеринг, підлаштований під характер Вашої події — від камерних зустрічей до масштабних заходів.",
+    catering_desc: "Ви обираєте місце та привід, ми дбаємо про решту. Ми готуємо ретельно продумане меню для корпоративних зустрічей, сімейних свят та спеціальних подій - від першого укусу до останнього тосту.",
     alt_catering: "Кейтеринг Montownia Smaków",
     for_whom_label: "ДЛЯ КОГО",
     for_whom_text: "Компанії, дні народження, причастя, сімейні свята та спеціальні події.",
@@ -77,7 +77,7 @@ export const cateringTranslation = {
     location_text: "Кейтеринг, підготовлений Montownia Smaków.",
 
     contact_label: "03 / КОНТАКТИ",
-    contact_title_1: "Побачимося на Популярній.",
+    contact_title_1: "Побачимося у Montowni Smaków.",
     address_street: "Popularna 71",
     address_city: "02-473 Варшава",
     hours_label: "ГОДИНИ РОБОТИ",

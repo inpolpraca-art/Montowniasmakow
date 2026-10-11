@@ -7,18 +7,18 @@
       <a
         href="<?php echo home_url('/'); ?>"
         aria-label="Montownia Smaków — start"
-        class="font-black tracking-wider relative flex items-center gap-x-2.5"
+        class="font-black tracking-wider relative grid grid-cols-[auto_1fr] gap-x-1"
       >
         <img
-          src="<?php echo get_template_directory_uri(); ?>/assets/logo.png"
+          src="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png"
           loading="eager"
           fetchpriority="high"
           alt="logo"
-          width="72"
-          height="72"
-          class="rounded-full max-w-12 max-h-12 md:max-w-16 md:max-h-16"
+          width="64"
+          height="64"
+          class="rounded-full max-w-12 overflow-hidden border-full max-h-12 md:max-w-16 md:max-h-16"
         />
-        <div class="flex text-xs lg:text-lg justify-center flex-col gap-y-1">
+        <div class="flex text-[0.56rem] font-bold tracking-[.2em] pt-1.5 flex-col gap-y-1">
           <span>MONTOWNIA</span>
           <span>SMAKÓW</span>
         </div>
@@ -63,7 +63,7 @@
         id="mainNav"
         class="absolute *:whitespace-nowrap top-full hidden left-0 lg:static lg:flex lg:z-auto justify-end w-full lg:max-w-160 text-[0.688rem] font-bold tracking-[.12em] *:inline-block *:hover:text-white/60 *:p-2 *:duration-200 items-center"
       >
-        <a href="<?php echo $hash_prefix; ?>#oferta" data-i18n="nav_offer">OFERTA</a>
+        <a href="<?php echo home_url('/catering/'); ?>" data-i18n="nav_offer">OFERTA</a>
         <a href="<?php echo $hash_prefix; ?>#o-nas" data-i18n="nav_about">O NAS</a>
         <a href="<?php echo $hash_prefix; ?>#video" data-i18n="nav_video">VIDEO</a>
         <a href="<?php echo home_url('/menu/'); ?>" data-i18n="nav_menu">MENU</a>

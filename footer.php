@@ -16,7 +16,7 @@
           class="mb-2 col-span-2 text-[0.56rem] tracking-[.18em] text-[#777]"
           data-i18n="shortcuts"
           >NA SKRÓTY</span
-        ><a href="<?php echo $hash_prefix; ?>#oferta" data-i18n="nav_offer" class="text-[0.56rem]"
+        ><a href="<?php echo home_url('/catering/'); ?>" data-i18n="nav_offer" class="text-[0.56rem]"
           >OFERTA</a
         ><a href="<?php echo $hash_prefix; ?>#o-nas" data-i18n="nav_about" class="text-[0.56rem]">O NAS</a
         ><a href="<?php echo $hash_prefix; ?>#video" data-i18n="nav_video" class="text-[0.56rem]">VIDEO</a

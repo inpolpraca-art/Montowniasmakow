@@ -126,10 +126,10 @@ Template Name: Nowy design (główna)
             WARSZAWA • WŁOCHY
           </p>
           <h1
-            class="text-[clamp(58px,8vw,118px)] font-medium leading-[.88]"
+            class="text-[clamp(50px,8vw,110px)] font-medium leading-[.88]"
             data-i18n="hero_title"
           >
-            SMAK,<br />KTÓRY ŁĄCZY NAS.
+            SMAK,<br />KTÓRY ŁĄCZY
           </h1>
           <p
             class="max-w-137.5 leading-[1.7] text-white"
@@ -167,24 +167,27 @@ Template Name: Nowy design (główna)
         id="oferta"
         class="grid place-items-center bg-blackfood px-[8vw] py-30 text-center text-cream"
       >
-        <div class="max-w-180 grid gap-y-5">
+        <div class="max-w-180 grid justify-items-center gap-y-5">
           <div
             class="text-[0.6rem] text-light-gold font-bold tracking-[.22em]"
-            data-i18n="offer_label"
+            data-i18n="offer_label2"
           >
-            01 / OFERTA
+            NASZA OFERTA
           </div>
           <h2
-            class="font-serif text-[clamp(48px,6.4vw,88px)] font-medium leading-[.92]"
+            class="font-serif text-[clamp(38px,6.4vw,75px)] font-medium leading-[.92]"
             data-i18n="offer_title"
           >
-            Spotkajmy się<br /><em class="font-normal">przy stole.</em>
+            Dobre rzeczy dzieją się przy stole.
           </h2>
-          <p class="leading-[1.7] text-[#aaa]" data-i18n="offer_text">
-            Dostawa, na wynos, rezerwacje, ogródek i catering.
+          <p class="leading-[1.7] text-[#aaa] max-w-125" data-i18n="offer_text1">
+            Od pierwszego kęsa po ostatni toast - tworzymy smaki, atmosferę i chwile, do których chce się wracać.
+          </p>
+          <p class="leading-[1.7] text-[#aaa] max-w-125" data-i18n="offer_text2">
+            Restauracja, wyjątkowe uroczystości i catering dopracowany w każdym szczególe.
           </p>
           <div
-            class="mt-2.5 grid grid-cols-2 gap-2 *:border *:border-[#444] *:px-4 *:py-3 *:text-[0.56rem] *:tracking-[.15em] *:transition *:hover:bg-paper *:hover:text-[#111]"
+            class="pt-6 border-t w-full border-t-[#444] grid grid-cols-2 gap-2 *:border *:border-[#444] *:px-4 *:py-3 *:text-[0.56rem] *:tracking-[.15em] *:transition *:hover:bg-paper *:hover:text-[#111]"
           >
           <a href="tel:+48883199177" data-i18n="call">ZADZWOŃ</a>
           <a href="mailto:biuro@montowniasmakow.pl" data-i18n="reservation">NAPISZ</a>
@@ -195,7 +198,7 @@ Template Name: Nowy design (główna)
         </div>
       </section>
 
-      <section id="o-nas" class="bg-paper px-[8vw] py-30">
+      <section id="o-nas" class="bg-blackfood px-[8vw] py-30">
         <div
           class="text-[0.56rem] text-light-gold font-bold tracking-[.22em]"
           data-i18n="about_label"
@@ -205,7 +208,7 @@ Template Name: Nowy design (główna)
         <div class="pt-14 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-[10vw]">
           <div class="grid grid-rows-[auto_1fr] gap-y-4">
             <p
-              class="text-[0.56rem] font-bold tracking-[.22em]"
+              class="text-[0.56rem] font-bold text-[#aaa] tracking-[.22em]"
               data-i18n="about_eyebrow"
             >
               MONTOWNIA SMAKÓW
@@ -218,7 +221,7 @@ Template Name: Nowy design (główna)
             </h2>
           </div>
           <div
-            class="max-w-142.5 flex flex-col gap-y-5 leading-[1.75] text-[#5e5a52]"
+            class="max-w-142.5 flex flex-col gap-y-5 leading-[1.75] text-[#aaa]"
           >
             <p data-i18n="about_p1">
               Montownia Smaków to restauracja na <b>Popularnej 71</b> w Warszawskich Włochach, stworzona z miłości do dobrego jedzenia, swobodnej atmosfery i spotkań przy wspólnym stole.
@@ -241,10 +244,10 @@ Template Name: Nowy design (główna)
           </div>
         </div>
         <figure
-          class="mx-auto flex flex-col gap-y-5 mt-50 text-center font-serif text-[clamp(27px,4vw,52px)] font-medium leading-[1.12]"
+          class="mx-auto flex flex-col gap-y-5 pt-10 text-center font-serif text-[clamp(27px,4vw,52px)] font-medium leading-[1.12]"
         >
           <blockquote>
-            <p data-i18n="quote_cite">
+            <p data-i18n="quote_cite" class="text-white">
               „Nie ma bardziej szczerej miłości<br />
               <em>niż miłość do jedzenia…”</em>
             </p>
@@ -541,7 +544,7 @@ Template Name: Nowy design (główna)
             class="font-serif text-[clamp(40px,6vw,60px)] font-medium leading-[.94]"
             data-i18n="contact_title"
           >
-            Widzimy się na Popularnej.
+            Widzimy się w Montowni Smaków.
           </h2>
           <p class="leading-[1.8] text-[#aaa]">
             Popularna 71<br />02-473 Warszawa
@@ -554,6 +557,15 @@ Template Name: Nowy design (główna)
               class="text-sm hover:text-[#e6a064]"
               >biuro@montowniasmakow.pl</a
             >
+          </div>
+          <div class="flex">
+            <img
+              src="<?php echo get_template_directory_uri(); ?>/assets/logo-black.png"
+              alt="Montownia Smaków"
+              width="200"
+              height="200"
+              class="h-50 w-50 object-contain"
+            />
           </div>
         </div>
         <div class="flex flex-col gap-y-7.5 px-[8vw] pb-19 lg:py-22.5">
